@@ -44,6 +44,7 @@ module translator #(
 
     // Instantiate Font ROM
     font_rom ascii_rom (
+        .clk(clk),
         .ascii_code(ascii_code),
         .row_index(row_idx),
         .row_data(row_data)

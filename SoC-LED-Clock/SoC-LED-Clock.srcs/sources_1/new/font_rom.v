@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module font_rom (
+    input clk,
     input      [6:0] ascii_code,
     input      [2:0] row_index,
     output reg [7:0] row_data
@@ -77,7 +78,7 @@ module font_rom (
     end
 
     // Extract the requested 8-bit row slice from the 64-bit configuration
-    always @(*) begin
+    always @(posedge clk) begin
         case (row_index)
             3'd0: row_data = full_char[63:56];
             3'd1: row_data = full_char[55:48];

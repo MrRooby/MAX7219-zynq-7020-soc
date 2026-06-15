@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log dot_matrix_fifo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dot_matrix_fifo.tcl
+EAStep vivado -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
