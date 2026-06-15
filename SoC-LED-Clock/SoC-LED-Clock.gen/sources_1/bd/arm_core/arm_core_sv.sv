@@ -94,7 +94,13 @@ module arm_core_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   inout wire FIXED_IO_ps_clk,
   (* X_INTERFACE_IGNORE = "true" *)
-  inout wire FIXED_IO_ps_porb
+  inout wire FIXED_IO_ps_porb,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire load_0,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire d_out_0,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire clk_out_0
 );
 
   arm_core inst (
@@ -118,7 +124,10 @@ module arm_core_sv (
     .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
     .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
     .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
-    .FIXED_IO_ps_porb(FIXED_IO_ps_porb)
+    .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
+    .load_0(load_0),
+    .d_out_0(d_out_0),
+    .clk_out_0(clk_out_0)
   );
 
 endmodule

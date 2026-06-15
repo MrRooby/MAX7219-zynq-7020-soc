@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Mon Jun 15 23:24:36 2026
+//Date        : Tue Jun 16 00:50:04 2026
 //Host        : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 //Command     : generate_target arm_core_wrapper.bd
 //Design      : arm_core_wrapper
@@ -31,7 +31,10 @@ module arm_core_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
+    FIXED_IO_ps_srstb,
+    clk_out_0,
+    d_out_0,
+    load_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -53,6 +56,9 @@ module arm_core_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  output clk_out_0;
+  output d_out_0;
+  output load_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -75,6 +81,9 @@ module arm_core_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire clk_out_0;
+  wire d_out_0;
+  wire load_0;
 
   arm_core arm_core_i
        (.DDR_addr(DDR_addr),
@@ -97,5 +106,8 @@ module arm_core_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .clk_out_0(clk_out_0),
+        .d_out_0(d_out_0),
+        .load_0(load_0));
 endmodule

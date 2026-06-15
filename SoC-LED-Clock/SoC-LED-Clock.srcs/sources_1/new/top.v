@@ -20,20 +20,33 @@
 //////////////////////////////////////////////////////////////////////////////////
 module top(
   input clk,
-  input clk_out,
-  input start_trans,
-  input [31:0] ascii_data,
-  input [63:0] data,
-  input start_fifo,
 
-  output ready,
-  output packet_valid,
-  output [31:0] max_packet,
+  // AXI_GPIO_0
+  input [31:0] ascii_data_0,
+  input [31:0] ascii_data_1,
+  // AXI_GPIO_1
+  input [1:0]  blink_idx,
+  input [3:0]  ctrl_reg,
+  
+  output clk_out,
   output load,
-  output d_out,
-  output busy
+  output d_out
 );
 
+// Internal Control Decoding Wires
+wire start_trans;
+wire start_fifo;
+
+// Unpack specific control execution bits from the AXI GPIO register bus
+assign start_trans = ctrl_reg[0]; // Bit 0 kicks off translation
+assign start_fifo  = ctrl_reg[1]; // Bit 1 drives the FIFO transmission pipeline
+
+// Internal Submodule Core Interconnect Wires
+wire [31:0] max_packet;
+wire        packet_valid;
+wire [63:0] data;
+wire        ready;
+wire        busy;
 
 translator #(
   .N(4)

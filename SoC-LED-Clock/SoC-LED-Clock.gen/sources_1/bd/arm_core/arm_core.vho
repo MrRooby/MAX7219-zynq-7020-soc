@@ -73,7 +73,10 @@ COMPONENT arm_core
     FIXED_IO_ddr_vrp : INOUT STD_LOGIC;
     FIXED_IO_ps_srstb : INOUT STD_LOGIC;
     FIXED_IO_ps_clk : INOUT STD_LOGIC;
-    FIXED_IO_ps_porb : INOUT STD_LOGIC
+    FIXED_IO_ps_porb : INOUT STD_LOGIC;
+    load_0 : OUT STD_LOGIC;
+    d_out_0 : OUT STD_LOGIC;
+    clk_out_0 : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -104,7 +107,10 @@ your_instance_name : arm_core
     FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
     FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
     FIXED_IO_ps_clk => FIXED_IO_ps_clk,
-    FIXED_IO_ps_porb => FIXED_IO_ps_porb
+    FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+    load_0 => load_0,
+    d_out_0 => d_out_0,
+    clk_out_0 => clk_out_0
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

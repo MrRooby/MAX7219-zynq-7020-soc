@@ -74,7 +74,10 @@ arm_core your_instance_name (
   .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp), // inout wire FIXED_IO_ddr_vrp
   .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb), // inout wire FIXED_IO_ps_srstb
   .FIXED_IO_ps_clk(FIXED_IO_ps_clk), // inout wire FIXED_IO_ps_clk
-  .FIXED_IO_ps_porb(FIXED_IO_ps_porb) // inout wire FIXED_IO_ps_porb
+  .FIXED_IO_ps_porb(FIXED_IO_ps_porb), // inout wire FIXED_IO_ps_porb
+  .load_0(load_0), // output wire load_0
+  .d_out_0(d_out_0), // output wire d_out_0
+  .clk_out_0(clk_out_0) // output wire clk_out_0
 );
 // INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 
