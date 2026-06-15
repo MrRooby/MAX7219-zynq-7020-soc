@@ -1,0 +1,79 @@
+[*]
+[*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
+[*] Tue Mar 26 20:58:39 2024
+[*]
+[dumpfile] "D:\soc24_intel\00_work\axi_intro\axi_io.vcd"
+[dumpfile_mtime] "Tue Mar 26 20:57:17 2024"
+[dumpfile_size] 9945
+[savefile] "D:\soc24_intel\00_work\axi_intro\axi_io.gtkw"
+[timestart] 27000
+[size] 1918 1528
+[pos] -372 -365
+*-18.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] AXI_IO_tb.
+[sst_width] 197
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 479
+@28
+AXI_IO_tb.UUT.CLK
+@22
+AXI_IO_tb.UUT.LED[7:0]
+AXI_IO_tb.UUT.LED_REG[31:0]
+AXI_IO_tb.UUT.PB[4:0]
+AXI_IO_tb.UUT.R0_ADDR[31:2]
+@28
+AXI_IO_tb.UUT.R0_CTRL[2:0]
+@22
+AXI_IO_tb.UUT.SW[7:0]
+AXI_IO_tb.UUT.S_AXI_ARADDR[31:0]
+@28
+AXI_IO_tb.UUT.S_AXI_ARBURST[1:0]
+AXI_IO_tb.UUT.S_AXI_ARESETN
+@22
+AXI_IO_tb.UUT.S_AXI_ARID[11:0]
+AXI_IO_tb.UUT.S_AXI_ARLEN[3:0]
+@28
+AXI_IO_tb.UUT.S_AXI_ARPROT[2:0]
+AXI_IO_tb.UUT.S_AXI_ARREADY
+AXI_IO_tb.UUT.S_AXI_ARSIZE[1:0]
+AXI_IO_tb.UUT.S_AXI_ARVALID
+@22
+AXI_IO_tb.UUT.S_AXI_AWADDR[31:0]
+AXI_IO_tb.UUT.S_AXI_AWID[11:0]
+@28
+AXI_IO_tb.UUT.S_AXI_AWPROT[2:0]
+AXI_IO_tb.UUT.S_AXI_AWREADY
+AXI_IO_tb.UUT.S_AXI_AWVALID
+@22
+AXI_IO_tb.UUT.S_AXI_BID[11:0]
+@28
+AXI_IO_tb.UUT.S_AXI_BREADY
+AXI_IO_tb.UUT.S_AXI_BRESP[1:0]
+AXI_IO_tb.UUT.S_AXI_BVALID
+@22
+AXI_IO_tb.UUT.S_AXI_RDATA[31:0]
+AXI_IO_tb.UUT.S_AXI_RID[11:0]
+@28
+AXI_IO_tb.UUT.S_AXI_RLAST
+AXI_IO_tb.UUT.S_AXI_RREADY
+AXI_IO_tb.UUT.S_AXI_RRESP[1:0]
+AXI_IO_tb.UUT.S_AXI_RVALID
+@22
+AXI_IO_tb.UUT.S_AXI_WDATA[31:0]
+AXI_IO_tb.UUT.S_AXI_WID[11:0]
+@28
+AXI_IO_tb.UUT.S_AXI_WREADY
+@22
+AXI_IO_tb.UUT.S_AXI_WSTRB[3:0]
+@28
+AXI_IO_tb.UUT.S_AXI_WVALID
+@22
+AXI_IO_tb.UUT.W0_ADDR[31:2]
+@28
+AXI_IO_tb.UUT.W0_CTRL[2:0]
+@22
+AXI_IO_tb.UUT.W0_DATA[31:0]
+AXI_IO_tb.UUT.W0_STRB[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

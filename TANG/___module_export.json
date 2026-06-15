@@ -1,0 +1,2469 @@
+{
+  "creator": "Yosys 0.61+21 (git sha1 967b47d98, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "AXI_IO_INT": {
+      "attributes": {
+        "dynports": 1,
+        "cells_not_processed": 1,
+        "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:22.1-297.10"
+      },
+      "parameter_default_values": {
+        "BURST_FIXED": 0,
+        "BURST_INCR": 1,
+        "BURST_WRAP": 2,
+        "CNT_CTRL": 1073741892,
+        "CNT_Q": 1073741888,
+        "GP0_BASE": 1073741824,
+        "GP1_BASE": 2147483648,
+        "LED_ADDR": 1073741824,
+        "PB_ADDR": 1073741832,
+        "RESP_DECERR": 3,
+        "RESP_OK": 0,
+        "RESP_SLVERR": 2,
+        "R_CTRL_W": 3,
+        "R_DATA": 1,
+        "R_DATA_ACK": 2,
+        "R_IDLE": 0,
+        "SW_ADDR": 1073741828,
+        "W_CTRL_W": 3,
+        "W_IDLE": 0,
+        "W_RESP": 2,
+        "W_WR": 1
+      },
+      "ports": {
+        "CLK": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "S_AXI_ARESETN": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "S_AXI_AWADDR": {
+          "direction": "input",
+          "bits": [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ]
+        },
+        "S_AXI_AWID": {
+          "direction": "input",
+          "bits": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 ]
+        },
+        "S_AXI_AWPROT": {
+          "direction": "input",
+          "bits": [ 48, 49, 50 ]
+        },
+        "S_AXI_AWVALID": {
+          "direction": "input",
+          "bits": [ 51 ]
+        },
+        "S_AXI_AWREADY": {
+          "direction": "output",
+          "bits": [ 52 ]
+        },
+        "S_AXI_WDATA": {
+          "direction": "input",
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ]
+        },
+        "S_AXI_WID": {
+          "direction": "input",
+          "bits": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 ]
+        },
+        "S_AXI_WSTRB": {
+          "direction": "input",
+          "bits": [ 97, 98, 99, 100 ]
+        },
+        "S_AXI_WVALID": {
+          "direction": "input",
+          "bits": [ 101 ]
+        },
+        "S_AXI_WREADY": {
+          "direction": "output",
+          "bits": [ 102 ]
+        },
+        "S_AXI_BRESP": {
+          "direction": "output",
+          "bits": [ 103, 104 ]
+        },
+        "S_AXI_BID": {
+          "direction": "output",
+          "bits": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+        },
+        "S_AXI_BVALID": {
+          "direction": "output",
+          "bits": [ 117 ]
+        },
+        "S_AXI_BREADY": {
+          "direction": "input",
+          "bits": [ 118 ]
+        },
+        "S_AXI_ARADDR": {
+          "direction": "input",
+          "bits": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ]
+        },
+        "S_AXI_ARID": {
+          "direction": "input",
+          "bits": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162 ]
+        },
+        "S_AXI_ARPROT": {
+          "direction": "input",
+          "bits": [ 163, 164, 165 ]
+        },
+        "S_AXI_ARBURST": {
+          "direction": "input",
+          "bits": [ 166, 167 ]
+        },
+        "S_AXI_ARLEN": {
+          "direction": "input",
+          "bits": [ 168, 169, 170, 171 ]
+        },
+        "S_AXI_ARSIZE": {
+          "direction": "input",
+          "bits": [ 172, 173 ]
+        },
+        "S_AXI_ARVALID": {
+          "direction": "input",
+          "bits": [ 174 ]
+        },
+        "S_AXI_ARREADY": {
+          "direction": "output",
+          "bits": [ 175 ]
+        },
+        "S_AXI_RDATA": {
+          "direction": "output",
+          "bits": [ 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ]
+        },
+        "S_AXI_RID": {
+          "direction": "output",
+          "bits": [ 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 ]
+        },
+        "S_AXI_RRESP": {
+          "direction": "output",
+          "bits": [ 220, 221 ]
+        },
+        "S_AXI_RVALID": {
+          "direction": "output",
+          "bits": [ 222 ]
+        },
+        "S_AXI_RREADY": {
+          "direction": "input",
+          "bits": [ 223 ]
+        },
+        "S_AXI_RLAST": {
+          "direction": "output",
+          "bits": [ "1" ]
+        },
+        "IRQ": {
+          "direction": "output",
+          "bits": [ 224 ]
+        },
+        "SW": {
+          "direction": "input",
+          "bits": [ 225, 226, 227, 228, 229, 230, 231, 232 ]
+        },
+        "PB": {
+          "direction": "input",
+          "bits": [ 233, 234, 235, 236, 237 ]
+        },
+        "LED": {
+          "direction": "output",
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245 ]
+        }
+      },
+      "cells": {
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230.7-230.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 51 ],
+            "B": [ 101 ],
+            "Y": [ 246 ]
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260$3": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260.19-260.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 247 ],
+            "B": [ 51 ],
+            "Y": [ 248 ]
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260$4": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260.19-260.65"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 248 ],
+            "B": [ 101 ],
+            "Y": [ 249 ]
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261$5": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261.18-261.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 247 ],
+            "B": [ 51 ],
+            "Y": [ 250 ]
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261$6": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261.18-261.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 250 ],
+            "B": [ 101 ],
+            "Y": [ 251 ]
+          }
+        },
+        "$logic_not$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280$8": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280.13-280.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 252 ],
+            "Y": [ 253 ]
+          }
+        },
+        "$procdff$104": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 249 ],
+            "Q": [ 52 ]
+          }
+        },
+        "$procdff$105": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 251 ],
+            "Q": [ 102 ]
+          }
+        },
+        "$procdff$106": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 2
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 254, 255 ],
+            "Q": [ 103, 104 ]
+          }
+        },
+        "$procdff$107": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 12
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+            "Q": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+          }
+        },
+        "$procdff$108": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 32
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+            "Q": [ 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ]
+          }
+        },
+        "$procdff$109": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 12
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311 ],
+            "Q": [ 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 ]
+          }
+        },
+        "$procdff$110": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 2
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 312, 313 ],
+            "Q": [ 220, 221 ]
+          }
+        },
+        "$procdff$111": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 314, 315, 316 ],
+            "Q": [ 175, 317, 222 ]
+          }
+        },
+        "$procdff$112": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 30
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347 ],
+            "Q": [ 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377 ]
+          }
+        },
+        "$procdff$113": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 378, 379, 380 ],
+            "Q": [ 247, 381, 117 ]
+          }
+        },
+        "$procdff$114": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 30
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411 ],
+            "Q": [ 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441 ]
+          }
+        },
+        "$procdff$115": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 442, 443, 444, 445 ],
+            "Q": [ 446, 447, 448, 449 ]
+          }
+        },
+        "$procdff$116": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 32
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 ],
+            "Q": [ 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513 ]
+          }
+        },
+        "$procdff$117": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 32
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Q": [ 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545 ]
+          }
+        },
+        "$procdff$118": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 546 ],
+            "Q": [ 547 ]
+          }
+        },
+        "$procdff$119": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ "0" ],
+            "Q": [ 548 ]
+          }
+        },
+        "$procdff$120": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 548 ],
+            "Q": [ 224 ]
+          }
+        },
+        "$procmux$10": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 8,
+            "WIDTH": 8
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:292.30-292.30|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x", "x", "x", "x", "x" ],
+            "B": [ 538, 539, 540, 541, 542, 543, 544, 545, 530, 531, 532, 533, 534, 535, 536, 537, 522, 523, 524, 525, 526, 527, 528, 529, 547, "0", "0", "0", "0", "0", "0", 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580 ],
+            "S": [ 581, 582, 583, 584, 585, 586, 587, 588 ],
+            "Y": [ 238, 239, 240, 241, 242, 243, 244, 245 ]
+          }
+        },
+        "$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 2
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:237.6-237.6|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 103, 104 ],
+            "B": [ "1", "1" ],
+            "S": [ 381 ],
+            "Y": [ 589, 590 ]
+          }
+        },
+        "$procmux$102": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 2
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 103, 104 ],
+            "B": [ 589, 590 ],
+            "S": [ 3 ],
+            "Y": [ 254, 255 ]
+          }
+        },
+        "$procmux$11_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:292.30-292.30|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "1", "1", "1" ],
+            "Y": [ 581 ]
+          }
+        },
+        "$procmux$12_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:291.29-291.29|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "0", "1", "1" ],
+            "Y": [ 582 ]
+          }
+        },
+        "$procmux$13_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:290.41-290.41|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 583 ]
+          }
+        },
+        "$procmux$14_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:289.32-289.32|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 584 ]
+          }
+        },
+        "$procmux$15_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:288.32-288.32|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "1", "1", "0" ],
+            "Y": [ 585 ]
+          }
+        },
+        "$procmux$16_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:287.31-287.31|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "0", "1", "0" ],
+            "Y": [ 586 ]
+          }
+        },
+        "$procmux$17_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:286.30-286.30|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 587 ]
+          }
+        },
+        "$procmux$18_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.15-285.15|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:285.2-294.9"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 230, 231, 232 ],
+            "Y": [ 588 ]
+          }
+        },
+        "$procmux$20": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 547 ],
+            "S": [ 3 ],
+            "Y": [ 546 ]
+          }
+        },
+        "$procmux$25": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 32
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.40-228.40|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513 ],
+            "B": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ],
+            "S": [ 247 ],
+            "Y": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622 ]
+          }
+        },
+        "$procmux$27": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 32
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513 ],
+            "B": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622 ],
+            "S": [ 3 ],
+            "Y": [ 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 ]
+          }
+        },
+        "$procmux$32": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.40-228.40|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 446, 447, 448, 449 ],
+            "B": [ 97, 98, 99, 100 ],
+            "S": [ 247 ],
+            "Y": [ 623, 624, 625, 626 ]
+          }
+        },
+        "$procmux$34": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 446, 447, 448, 449 ],
+            "B": [ 623, 624, 625, 626 ],
+            "S": [ 3 ],
+            "Y": [ 442, 443, 444, 445 ]
+          }
+        },
+        "$procmux$39": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 30
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.40-228.40|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441 ],
+            "B": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
+            "S": [ 247 ],
+            "Y": [ 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656 ]
+          }
+        },
+        "$procmux$41": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 30
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441 ],
+            "B": [ 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656 ],
+            "S": [ 3 ],
+            "Y": [ 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411 ]
+          }
+        },
+        "$procmux$44": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:248.7-248.19|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:248.4-249.28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 247, 381, 117 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 118 ],
+            "Y": [ 657, 658, 659 ]
+          }
+        },
+        "$procmux$46": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 3,
+            "WIDTH": 3
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:246.6-246.6|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 247, 381, 117 ],
+            "B": [ 657, 658, 659, "0", "0", "1", 660, 661, 662 ],
+            "S": [ 117, 381, 247 ],
+            "Y": [ 663, 664, 665 ]
+          }
+        },
+        "$procmux$49": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230.7-230.35|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230.4-232.7"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 247, 381, 117 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 246 ],
+            "Y": [ 660, 661, 662 ]
+          }
+        },
+        "$procmux$52": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0" ],
+            "B": [ 663, 664, 665 ],
+            "S": [ 3 ],
+            "Y": [ 378, 379, 380 ]
+          }
+        },
+        "$procmux$57": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 30
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.46-200.46|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.9-225.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377 ],
+            "B": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
+            "S": [ 175 ],
+            "Y": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695 ]
+          }
+        },
+        "$procmux$59": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 30
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377 ],
+            "B": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695 ],
+            "S": [ 3 ],
+            "Y": [ 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347 ]
+          }
+        },
+        "$procmux$62": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:222.7-222.19|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:222.4-223.28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 175, 317, 222 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 223 ],
+            "Y": [ 696, 697, 698 ]
+          }
+        },
+        "$procmux$64": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 3,
+            "WIDTH": 3
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:220.6-220.6|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.9-225.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 175, 317, 222 ],
+            "B": [ 696, 697, 698, "0", "0", "1", 699, 700, 701 ],
+            "S": [ 222, 317, 175 ],
+            "Y": [ 702, 703, 704 ]
+          }
+        },
+        "$procmux$67": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:202.7-202.20|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:202.4-205.7"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 175, 317, 222 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 174 ],
+            "Y": [ 699, 700, 701 ]
+          }
+        },
+        "$procmux$70": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 3
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0" ],
+            "B": [ 702, 703, 704 ],
+            "S": [ 3 ],
+            "Y": [ 314, 315, 316 ]
+          }
+        },
+        "$procmux$74": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 2
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:208.6-208.6|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.9-225.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 220, 221 ],
+            "B": [ "1", "1" ],
+            "S": [ 317 ],
+            "Y": [ 705, 706 ]
+          }
+        },
+        "$procmux$76": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 2
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 220, 221 ],
+            "B": [ 705, 706 ],
+            "S": [ 3 ],
+            "Y": [ 312, 313 ]
+          }
+        },
+        "$procmux$81": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 12
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.46-200.46|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.9-225.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 ],
+            "B": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162 ],
+            "S": [ 175 ],
+            "Y": [ 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718 ]
+          }
+        },
+        "$procmux$83": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 12
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 ],
+            "B": [ 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718 ],
+            "S": [ 3 ],
+            "Y": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311 ]
+          }
+        },
+        "$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 32
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:208.6-208.6|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:200.9-225.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ],
+            "B": [ "1", "1", "1", "1", "0", "1", "1", "1", "0", "1", "1", "1", "1", "1", "0", "1", "1", "0", "1", "1", "0", "1", "0", "1", "0", "1", "1", "1", "1", "0", "1", "1" ],
+            "S": [ 317 ],
+            "Y": [ 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750 ]
+          }
+        },
+        "$procmux$89": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 32
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ],
+            "B": [ 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750 ],
+            "S": [ 3 ],
+            "Y": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ]
+          }
+        },
+        "$procmux$94": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 12
+          },
+          "attributes": {
+            "parallel_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.40-228.40|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:228.3-252.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+            "B": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 ],
+            "S": [ 247 ],
+            "Y": [ 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762 ]
+          }
+        },
+        "$procmux$96": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 12
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.8-198.21|/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:198.5-258.5"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+            "B": [ 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762 ],
+            "S": [ 3 ],
+            "Y": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ]
+          }
+        },
+        "$reduce_or$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280$7": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 32,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280.13-280.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545 ],
+            "Y": [ 252 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\IRQ_FF[0:0]": {
+          "hide_name": 1,
+          "bits": [ 548 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\LED[7:0]": {
+          "hide_name": 1,
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:283.1-295.4"
+          }
+        },
+        "$0\\R0_ADDR[29:0]": {
+          "hide_name": 1,
+          "bits": [ 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\R0_CTRL[2:0]": {
+          "hide_name": 1,
+          "bits": [ 314, 315, 316 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_AWREADY[0:0]": {
+          "hide_name": 1,
+          "bits": [ 249 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_BID[11:0]": {
+          "hide_name": 1,
+          "bits": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_BRESP[1:0]": {
+          "hide_name": 1,
+          "bits": [ 254, 255 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_RDATA[31:0]": {
+          "hide_name": 1,
+          "bits": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_RID[11:0]": {
+          "hide_name": 1,
+          "bits": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_RRESP[1:0]": {
+          "hide_name": 1,
+          "bits": [ 312, 313 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\S_AXI_WREADY[0:0]": {
+          "hide_name": 1,
+          "bits": [ 251 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\TMR_Q[31:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\TMR_RUN[0:0]": {
+          "hide_name": 1,
+          "bits": [ 546 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\TMR_ZD[0:0]": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\W0_ADDR[29:0]": {
+          "hide_name": 1,
+          "bits": [ 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\W0_CTRL[2:0]": {
+          "hide_name": 1,
+          "bits": [ 378, 379, 380 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\W0_DATA[31:0]": {
+          "hide_name": 1,
+          "bits": [ 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$0\\W0_STRB[3:0]": {
+          "hide_name": 1,
+          "bits": [ 442, 443, 444, 445 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:196.1-271.4"
+          }
+        },
+        "$1\\LED[7:0]": {
+          "hide_name": 1,
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:283.1-295.4"
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230$2_Y": {
+          "hide_name": 1,
+          "bits": [ 246 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:230.7-230.35"
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260$3_Y": {
+          "hide_name": 1,
+          "bits": [ 248 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260.19-260.50"
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260$4_Y": {
+          "hide_name": 1,
+          "bits": [ 249 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:260.19-260.65"
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261$5_Y": {
+          "hide_name": 1,
+          "bits": [ 250 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261.18-261.49"
+          }
+        },
+        "$and$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261$6_Y": {
+          "hide_name": 1,
+          "bits": [ 251 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:261.18-261.64"
+          }
+        },
+        "$logic_not$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280$8_Y": {
+          "hide_name": 1,
+          "bits": [ 253 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280.13-280.20"
+          }
+        },
+        "$procmux$100_Y": {
+          "hide_name": 1,
+          "bits": [ 589, 590 ],
+          "attributes": {
+          }
+        },
+        "$procmux$101_CMP": {
+          "hide_name": 1,
+          "bits": [ 381 ],
+          "attributes": {
+          }
+        },
+        "$procmux$102_Y": {
+          "hide_name": 1,
+          "bits": [ 254, 255 ],
+          "attributes": {
+          }
+        },
+        "$procmux$103_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$10_Y": {
+          "hide_name": 1,
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245 ],
+          "attributes": {
+          }
+        },
+        "$procmux$11_CMP": {
+          "hide_name": 1,
+          "bits": [ 581 ],
+          "attributes": {
+          }
+        },
+        "$procmux$12_CMP": {
+          "hide_name": 1,
+          "bits": [ 582 ],
+          "attributes": {
+          }
+        },
+        "$procmux$13_CMP": {
+          "hide_name": 1,
+          "bits": [ 583 ],
+          "attributes": {
+          }
+        },
+        "$procmux$14_CMP": {
+          "hide_name": 1,
+          "bits": [ 584 ],
+          "attributes": {
+          }
+        },
+        "$procmux$15_CMP": {
+          "hide_name": 1,
+          "bits": [ 585 ],
+          "attributes": {
+          }
+        },
+        "$procmux$16_CMP": {
+          "hide_name": 1,
+          "bits": [ 586 ],
+          "attributes": {
+          }
+        },
+        "$procmux$17_CMP": {
+          "hide_name": 1,
+          "bits": [ 587 ],
+          "attributes": {
+          }
+        },
+        "$procmux$18_CMP": {
+          "hide_name": 1,
+          "bits": [ 588 ],
+          "attributes": {
+          }
+        },
+        "$procmux$20_Y": {
+          "hide_name": 1,
+          "bits": [ 546 ],
+          "attributes": {
+          }
+        },
+        "$procmux$21_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$25_Y": {
+          "hide_name": 1,
+          "bits": [ 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622 ],
+          "attributes": {
+          }
+        },
+        "$procmux$26_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$27_Y": {
+          "hide_name": 1,
+          "bits": [ 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 ],
+          "attributes": {
+          }
+        },
+        "$procmux$28_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$32_Y": {
+          "hide_name": 1,
+          "bits": [ 623, 624, 625, 626 ],
+          "attributes": {
+          }
+        },
+        "$procmux$33_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$34_Y": {
+          "hide_name": 1,
+          "bits": [ 442, 443, 444, 445 ],
+          "attributes": {
+          }
+        },
+        "$procmux$35_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$39_Y": {
+          "hide_name": 1,
+          "bits": [ 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656 ],
+          "attributes": {
+          }
+        },
+        "$procmux$40_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$41_Y": {
+          "hide_name": 1,
+          "bits": [ 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411 ],
+          "attributes": {
+          }
+        },
+        "$procmux$42_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$44_Y": {
+          "hide_name": 1,
+          "bits": [ 657, 658, 659 ],
+          "attributes": {
+          }
+        },
+        "$procmux$45_CMP": {
+          "hide_name": 1,
+          "bits": [ 118 ],
+          "attributes": {
+          }
+        },
+        "$procmux$46_Y": {
+          "hide_name": 1,
+          "bits": [ 663, 664, 665 ],
+          "attributes": {
+          }
+        },
+        "$procmux$47_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$48_CMP": {
+          "hide_name": 1,
+          "bits": [ 381 ],
+          "attributes": {
+          }
+        },
+        "$procmux$49_Y": {
+          "hide_name": 1,
+          "bits": [ 660, 661, 662 ],
+          "attributes": {
+          }
+        },
+        "$procmux$50_CMP": {
+          "hide_name": 1,
+          "bits": [ 246 ],
+          "attributes": {
+          }
+        },
+        "$procmux$51_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$52_Y": {
+          "hide_name": 1,
+          "bits": [ 378, 379, 380 ],
+          "attributes": {
+          }
+        },
+        "$procmux$53_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$57_Y": {
+          "hide_name": 1,
+          "bits": [ 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695 ],
+          "attributes": {
+          }
+        },
+        "$procmux$58_CMP": {
+          "hide_name": 1,
+          "bits": [ 175 ],
+          "attributes": {
+          }
+        },
+        "$procmux$59_Y": {
+          "hide_name": 1,
+          "bits": [ 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347 ],
+          "attributes": {
+          }
+        },
+        "$procmux$60_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$62_Y": {
+          "hide_name": 1,
+          "bits": [ 696, 697, 698 ],
+          "attributes": {
+          }
+        },
+        "$procmux$63_CMP": {
+          "hide_name": 1,
+          "bits": [ 223 ],
+          "attributes": {
+          }
+        },
+        "$procmux$64_Y": {
+          "hide_name": 1,
+          "bits": [ 702, 703, 704 ],
+          "attributes": {
+          }
+        },
+        "$procmux$65_CMP": {
+          "hide_name": 1,
+          "bits": [ 222 ],
+          "attributes": {
+          }
+        },
+        "$procmux$66_CMP": {
+          "hide_name": 1,
+          "bits": [ 317 ],
+          "attributes": {
+          }
+        },
+        "$procmux$67_Y": {
+          "hide_name": 1,
+          "bits": [ 699, 700, 701 ],
+          "attributes": {
+          }
+        },
+        "$procmux$68_CMP": {
+          "hide_name": 1,
+          "bits": [ 174 ],
+          "attributes": {
+          }
+        },
+        "$procmux$69_CMP": {
+          "hide_name": 1,
+          "bits": [ 175 ],
+          "attributes": {
+          }
+        },
+        "$procmux$70_Y": {
+          "hide_name": 1,
+          "bits": [ 314, 315, 316 ],
+          "attributes": {
+          }
+        },
+        "$procmux$71_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$74_Y": {
+          "hide_name": 1,
+          "bits": [ 705, 706 ],
+          "attributes": {
+          }
+        },
+        "$procmux$75_CMP": {
+          "hide_name": 1,
+          "bits": [ 317 ],
+          "attributes": {
+          }
+        },
+        "$procmux$76_Y": {
+          "hide_name": 1,
+          "bits": [ 312, 313 ],
+          "attributes": {
+          }
+        },
+        "$procmux$77_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$81_Y": {
+          "hide_name": 1,
+          "bits": [ 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718 ],
+          "attributes": {
+          }
+        },
+        "$procmux$82_CMP": {
+          "hide_name": 1,
+          "bits": [ 175 ],
+          "attributes": {
+          }
+        },
+        "$procmux$83_Y": {
+          "hide_name": 1,
+          "bits": [ 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311 ],
+          "attributes": {
+          }
+        },
+        "$procmux$84_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750 ],
+          "attributes": {
+          }
+        },
+        "$procmux$88_CMP": {
+          "hide_name": 1,
+          "bits": [ 317 ],
+          "attributes": {
+          }
+        },
+        "$procmux$89_Y": {
+          "hide_name": 1,
+          "bits": [ 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299 ],
+          "attributes": {
+          }
+        },
+        "$procmux$90_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$94_Y": {
+          "hide_name": 1,
+          "bits": [ 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762 ],
+          "attributes": {
+          }
+        },
+        "$procmux$95_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$96_Y": {
+          "hide_name": 1,
+          "bits": [ 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267 ],
+          "attributes": {
+          }
+        },
+        "$procmux$97_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$reduce_or$/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280$7_Y": {
+          "hide_name": 1,
+          "bits": [ 252 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:280.13-280.20"
+          }
+        },
+        "CLK": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:108.7-108.10"
+          }
+        },
+        "IRQ": {
+          "hide_name": 0,
+          "bits": [ 224 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:150.8-150.11"
+          }
+        },
+        "IRQ_FF": {
+          "hide_name": 0,
+          "bits": [ 224 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:182.5-182.11"
+          }
+        },
+        "LED": {
+          "hide_name": 0,
+          "bits": [ 238, 239, 240, 241, 242, 243, 244, 245 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:154.18-154.21"
+          }
+        },
+        "LED_REG": {
+          "hide_name": 0,
+          "bits": [ 573, 574, 575, 576, 577, 578, 579, 580, 565, 566, 567, 568, 569, 570, 571, 572, 557, 558, 559, 560, 561, 562, 563, 564, 549, 550, 551, 552, 553, 554, 555, 556 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:173.12-173.19"
+          }
+        },
+        "PB": {
+          "hide_name": 0,
+          "bits": [ 233, 234, 235, 236, 237 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:153.13-153.15"
+          }
+        },
+        "PB_REG": {
+          "hide_name": 0,
+          "bits": [ 763, 764, 765, 766, 767 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:175.11-175.17"
+          }
+        },
+        "R0_ADDR": {
+          "hide_name": 0,
+          "bits": [ 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377 ],
+          "offset": 2,
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:159.12-159.19"
+          }
+        },
+        "R0_CTRL": {
+          "hide_name": 0,
+          "bits": [ 175, 317, 222 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:158.22-158.29"
+          }
+        },
+        "SW": {
+          "hide_name": 0,
+          "bits": [ 225, 226, 227, 228, 229, 230, 231, 232 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:152.13-152.15"
+          }
+        },
+        "SW_REG": {
+          "hide_name": 0,
+          "bits": [ 768, 769, 770, 771, 772, 773, 774, 775 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:174.11-174.17"
+          }
+        },
+        "S_AXI_ARADDR": {
+          "hide_name": 0,
+          "bits": [ 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:133.14-133.26"
+          }
+        },
+        "S_AXI_ARBURST": {
+          "hide_name": 0,
+          "bits": [ 166, 167 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:136.13-136.26"
+          }
+        },
+        "S_AXI_ARESETN": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:110.7-110.20"
+          }
+        },
+        "S_AXI_ARID": {
+          "hide_name": 0,
+          "bits": [ 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:134.14-134.24"
+          }
+        },
+        "S_AXI_ARLEN": {
+          "hide_name": 0,
+          "bits": [ 168, 169, 170, 171 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:137.13-137.24"
+          }
+        },
+        "S_AXI_ARPROT": {
+          "hide_name": 0,
+          "bits": [ 163, 164, 165 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:135.13-135.25"
+          }
+        },
+        "S_AXI_ARREADY": {
+          "hide_name": 0,
+          "bits": [ 175 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:140.8-140.21"
+          }
+        },
+        "S_AXI_ARSIZE": {
+          "hide_name": 0,
+          "bits": [ 172, 173 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:138.13-138.25"
+          }
+        },
+        "S_AXI_ARVALID": {
+          "hide_name": 0,
+          "bits": [ 174 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:139.7-139.20"
+          }
+        },
+        "S_AXI_AWADDR": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:112.14-112.26"
+          }
+        },
+        "S_AXI_AWID": {
+          "hide_name": 0,
+          "bits": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:113.14-113.24"
+          }
+        },
+        "S_AXI_AWPROT": {
+          "hide_name": 0,
+          "bits": [ 48, 49, 50 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:114.13-114.25"
+          }
+        },
+        "S_AXI_AWREADY": {
+          "hide_name": 0,
+          "bits": [ 52 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:116.8-116.21"
+          }
+        },
+        "S_AXI_AWVALID": {
+          "hide_name": 0,
+          "bits": [ 51 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:115.7-115.20"
+          }
+        },
+        "S_AXI_BID": {
+          "hide_name": 0,
+          "bits": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:127.15-127.24"
+          }
+        },
+        "S_AXI_BREADY": {
+          "hide_name": 0,
+          "bits": [ 118 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:129.8-129.20"
+          }
+        },
+        "S_AXI_BRESP": {
+          "hide_name": 0,
+          "bits": [ 103, 104 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:126.14-126.25"
+          }
+        },
+        "S_AXI_BVALID": {
+          "hide_name": 0,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:128.8-128.20"
+          }
+        },
+        "S_AXI_RDATA": {
+          "hide_name": 0,
+          "bits": [ 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:143.15-143.26"
+          }
+        },
+        "S_AXI_RID": {
+          "hide_name": 0,
+          "bits": [ 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:144.15-144.24"
+          }
+        },
+        "S_AXI_RLAST": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:148.8-148.19"
+          }
+        },
+        "S_AXI_RREADY": {
+          "hide_name": 0,
+          "bits": [ 223 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:147.7-147.19"
+          }
+        },
+        "S_AXI_RRESP": {
+          "hide_name": 0,
+          "bits": [ 220, 221 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:145.14-145.25"
+          }
+        },
+        "S_AXI_RVALID": {
+          "hide_name": 0,
+          "bits": [ 222 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:146.8-146.20"
+          }
+        },
+        "S_AXI_WDATA": {
+          "hide_name": 0,
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:119.14-119.25"
+          }
+        },
+        "S_AXI_WID": {
+          "hide_name": 0,
+          "bits": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:120.14-120.23"
+          }
+        },
+        "S_AXI_WREADY": {
+          "hide_name": 0,
+          "bits": [ 102 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:123.8-123.20"
+          }
+        },
+        "S_AXI_WSTRB": {
+          "hide_name": 0,
+          "bits": [ 97, 98, 99, 100 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:121.13-121.24"
+          }
+        },
+        "S_AXI_WVALID": {
+          "hide_name": 0,
+          "bits": [ 101 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:122.7-122.19"
+          }
+        },
+        "TMR_CNT": {
+          "hide_name": 0,
+          "bits": [ 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:178.12-178.19"
+          }
+        },
+        "TMR_OV": {
+          "hide_name": 0,
+          "bits": [ 808 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:179.22-179.28"
+          }
+        },
+        "TMR_Q": {
+          "hide_name": 0,
+          "bits": [ 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:177.12-177.17"
+          }
+        },
+        "TMR_RUN": {
+          "hide_name": 0,
+          "bits": [ 547 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:179.5-179.12"
+          }
+        },
+        "TMR_ZD": {
+          "hide_name": 0,
+          "bits": [ 548 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:179.14-179.20"
+          }
+        },
+        "W0_ADDR": {
+          "hide_name": 0,
+          "bits": [ 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441 ],
+          "offset": 2,
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:169.12-169.19"
+          }
+        },
+        "W0_CTRL": {
+          "hide_name": 0,
+          "bits": [ 247, 381, 117 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:164.22-164.29"
+          }
+        },
+        "W0_DATA": {
+          "hide_name": 0,
+          "bits": [ 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:171.12-171.19"
+          }
+        },
+        "W0_STRB": {
+          "hide_name": 0,
+          "bits": [ 446, 447, 448, 449 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:170.11-170.18"
+          }
+        },
+        "ZD": {
+          "hide_name": 0,
+          "bits": [ 253 ],
+          "attributes": {
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/axi_intro/axi_io_int.v:180.6-180.8"
+          }
+        }
+      }
+    }
+  }
+}
