@@ -1,11 +1,11 @@
 # DIN / MOSI -> Pin 1 (Y18)
-set_property -dict {PACKAGE_PIN Y18  IOSTANDARD LVCMOS33} [get_ports {d_out}];
+set_property -dict {PACKAGE_PIN Y18  IOSTANDARD LVCMOS33} [get_ports d_out_0];
 
 # CS / LOAD  -> Pin 2 (Y19)
-set_property -dict {PACKAGE_PIN Y19  IOSTANDARD LVCMOS33} [get_ports {load}];
+set_property -dict {PACKAGE_PIN Y19  IOSTANDARD LVCMOS33} [get_ports load_0];
 
 # SCLK       -> Pin 3 (Y16)
-set_property -dict {PACKAGE_PIN Y16  IOSTANDARD LVCMOS33} [get_ports {clk_out}];
+set_property -dict {PACKAGE_PIN Y16  IOSTANDARD LVCMOS33} [get_ports clk_out_0];
 
 
 # ----------------------------------------------------------------------------
