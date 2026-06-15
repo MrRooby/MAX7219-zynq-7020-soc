@@ -97,7 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -108,6 +107,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 4
   set_param general.usePosixSpawnForFork 1
+  set_param bd.open.in_stealth_mode 1
   set_param runs.launchOptions { -jobs 8  }
   open_checkpoint top_routed.dcp
   set_property webtalk.parent_dir /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.cache/wt [current_project]

@@ -1,95 +1,30 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="150810" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="265852" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="172338" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="268927" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="184960" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="272071" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="187051" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="272426" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="199725" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="272728" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="205778" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="210570" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="213911" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="218286" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="222393" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="223116" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="223418" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="228834" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="232929" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="234078" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="240827" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="250166" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="254077" HostCore="16" HostMemory="16226064">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="261828" HostCore="16" HostMemory="16226064">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="273461" HostCore="16" HostMemory="16226064">
     </Process>
 </ProcessHandle>
