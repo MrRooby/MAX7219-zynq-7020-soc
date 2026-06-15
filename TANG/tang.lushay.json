@@ -1,0 +1,10 @@
+{
+    "name": "tang",
+    "top": "top",
+    "constraintsFile": "pins.cst",
+    "includedFiles": [
+        "top.v",
+        "dot_matrix_fifo.v",
+        "pll.v"
+    ]
+}

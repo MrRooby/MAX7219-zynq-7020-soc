@@ -1,0 +1,1323 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.9-51-g58e3b858)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "27000000.000000",
+        "cst.filename": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/pins.cst",
+        "packer.partno": "GW1NR-LV9QN88PC6/I5",
+        "packer.chipdb": "GW1N-9C",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:10.1-85.10"
+      },
+      "ports": {
+        "load": {
+          "direction": "output",
+          "bits": [ 7611 ]
+        },
+        "d_out": {
+          "direction": "output",
+          "bits": [ 7610 ]
+        },
+        "clk_out": {
+          "direction": "output",
+          "bits": [ 7609 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 7608 ]
+        }
+      },
+      "cells": {
+        "en_DFFE_Q_passthrough_lut$": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "00000000000000001111111111111111"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X12Y22/LUT4"
+          },
+          "port_directions": {
+            "F": "output"
+          },
+          "connections": {
+            "F": [ 7924 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_D_ALU_SUM_DUMMY_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "C2L"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU5"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "ALU_MODE": "ONE2C"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU0"
+          },
+          "port_directions": {
+            "I2": "input",
+            "COUT": "output"
+          },
+          "connections": {
+            "I2": [ 7902 ],
+            "COUT": [ 7909 ]
+          }
+        },
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 7902 ]
+          }
+        },
+        "status_DFFE_Q_D_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "0100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/LUT0",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7648 ],
+            "I0": [ 7647 ],
+            "F": [ 7804 ]
+          }
+        },
+        "status_DFFE_Q_CE_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "0010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/LUT7",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7804 ],
+            "I0": [ 7650 ],
+            "F": [ 7881 ]
+          }
+        },
+        "status_DFFE_Q_1_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/LUT1",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 7648 ],
+            "F": [ 7883 ]
+          }
+        },
+        "status_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/DFF1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:51.1-83.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7648 ],
+            "D": [ 7883 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7881 ]
+          }
+        },
+        "status_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/DFF0",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:51.1-83.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7647 ],
+            "D": [ 7804 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7881 ]
+          }
+        },
+        "my_pll.pll": {
+          "hide_name": 0,
+          "type": "rPLL",
+          "parameters": {
+            "ODIV_SEL": "00000000000000000000000000110000",
+            "IDIV_SEL": "00000000000000000000000000000111",
+            "FCLKIN": "27.0",
+            "FBDIV_SEL": "00000000000000000000000000000010",
+            "DEVICE": "GW1NR-9C"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X46Y9/PLL",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/pll.v:26.7-41.6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "hdlname": "my_pll pll"
+          },
+          "port_directions": {
+            "ODSEL5": "input",
+            "RESET": "input",
+            "ODSEL3": "input",
+            "ODSEL2": "input",
+            "ODSEL1": "input",
+            "ODSEL0": "input",
+            "IDSEL5": "input",
+            "IDSEL4": "input",
+            "IDSEL3": "input",
+            "IDSEL2": "input",
+            "IDSEL1": "input",
+            "IDSEL0": "input",
+            "LOCK": "output",
+            "FBDSEL5": "input",
+            "FBDSEL4": "input",
+            "FBDSEL3": "input",
+            "FBDSEL2": "input",
+            "FBDSEL1": "input",
+            "FBDSEL0": "input",
+            "DUTYDA3": "input",
+            "DUTYDA2": "input",
+            "DUTYDA1": "input",
+            "DUTYDA0": "input",
+            "ODSEL4": "input",
+            "FDLY3": "input",
+            "FDLY2": "input",
+            "FDLY1": "input",
+            "FDLY0": "input",
+            "RESET_P": "input",
+            "PSDA3": "input",
+            "PSDA2": "input",
+            "PSDA1": "input",
+            "PSDA0": "input",
+            "CLKOUT": "output",
+            "CLKIN": "input",
+            "CLKFB": "input"
+          },
+          "connections": {
+            "ODSEL5": [ 7903 ],
+            "RESET": [ 7903 ],
+            "ODSEL3": [ 7903 ],
+            "ODSEL2": [ 7903 ],
+            "ODSEL1": [ 7903 ],
+            "ODSEL0": [ 7903 ],
+            "IDSEL5": [ 7903 ],
+            "IDSEL4": [ 7903 ],
+            "IDSEL3": [ 7903 ],
+            "IDSEL2": [ 7903 ],
+            "IDSEL1": [ 7903 ],
+            "IDSEL0": [ 7903 ],
+            "LOCK": [ 7650 ],
+            "FBDSEL5": [ 7903 ],
+            "FBDSEL4": [ 7903 ],
+            "FBDSEL3": [ 7903 ],
+            "FBDSEL2": [ 7903 ],
+            "FBDSEL1": [ 7903 ],
+            "FBDSEL0": [ 7903 ],
+            "DUTYDA3": [ 7903 ],
+            "DUTYDA2": [ 7903 ],
+            "DUTYDA1": [ 7903 ],
+            "DUTYDA0": [ 7903 ],
+            "ODSEL4": [ 7903 ],
+            "FDLY3": [ 7903 ],
+            "FDLY2": [ 7903 ],
+            "FDLY1": [ 7903 ],
+            "FDLY0": [ 7903 ],
+            "RESET_P": [ 7903 ],
+            "PSDA3": [ 7903 ],
+            "PSDA2": [ 7903 ],
+            "PSDA1": [ 7903 ],
+            "PSDA0": [ 7903 ],
+            "CLKOUT": [ 7621 ],
+            "CLKIN": [ 7837 ],
+            "CLKFB": [ 7903 ]
+          }
+        },
+        "my_pll.clock_in_IBUF_O": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X46Y16/IOBA",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:11.11-11.14",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=UP": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 7837 ],
+            "I": [ 7608 ]
+          }
+        },
+        "load_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X46Y23/IOBA",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:13.16-13.20",
+            "&DRIVE=4": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 7611 ],
+            "I": [ 7802 ]
+          }
+        },
+        "fifo_out.d_out_DFFE_Q_D_LUT4_F_I3_LUT3_F": {
+          "hide_name": 0,
+          "type": "LUT3",
+          "parameters": {
+            "INIT": "01111100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/LUT6",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:143.23-144.37",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I2": [ 7822 ],
+            "I1": [ 7818 ],
+            "I0": [ 7625 ],
+            "F": [ 7833 ]
+          }
+        },
+        "fifo_out.d_out_DFFE_Q_D_LUT4_F": {
+          "hide_name": 0,
+          "type": "LUT4",
+          "parameters": {
+            "INIT": "0010001000101110"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/LUT0",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:147.23-148.48",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I3": "input",
+            "I2": "input",
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I3": [ 7833 ],
+            "I2": [ 7812 ],
+            "I1": [ 7808 ],
+            "I0": [ 7630 ],
+            "F": [ 7831 ]
+          }
+        },
+        "fifo_out.d_out_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/DFF0",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:22.1-32.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7617 ],
+            "D": [ 7831 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7802 ]
+          }
+        },
+        "fifo_out.clk_out_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X45Y23/LUT3",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7621 ],
+            "I0": [ 7802 ],
+            "F": [ 7614 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000101000010101010",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU4",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 7902 ],
+            "SUM": [ 7806 ],
+            "I3": [ 7903 ],
+            "I1": [  ],
+            "I0": [ 7808 ],
+            "COUT": [ 7828 ],
+            "CIN": [ 7815 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_3_D_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/LUT2",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 7822 ],
+            "F": [ 7825 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_3": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/DFF2",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:22.1-32.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 7903 ],
+            "Q": [ 7822 ],
+            "D": [ 7825 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7802 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_CIN_ALU_COUT": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000101000010101010",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 7902 ],
+            "SUM": [ 7823 ],
+            "I3": [ 7903 ],
+            "I1": [  ],
+            "I0": [ 7822 ],
+            "COUT": [ 7820 ],
+            "CIN": [ 7909 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000101000010101010",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU2",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 7902 ],
+            "SUM": [ 7817 ],
+            "I3": [ 7903 ],
+            "I1": [  ],
+            "I0": [ 7818 ],
+            "COUT": [ 7814 ],
+            "CIN": [ 7820 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/DFF2",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:22.1-32.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 7903 ],
+            "Q": [ 7818 ],
+            "D": [ 7817 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7802 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_1_D_ALU_SUM": {
+          "hide_name": 0,
+          "type": "ALU",
+          "parameters": {
+            "RAW_ALU_LUT": "00000000000000000101000010101010",
+            "ALU_MODE": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/ALU3",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I2": "input",
+            "SUM": "output",
+            "I3": "input",
+            "I1": "input",
+            "I0": "input",
+            "COUT": "output",
+            "CIN": "input"
+          },
+          "connections": {
+            "I2": [ 7902 ],
+            "SUM": [ 7810 ],
+            "I3": [ 7903 ],
+            "I1": [  ],
+            "I0": [ 7812 ],
+            "COUT": [ 7815 ],
+            "CIN": [ 7814 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/DFF3",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:22.1-32.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 7903 ],
+            "Q": [ 7812 ],
+            "D": [ 7810 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7802 ]
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q": {
+          "hide_name": 0,
+          "type": "DFFRE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y22/DFF4",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:22.1-32.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:43.8-43.68",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "RESET": "input",
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "RESET": [ 7903 ],
+            "Q": [ 7808 ],
+            "D": [ 7806 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7802 ]
+          }
+        },
+        "en_DFFE_Q_CE_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X11Y22/LUT7",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7804 ],
+            "I0": [ 7650 ],
+            "F": [ 7800 ]
+          }
+        },
+        "en_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X12Y22/DFF4",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:51.1-83.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7802 ],
+            "D": [ 7924 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7800 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 7903 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 7902 ]
+          }
+        },
+        "data_DFFE_Q_D_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "1101"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/LUT4",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7648 ],
+            "I0": [ 7647 ],
+            "F": [ 7623 ]
+          }
+        },
+        "data_DFFE_Q_CE_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "0010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y24/LUT6",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7648 ],
+            "I0": [ 7650 ],
+            "F": [ 7619 ]
+          }
+        },
+        "data_DFFE_Q_1_D_LUT2_F": {
+          "hide_name": 0,
+          "type": "LUT2",
+          "parameters": {
+            "INIT": "0010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y24/LUT0",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:139.23-140.26",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I1": "input",
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I1": [ 7648 ],
+            "I0": [ 7647 ],
+            "F": [ 7628 ]
+          }
+        },
+        "data_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y24/DFF0",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:51.1-83.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7630 ],
+            "D": [ 7628 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7619 ]
+          }
+        },
+        "data_DFFE_Q": {
+          "hide_name": 0,
+          "type": "DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X13Y23/DFF4",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:51.1-83.4|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:19.7-19.56",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "Q": "output",
+            "D": "input",
+            "CLK": "input",
+            "CE": "input"
+          },
+          "connections": {
+            "Q": [ 7625 ],
+            "D": [ 7623 ],
+            "CLK": [ 7621 ],
+            "CE": [ 7619 ]
+          }
+        },
+        "d_out_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET",
+            "NET_BOTTOM_IO_PORT_A": "GND",
+            "NET_BOTTOM_IO_PORT_B": "GND"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X14Y28/IOBA",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:14.12-14.17",
+            "&DRIVE=4": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "BOTTOM_IO_PORT_B": "input",
+            "BOTTOM_IO_PORT_A": "input",
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "BOTTOM_IO_PORT_B": [ 7903 ],
+            "BOTTOM_IO_PORT_A": [ 7903 ],
+            "O": [ 7610 ],
+            "I": [ 7617 ]
+          }
+        },
+        "clk_out_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X46Y23/IOBB",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:15.12-15.19",
+            "&DRIVE=4": "00000000000000000000000000000001",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 7609 ],
+            "I": [ 7614 ]
+          }
+        }
+      },
+      "netnames": {
+        "en_DFFE_Q$conn$D": {
+          "hide_name": 0,
+          "bits": [ 7924 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/F4;;1;X12Y22/XD4;X12Y22/XD4/F4;1"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_CIN_ALU_COUT_HEAD_ALULC": {
+          "hide_name": 0,
+          "bits": [ 7909 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/COUT0;;1"
+          }
+        },
+        "status_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 7883 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/F1;;1;X12Y22/XD1;X12Y22/XD1/F1;1"
+          }
+        },
+        "status_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 7881 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/F7;;1;X12Y22/X08;X12Y22/X08/F7;1;X12Y22/CE0;X12Y22/CE0/X08;1"
+          }
+        },
+        "my_pll.clock_in": {
+          "hide_name": 0,
+          "bits": [ 7837 ] ,
+          "attributes": {
+            "ROUTING": "X39Y1/SPINE0;X29Y9/SPINE0/PCLKR1;5;X43Y8/GT00;X43Y1/GT00/SPINE0;5;X43Y9/GB00;X43Y9/GBO0/GT00;5;X44Y9/CLK0;X44Y9/CLK0/GB00;5;X46Y16/F6;;5",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/pll.v:15.16-15.24",
+            "hdlname": "my_pll clock_in"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 7608 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:11.11-11.14"
+          }
+        },
+        "load": {
+          "hide_name": 0,
+          "bits": [ 7611 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:13.16-13.20"
+          }
+        },
+        "fifo_out.d_out_DFFE_Q_D_LUT4_F_I3[3]": {
+          "hide_name": 0,
+          "bits": [ 7833 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/F6;;1;X13Y23/S260;X13Y23/S260/F6;1;X13Y23/D0;X13Y23/D0/S260;1",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "fifo_out.d_out_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 7831 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/F0;;1;X13Y23/XD0;X13Y23/XD0/F0;1"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 7828 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 ",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 7825 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/F2;;1;X13Y23/XD2;X13Y23/XD2/F2;1"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_CIN_ALU_COUT_SUM": {
+          "hide_name": 0,
+          "bits": [ 7823 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 "
+          }
+        },
+        "fifo_out.bit_index[0]": {
+          "hide_name": 0,
+          "bits": [ 7822 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/C6;X13Y23/C6/N130;1;X13Y23/N130;X13Y23/N130/Q2;1;X13Y23/A2;X13Y23/A2/N130;1;X13Y23/Q2;;1;X13Y23/SN10;X13Y23/SN10/Q2;1;X13Y22/A1;X13Y22/A1/N111;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:18.23-18.32",
+            "hdlname": "fifo_out bit_index"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_CIN": {
+          "hide_name": 0,
+          "bits": [ 7820 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/COUT1;;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "fifo_out.bit_index[1]": {
+          "hide_name": 0,
+          "bits": [ 7818 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/SN20;X13Y22/SN20/Q2;1;X13Y23/B6;X13Y23/B6/S121;1;X13Y22/Q2;;1;X13Y22/X05;X13Y22/X05/Q2;1;X13Y22/A2;X13Y22/A2/X05;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:18.23-18.32",
+            "hdlname": "fifo_out bit_index"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 7817 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/F2;;1;X13Y22/XD2;X13Y22/XD2/F2;1"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_1_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 7815 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/COUT3;;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_2_D_ALU_SUM_COUT": {
+          "hide_name": 0,
+          "bits": [ 7814 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/COUT2;;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:24.13-24.35|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/arith_map.v:57.7-63.5|/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_sim.v:938.25-938.29",
+            "abc9_carry": "00000000000000000000000000000001"
+          }
+        },
+        "fifo_out.bit_index[2]": {
+          "hide_name": 0,
+          "bits": [ 7812 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/X02;X13Y22/X02/Q3;1;X13Y22/A3;X13Y22/A3/X02;1;X13Y22/Q3;;1;X13Y22/S100;X13Y22/S100/Q3;1;X13Y23/C0;X13Y23/C0/S101;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "hdlname": "fifo_out bit_index"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 7810 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/F3;;1;X13Y22/XD3;X13Y22/XD3/F3;1"
+          }
+        },
+        "fifo_out.bit_index[3]": {
+          "hide_name": 0,
+          "bits": [ 7808 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/X07;X13Y22/X07/Q4;1;X13Y22/A4;X13Y22/A4/X07;1;X13Y22/Q4;;1;X13Y22/SN10;X13Y22/SN10/Q4;1;X13Y23/B0;X13Y23/B0/S111;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "hdlname": "fifo_out bit_index"
+          }
+        },
+        "fifo_out.bit_index_DFFRE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 7806 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/F4;;1;X13Y22/XD4;X13Y22/XD4/F4;1"
+          }
+        },
+        "status_DFFE_Q_D[1]": {
+          "hide_name": 0,
+          "bits": [ 7804 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/EW10;X12Y22/EW10/F0;1;X11Y22/B7;X11Y22/B7/W111;1;X12Y22/XD0;X12Y22/XD0/F0;1;X12Y22/F0;;1;X12Y22/X05;X12Y22/X05/F0;1;X12Y22/B7;X12Y22/B7/X05;1",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "en": {
+          "hide_name": 0,
+          "bits": [ 7802 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/CE1;X13Y23/CE1/E211;1;X13Y23/CE0;X13Y23/CE0/E211;1;X45Y23/A3;X45Y23/A3/S271;1;X12Y22/E820;X12Y22/E820/Q4;1;X20Y22/E830;X20Y22/E830/E828;1;X28Y22/E830;X28Y22/E830/E838;1;X36Y22/E830;X36Y22/E830/E838;1;X44Y22/E250;X44Y22/E250/E838;1;X46Y22/S250;X46Y22/S250/E252;1;X46Y23/A0;X46Y23/A0/S251;1;X13Y22/CE1;X13Y22/CE1/E271;1;X12Y22/W130;X12Y22/W130/Q4;1;X12Y22/E270;X12Y22/E270/W130;1;X13Y22/CE2;X13Y22/CE2/E271;1;X12Y23/E210;X12Y23/E210/S111;1;X12Y22/Q4;;1;X44Y22/E130;X44Y22/E130/E838;1;X12Y22/SN10;X12Y22/SN10/Q4;1;X45Y22/S270;X45Y22/S270/E131;1",
+            "hdlname": "fifo_out en",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:12.11-12.13"
+          }
+        },
+        "en_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 7800 ] ,
+          "attributes": {
+            "ROUTING": "X11Y22/F7;;1;X11Y22/E270;X11Y22/E270/F7;1;X12Y22/CE2;X12Y22/CE2/E271;1"
+          }
+        },
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 7903 ] ,
+          "attributes": {
+            "ROUTING": "X44Y9/B0;X44Y9/B0/S240;1;X44Y9/B6;X44Y9/B6/N250;1;X44Y9/C6;X44Y9/C6/E220;1;X44Y9/D0;X44Y9/D0/E270;1;X44Y9/A5;X44Y9/A5/S200;1;X44Y9/B5;X44Y9/B5/N240;1;X44Y9/E270;X44Y9/E270/VSS;1;X44Y9/D1;X44Y9/D1/E270;1;X44Y9/E200;X44Y9/E200/VSS;1;X44Y9/A3;X44Y9/A3/E200;1;X13Y22/D3;X13Y22/D3/S270;1;X14Y28/C6;X14Y28/C6/S230;1;X44Y9/C5;X44Y9/C5/E230;1;X13Y22/S270;X13Y22/S270/VSS;1;X13Y22/D2;X13Y22/D2/S270;1;X13Y23/LSR1;X13Y23/LSR1/N271;1;X14Y28/S230;X14Y28/S230/VSS;1;X44Y9/D6;X44Y9/D6/N270;1;X44Y9/S200;X44Y9/S200/VSS;1;X44Y9/A4;X44Y9/A4/S200;1;X44Y9/C0;X44Y9/C0/N220;1;X44Y9/D3;X44Y9/D3/S270;1;X44Y9/E220;X44Y9/E220/VSS;1;X44Y9/C7;X44Y9/C7/E220;1;X44Y9/B3;X44Y9/B3/W240;1;X44Y9/W240;X44Y9/W240/VSS;1;X44Y9/B2;X44Y9/B2/W240;1;X44Y9/N270;X44Y9/N270/VSS;1;X44Y9/D7;X44Y9/D7/N270;1;X44Y9/S270;X44Y9/S270/VSS;1;X44Y9/D2;X44Y9/D2/S270;1;X44Y9/C3;X44Y9/C3/N230;1;X13Y22/E270;X13Y22/E270/VSS;1;X13Y22/D1;X13Y22/D1/E270;1;X43Y9/E210;X43Y9/E210/VSS;1;X43Y9/A0;X43Y9/A0/E210;1;X44Y9/A7;X44Y9/A7/W200;1;X13Y22/LSR1;X13Y22/LSR1/E211;1;X44Y9/N250;X44Y9/N250/VSS;1;X44Y9/B7;X44Y9/B7/N250;1;X44Y9/D5;X44Y9/D5/W270;1;X43Y9/A2;X43Y9/A2/N210;1;X44Y9/W270;X44Y9/W270/VSS;1;X44Y9/D4;X44Y9/D4/W270;1;X13Y22/W270;X13Y22/W270/VSS;1;X13Y22/D4;X13Y22/D4/W270;1;X12Y22/E210;X12Y22/E210/VSS;1;X13Y22/LSR2;X13Y22/LSR2/E211;1;X44Y9/E230;X44Y9/E230/VSS;1;X44Y9/C4;X44Y9/C4/E230;1;X44Y9/W200;X44Y9/W200/VSS;1;X44Y9/A6;X44Y9/A6/W200;1;X43Y9/N210;X43Y9/N210/VSS;1;X43Y9/A3;X43Y9/A3/N210;1;X45Y9/W240;X45Y9/W240/VSS;1;X44Y9/CLK2;X44Y9/CLK2/W241;1;X44Y9/N220;X44Y9/N220/VSS;1;X44Y9/C1;X44Y9/C1/N220;1;X44Y9/N240;X44Y9/N240/VSS;1;X44Y9/B4;X44Y9/B4/N240;1;X44Y9/B1;X44Y9/B1/S240;1;X14Y28/S260;X14Y28/S260/VSS;1;X14Y28/D6;X14Y28/D6/N261;1;X44Y9/N230;X44Y9/N230/VSS;1;X44Y9/C2;X44Y9/C2/N230;1;X0Y0/VSS;;1;X44Y9/S240;X44Y9/S240/VSS;1;X13Y24/N270;X13Y24/N270/VSS;1"
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 7902 ] ,
+          "attributes": {
+            "ROUTING": "X13Y22/C3;X13Y22/C3/X04;1;X13Y22/X08;X13Y22/X08/VCC;1;X13Y22/C4;X13Y22/C4/X08;1;X13Y22/C1;X13Y22/C1/X04;1;X13Y22/C0;X13Y22/C0/X04;1;X0Y0/W240;X0Y0/W240/VCC;1;X0Y0/C4;X0Y0/C4/E241;1;X0Y0/VCC;;1;X13Y22/X04;X13Y22/X04/VCC;1;X13Y22/C2;X13Y22/C2/X04;1"
+          }
+        },
+        "pll_locked": {
+          "hide_name": 0,
+          "bits": [ 7650 ] ,
+          "attributes": {
+            "ROUTING": "X12Y21/W130;X12Y21/W130/W818;1;X11Y21/S230;X11Y21/S230/W131;1;X11Y22/A7;X11Y22/A7/S231;1;X36Y17/W810;X36Y17/W810/W818;1;X28Y17/W810;X28Y17/W810/W818;1;X20Y17/S810;X20Y17/S810/W818;1;X20Y21/W810;X20Y21/W810/S814;1;X12Y21/S210;X12Y21/S210/W818;1;X12Y22/A7;X12Y22/A7/S211;1;X44Y9/F2;;1;X44Y9/S810;X44Y9/S810/F2;1;X44Y17/W810;X44Y17/W810/S818;1;X36Y17/W820;X36Y17/W820/W818;1;X28Y17/W820;X28Y17/W820/W828;1;X20Y17/S820;X20Y17/S820/W828;1;X20Y25/W820;X20Y25/W820/S828;1;X12Y25/E130;X12Y25/E130/W828;1;X13Y25/N230;X13Y25/N230/E131;1;X13Y24/A6;X13Y24/A6/N231;1",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/bartek/FPGA/oss-cad-suite/lib/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "hdlname": "my_pll locked"
+          }
+        },
+        "status[0]": {
+          "hide_name": 0,
+          "bits": [ 7648 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/S130;X12Y22/S130/Q1;1;X12Y23/E230;X12Y23/E230/S131;1;X13Y23/B4;X13Y23/B4/E231;1;X12Y22/S100;X12Y22/S100/Q1;1;X12Y22/B0;X12Y22/B0/S100;1;X12Y22/X02;X12Y22/X02/Q1;1;X12Y22/A1;X12Y22/A1/X02;1;X13Y24/B0;X13Y24/B0/E211;1;X12Y22/Q1;;1;X12Y22/S210;X12Y22/S210/Q1;1;X12Y24/E210;X12Y24/E210/S212;1;X13Y24/B6;X13Y24/B6/E211;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:48.11-48.17"
+          }
+        },
+        "status[1]": {
+          "hide_name": 0,
+          "bits": [ 7647 ] ,
+          "attributes": {
+            "ROUTING": "X12Y22/E130;X12Y22/E130/Q0;1;X13Y22/S230;X13Y22/S230/E131;1;X13Y23/A4;X13Y23/A4/S231;1;X12Y22/E100;X12Y22/E100/Q0;1;X13Y22/S200;X13Y22/S200/E101;1;X13Y24/X01;X13Y24/X01/S202;1;X13Y24/A0;X13Y24/A0/X01;1;X12Y22/Q0;;1;X12Y22/X01;X12Y22/X01/Q0;1;X12Y22/A0;X12Y22/A0/X01;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:48.11-48.17"
+          }
+        },
+        "data[0]": {
+          "hide_name": 0,
+          "bits": [ 7630 ] ,
+          "attributes": {
+            "ROUTING": "X13Y24/Q0;;1;X13Y24/SN10;X13Y24/SN10/Q0;1;X13Y23/A0;X13Y23/A0/N111;1",
+            "hdlname": "fifo_out data",
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:11.24-11.28"
+          }
+        },
+        "data_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 7628 ] ,
+          "attributes": {
+            "ROUTING": "X13Y24/F0;;1;X13Y24/XD0;X13Y24/XD0/F0;1"
+          }
+        },
+        "data[11]": {
+          "hide_name": 0,
+          "bits": [ 7625 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/Q4;;1;X13Y23/X03;X13Y23/X03/Q4;1;X13Y23/A6;X13Y23/A6/X03;1",
+            "hdlname": "fifo_out data",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:11.24-11.28"
+          }
+        },
+        "data_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 7623 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/F4;;1;X13Y23/XD4;X13Y23/XD4/F4;1"
+          }
+        },
+        "clk_10MHz": {
+          "hide_name": 0,
+          "bits": [ 7621 ] ,
+          "attributes": {
+            "ROUTING": "X44Y9/E100;X44Y9/E100/F4;1;X45Y9/S800;X45Y9/S800/E101;1;X45Y17/S800;X45Y17/S800/S808;1;X45Y25/N230;X45Y25/N230/S808;1;X45Y23/B3;X45Y23/B3/N232;1;X12Y22/CLK0;X12Y22/CLK0/GB00;5;X13Y23/CLK0;X13Y23/CLK0/GB00;5;X13Y23/CLK1;X13Y23/CLK1/GB00;5;X13Y22/CLK1;X13Y22/CLK1/GB00;5;X13Y22/CLK2;X13Y22/CLK2/GB00;5;X10Y22/GB00;X11Y22/GBO0/GT00;5;X12Y22/CLK2;X12Y22/CLK2/GB00;5;X11Y24/GBO0;X11Y24/GBO0/GT00;5;X13Y24/CLK0;X13Y24/CLK0/GB00;5;X23Y19/SPINE16;X27Y9/SPINE16/TRPLL0CLK0;5;X11Y19/GT00;X11Y19/GT00/SPINE16;5;X11Y23/GB00;X11Y23/GBO0/GT00;5;X13Y23/CLK2;X13Y23/CLK2/GB00;5;X44Y9/F4;;5",
+            "hdlname": "my_pll clock_out",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/pll.v:16.16-16.25"
+          }
+        },
+        "data_DFFE_Q_CE": {
+          "hide_name": 0,
+          "bits": [ 7619 ] ,
+          "attributes": {
+            "ROUTING": "X13Y24/X07;X13Y24/X07/F6;1;X13Y24/CE0;X13Y24/CE0/X07;1;X13Y24/F6;;1;X13Y24/N260;X13Y24/N260/F6;1;X13Y23/X05;X13Y23/X05/N261;1;X13Y23/CE2;X13Y23/CE2/X05;1"
+          }
+        },
+        "d_out": {
+          "hide_name": 0,
+          "bits": [ 7610 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:14.12-14.17"
+          }
+        },
+        "fifo_out.d_out": {
+          "hide_name": 0,
+          "bits": [ 7617 ] ,
+          "attributes": {
+            "ROUTING": "X13Y23/Q0;;1;X13Y23/S130;X13Y23/S130/Q0;1;X13Y24/S830;X13Y24/S830/S131;1;X13Y28/E250;X13Y28/E250/S834;1;X14Y28/A0;X14Y28/A0/E251;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:8.16-8.21",
+            "hdlname": "fifo_out d_out"
+          }
+        },
+        "clk_out": {
+          "hide_name": 0,
+          "bits": [ 7609 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/top.v:15.12-15.19"
+          }
+        },
+        "fifo_out.clk_out": {
+          "hide_name": 0,
+          "bits": [ 7614 ] ,
+          "attributes": {
+            "ROUTING": "X45Y23/F3;;1;X45Y23/E100;X45Y23/E100/F3;1;X46Y23/D1;X46Y23/D1/E101;1",
+            "src": "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:7.12-7.19",
+            "hdlname": "fifo_out clk_out"
+          }
+        }
+      }
+    }
+  }
+}
