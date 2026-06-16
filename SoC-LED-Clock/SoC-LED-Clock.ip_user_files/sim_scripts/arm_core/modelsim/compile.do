@@ -2,6 +2,7 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xilinx_vip
+vlib modelsim_lib/msim/xpm
 vlib modelsim_lib/msim/axi_infrastructure_v1_1_0
 vlib modelsim_lib/msim/axi_vip_v1_1_22
 vlib modelsim_lib/msim/processing_system7_vip_v1_0_24
@@ -14,6 +15,7 @@ vlib modelsim_lib/msim/smartconnect_v1_0
 vlib modelsim_lib/msim/axi_register_slice_v2_1_36
 
 vmap xilinx_vip modelsim_lib/msim/xilinx_vip
+vmap xpm modelsim_lib/msim/xpm
 vmap axi_infrastructure_v1_1_0 modelsim_lib/msim/axi_infrastructure_v1_1_0
 vmap axi_vip_v1_1_22 modelsim_lib/msim/axi_vip_v1_1_22
 vmap processing_system7_vip_v1_0_24 modelsim_lib/msim/processing_system7_vip_v1_0_24
@@ -35,6 +37,14 @@ vlog -work xilinx_vip -64 -incr -mfcu  -sv -L smartconnect_v1_0 -L axi_vip_v1_1_
 "/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/hdl/axi_vip_if.sv" \
 "/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/hdl/clk_vip_if.sv" \
 "/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xpm -64 -incr -mfcu  -sv -L smartconnect_v1_0 -L axi_vip_v1_1_22 -L processing_system7_vip_v1_0_24 -L xilinx_vip "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/ec67/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/9a25/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" "+incdir+/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/include" \
+"/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+"/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -64 -93  \
+"/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work axi_infrastructure_v1_1_0 -64 -incr -mfcu  "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/ec67/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/9a25/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" "+incdir+/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/include" \
 "../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -59,6 +69,9 @@ vcom -work axi_gpio_v2_0_37 -64 -93  \
 
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/arm_core/ip/arm_core_axi_gpio_0_0/sim/arm_core_axi_gpio_0_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/ec67/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/9a25/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" "+incdir+/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/include" \
+"../../../bd/arm_core/ip/arm_core_axi_smc_0/bd_0/sim/bd_302c.v" \
 
 vcom -work proc_sys_reset_v5_0_17 -64 -93  \
 "../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
@@ -144,9 +157,6 @@ vlog -work xil_defaultlib -64 -incr -mfcu  -sv -L smartconnect_v1_0 -L axi_vip_v
 "../../../bd/arm_core/ip/arm_core_axi_smc_0/bd_0/ip/ip_37/sim/bd_302c_m01wn_0.sv" \
 "../../../bd/arm_core/ip/arm_core_axi_smc_0/bd_0/ip/ip_38/sim/bd_302c_m01bn_0.sv" \
 "../../../bd/arm_core/ip/arm_core_axi_smc_0/bd_0/ip/ip_39/sim/bd_302c_m01e_0.sv" \
-
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/ec67/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/9a25/hdl" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" "+incdir+/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/include" \
-"../../../bd/arm_core/ip/arm_core_axi_smc_0/bd_0/sim/bd_302c.v" \
 
 vcom -work smartconnect_v1_0 -64 -93  \
 "../../../../SoC-LED-Clock.gen/sources_1/bd/arm_core/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \

@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Jun 16 01:13:29 2026
-# Process ID         : 340067
+# Start of session at: Tue Jun 16 11:53:33 2026
+# Process ID         : 3645847
 # Current directory  : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1
 # Command line       : vivado -log arm_core_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source arm_core_wrapper.tcl
 # Log file           : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1/arm_core_wrapper.vds
@@ -13,12 +13,12 @@
 # Platform           : Fedora
 # Operating System   : Fedora Linux 44 (Workstation Edition)
 # Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
-# CPU Frequency      : 1722.927 MHz
+# CPU Frequency      : 1885.286 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16615 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 25205 MB
-# Available Virtual  : 14877 MB
+# Available Virtual  : 13365 MB
 #-----------------------------------------------------------
 source arm_core_wrapper.tcl -notrace

@@ -2,11 +2,11 @@
 <Root MajorVersion="0" MinorVersion="43">
   <CompositeFile CompositeFileTopName="arm_core" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1781563818"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1781563818"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1781563818"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1781563818"/>
-    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1781563818"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1781603573"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1781603573"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1781603573"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1781603573"/>
+    <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1781603573"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="arm_core.vho" Type="VhdlTemplate">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>

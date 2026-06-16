@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Tue Jun 16 01:16:04 2026
+| Date             : Tue Jun 16 11:56:20 2026
 | Host             : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command          : report_power -file arm_core_wrapper_power_routed.rpt -pb arm_core_wrapper_power_summary_routed.pb -rpx arm_core_wrapper_power_routed.rpx
 | Design           : arm_core_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.672        |
+| Total On-Chip Power (W)  | 1.671        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.532        |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.004 |        3 |       --- |             --- |
-| Slice Logic             |     0.001 |     2996 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      895 |     53200 |            1.68 |
-|   Register              |    <0.001 |     1506 |    106400 |            1.42 |
+| Slice Logic             |    <0.001 |     2995 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      893 |     53200 |            1.68 |
+|   Register              |    <0.001 |     1505 |    106400 |            1.41 |
 |   CARRY4                |    <0.001 |       11 |     13300 |            0.08 |
-|   Others                |     0.000 |      352 |       --- |             --- |
+|   Others                |     0.000 |      353 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        2 |     17400 |            0.01 |
-| Signals                 |     0.001 |     2165 |       --- |             --- |
-| I/O                     |     0.001 |        3 |       200 |            1.50 |
+| Signals                 |     0.001 |     2162 |       --- |             --- |
+| I/O                     |    <0.001 |        3 |       200 |            1.50 |
 | PS7                     |     1.525 |        1 |       --- |             --- |
 | Static Power            |     0.139 |          |           |                 |
-| Total                   |     1.672 |          |           |                 |
+| Total                   |     1.671 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.006 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -153,8 +153,8 @@ Table of Contents
 |   arm_core_i             |     1.531 |
 |     axi_gpio_0           |     0.002 |
 |       U0                 |     0.002 |
-|     axi_smc              |     0.003 |
-|       inst               |     0.003 |
+|     axi_smc              |     0.004 |
+|       inst               |     0.004 |
 |     processing_system7_0 |     1.525 |
 |       inst               |     1.525 |
 +--------------------------+-----------+

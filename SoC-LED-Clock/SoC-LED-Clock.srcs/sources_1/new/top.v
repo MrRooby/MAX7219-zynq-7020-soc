@@ -37,12 +37,8 @@ module top(
 wire start_trans;
 wire start_fifo;
 
-// Unpack specific control execution bits from the AXI GPIO register bus
-assign start_trans = ctrl_reg[0]; // Bit 0 kicks off translation
-assign start_fifo  = ctrl_reg[1]; // Bit 1 drives the FIFO transmission pipeline
-
 // Internal Submodule Core Interconnect Wires
-wire [31:0] max_packet;
+wire [63:0] packet;
 wire        packet_valid;
 wire [63:0] data;
 wire        ready;
@@ -53,21 +49,21 @@ translator #(
 ) trans (
   .clk(clk),
   .start(start_trans),
-  .ascii_data(ascii_data),   // 8 bits per character * N modules
-  .max_packet(max_packet),   // 16-bit packet to send to SPI engine
-  .packet_valid(packet_valid), // Tells SPI engine to transmit
-  .ready(ready)         // ready
+  .ascii_data(ascii_data),      // 8 bits per character * N modules
+  .row_packet(packet),              // 16-bit packet to send to SPI engine
+  .packet_valid(packet_valid),  // Tells SPI engine to transmit
+  .ready(ready)                 // ready
 );
 
 dot_matrix_fifo #(
-  .N(4)                       // number of cascaded MAX7219
+  .N(4)                         // number of cascaded MAX7219
 ) fifo (
-  .load(load),                      // CS / LOAD  (idle high)
-  .clk_out(clk_out),                   // SCLK       (idle low)
-  .d_out(d_out),                     // DIN / MOSI
-  .clk_in(clk),           // system clock (e.g. 10 MHz from PLL)
-  .start(start_fifo),            // 1-cycle pulse to begin a frame
-  .data(data),             // frame: word for each device, MSB-first
+  .load(load),                  // CS / LOAD  (idle high)
+  .clk_out(clk_out),            // SCLK       (idle low)
+  .d_out(d_out),                // DIN / MOSI
+  .clk_in(clk),                 // system clock (e.g. 10 MHz from PLL)
+  .start(start_fifo),           // 1-cycle pulse to begin a frame
+  .data(packet),                // frame: word for each device, MSB-first 16bit * N
   .busy(busy)
 );
 

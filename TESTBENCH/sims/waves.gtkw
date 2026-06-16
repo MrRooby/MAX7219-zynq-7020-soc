@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Tue Jun 16 12:02:37 2026
+[*]
+[dumpfile] "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TESTBENCH/sims/trans.vcd"
+[dumpfile_mtime] "Tue Jun 16 12:00:46 2026"
+[dumpfile_size] 4124
+[savefile] "/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TESTBENCH/sims/waves.gtkw"
+[timestart] 0
+[size] 964 471
+[pos] -7 -4
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_translator.
+[sst_width] 290
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 112
+@22
+tb_translator.UUT.ascii_code[6:0]
+tb_translator.UUT.ascii_data[27:0]
+@28
+tb_translator.UUT.clk
+tb_translator.UUT.idx[2:0]
+tb_translator.UUT.packet_valid
+tb_translator.UUT.ready
+@22
+tb_translator.UUT.row_data[7:0]
+@28
+tb_translator.UUT.row_idx[2:0]
+@22
+tb_translator.UUT.row_packet[63:0]
+@28
+tb_translator.UUT.start
+@29
+tb_translator.UUT.state[2:0]
+[pattern_trace] 1
+[pattern_trace] 0
