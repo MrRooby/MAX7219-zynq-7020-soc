@@ -4,28 +4,21 @@
 
 // Memory-mapped register access using volatile pointers
 #define REG_ASCII_0      (*(volatile uint32_t *)(XPAR_XGPIO_0_BASEADDR + 0x00))
-#define REG_ASCII_1      (*(volatile uint32_t *)(XPAR_XGPIO_0_BASEADDR + 0x08)) 
 #define REG_CTRL         (*(volatile uint32_t *)(XPAR_XGPIO_1_BASEADDR + 0x00)) // Bit 0/1 controls
 
 // Direction control
 #define REG_ASCII_DIR_0  (*(volatile uint32_t *)(XPAR_XGPIO_0_BASEADDR + 0x04))
-#define REG_ASCII_DIR_1  (*(volatile uint32_t *)(XPAR_XGPIO_0_BASEADDR + 0x0C)) 
-
 #define REG_CTRL_DIR     (*(volatile uint32_t *)(XPAR_XGPIO_0_BASEADDR + 0x04))
 
 int main() {
     // Set direction to output
     REG_ASCII_DIR_0 = 0x00000000;
-    REG_ASCII_DIR_1 = 0x00000000;
     REG_CTRL_DIR    = 0x00000000;
 
-    std::string test = "12";
-    std::string test2 = "12";
+    std::string test = "chuj";
     uint32_t val = std::stoi(test);
-    uint32_t val2 = std::stoi(test);
 
     REG_ASCII_0 = val;
-    REG_ASCII_1 = val2;
     
     // Trigger translation (Bit 0) and FIFO (Bit 1)
     REG_CTRL = 0b0011; 

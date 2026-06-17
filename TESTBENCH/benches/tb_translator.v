@@ -34,30 +34,31 @@ translator #(
 // Clock generator: flips state every 5ns (10ns period)
 always #5 clk = ~clk;
 
-initial begin
-    $dumpfile("TESTBENCH/sims/trans.vcd");
-    // $dumpvars(0, tb_rom);
-    $dumpvars(0, tb_translator);
+integer r; // Declare variable here
 
-    clk = 0; 
-    ascii_data = {7'h63, 7'h68, 7'h75, 7'h6A};
+initial begin
+    clk = 0;
+    // ascii_data = {7'h63, 7'h68, 7'h75, 7'h6A}; 
+    // ascii_data = {7'h63, 7'h69, 7'h70, 7'h61}; 
+    ascii_data = {7'h64, 7'h75, 7'h70, 7'h61};
     start = 0;
     row_idx = 0;
 
-    #10 start = 1;
-
-    repeat(40) begin
-        @(posedge clk);
+    for (r = 0; r < 8; r = r + 1) begin
+        row_idx = r;
+        start = 1;
+        #10 start = 0;
+        
+        // Wait until the translator finishes and sets packet_valid
+        wait(packet_valid);
+        
+        $display("Row %0d Packet: %h", r, row_packet);
+        
+        // Wait until it drops before starting next row
+        @(negedge packet_valid); 
+        #10;
     end
-
     #20 $finish;
-end
-
-// initial begin
-//     $monitor("Time=%0t | Row=%d | Data=%h", $time, row_index, row_data);
-// end
-always @(posedge clk) begin
-    $display("Time=%0t | State=%d | idx=%d | row_packet=%h", $time, UUT.state, UUT.idx, row_packet);
 end
 
 endmodule

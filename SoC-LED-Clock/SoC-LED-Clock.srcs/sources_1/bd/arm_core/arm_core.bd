@@ -7,16 +7,14 @@
       "name": "arm_core",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "None",
-      "tool_version": "2025.2",
-      "validated": "true"
+      "tool_version": "2025.2"
     },
     "design_tree": {
       "processing_system7_0": "",
       "axi_gpio_0": "",
       "axi_smc": "",
       "rst_ps7_0_50M": "",
-      "top_0": "",
-      "axi_gpio_1": ""
+      "top_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -373,7 +371,7 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "C_GPIO2_WIDTH": {
-            "value": "32"
+            "value": "8"
           },
           "C_IS_DUAL": {
             "value": "1"
@@ -510,36 +508,16 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "5e+07",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "arm_core_processing_system7_0_0_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
+            "direction": "I"
           },
-          "ascii_data_0": {
+          "ascii_data": {
             "direction": "I",
             "left": "31",
-            "right": "0"
-          },
-          "ascii_data_1": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "blink_idx": {
-            "direction": "I",
-            "left": "1",
             "right": "0"
           },
           "ctrl_reg": {
             "direction": "I",
-            "left": "3",
+            "left": "7",
             "right": "0"
           },
           "clk_out": {
@@ -552,25 +530,6 @@
             "direction": "O"
           }
         }
-      },
-      "axi_gpio_1": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "37",
-        "xci_name": "arm_core_axi_gpio_1_0",
-        "xci_path": "ip/arm_core_axi_gpio_1_0/arm_core_axi_gpio_1_0.xci",
-        "inst_hier_path": "axi_gpio_1",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_GPIO2_WIDTH": {
-            "value": "4"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "2"
-          },
-          "C_IS_DUAL": {
-            "value": "1"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -578,12 +537,6 @@
         "interface_ports": [
           "axi_smc/M00_AXI",
           "axi_gpio_0/S_AXI"
-        ]
-      },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "axi_gpio_1/S_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -609,25 +562,13 @@
       "axi_gpio_0_gpio2_io_o": {
         "ports": [
           "axi_gpio_0/gpio2_io_o",
-          "top_0/ascii_data_1"
+          "top_0/ctrl_reg"
         ]
       },
       "axi_gpio_0_gpio_io_o": {
         "ports": [
           "axi_gpio_0/gpio_io_o",
-          "top_0/ascii_data_0"
-        ]
-      },
-      "axi_gpio_1_gpio2_io_o": {
-        "ports": [
-          "axi_gpio_1/gpio2_io_o",
-          "top_0/ctrl_reg"
-        ]
-      },
-      "axi_gpio_1_gpio_io_o": {
-        "ports": [
-          "axi_gpio_1/gpio_io_o",
-          "top_0/blink_idx"
+          "top_0/ascii_data"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -637,7 +578,6 @@
           "axi_smc/aclk",
           "axi_gpio_0/s_axi_aclk",
           "rst_ps7_0_50M/slowest_sync_clk",
-          "axi_gpio_1/s_axi_aclk",
           "top_0/clk"
         ]
       },
@@ -651,8 +591,7 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "axi_smc/aresetn",
-          "axi_gpio_1/s_axi_aresetn"
+          "axi_smc/aresetn"
         ]
       },
       "top_0_clk_out": {
@@ -682,11 +621,6 @@
               "SEG_axi_gpio_0_Reg": {
                 "address_block": "/axi_gpio_0/S_AXI/Reg",
                 "offset": "0x41200000",
-                "range": "64K"
-              },
-              "SEG_axi_gpio_1_Reg": {
-                "address_block": "/axi_gpio_1/S_AXI/Reg",
-                "offset": "0x41210000",
                 "range": "64K"
               }
             }

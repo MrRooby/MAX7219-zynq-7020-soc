@@ -10,7 +10,7 @@
       "component_parameters": {
         "C_TRI_DEFAULT": [ { "value": "0xFFFFFFFF", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_GPIO_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_GPIO2_WIDTH": [ { "value": "32", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_GPIO2_WIDTH": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_IS_DUAL": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_ALL_INPUTS": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_TRI_DEFAULT_2": [ { "value": "0xFFFFFFFF", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
@@ -30,7 +30,7 @@
         "C_S_AXI_ADDR_WIDTH": [ { "value": "9", "format": "long", "usage": "all" } ],
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "format": "long", "usage": "all" } ],
         "C_GPIO_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_GPIO2_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_GPIO2_WIDTH": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ALL_INPUTS": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ALL_INPUTS_2": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ALL_OUTPUTS": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -90,9 +90,9 @@
         "gpio_io_i": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
         "gpio_io_o": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "gpio_io_t": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "gpio2_io_i": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
-        "gpio2_io_o": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "gpio2_io_t": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
+        "gpio2_io_i": [ { "direction": "in", "size_left": "7", "size_right": "0", "driver_value": "0" } ],
+        "gpio2_io_o": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "gpio2_io_t": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
       },
       "interfaces": {
         "S_AXI": {
@@ -263,7 +263,7 @@
                 },
                 "GPIO2_DATA": {
                   "address_offset": "0x8",
-                  "size": 32,
+                  "size": 8,
                   "display_name": "Channel_2_GPIO_DATA",
                   "description": "Channel-2 AXI GPIO Data register",
                   "is_volatile": true,
@@ -272,7 +272,7 @@
                   "fields": {
                     "CH2_DATA": {
                       "bit_offset": 0,
-                      "bit_width": 32,
+                      "bit_width": 8,
                       "display_name": "Channel_2_GPIO_DATA",
                       "description": "AXI GPIO Data Register.\nFor each I/O bit programmed as input\n  R - Reads value on the input pin.\n  W - No effect.\nFor each I/O bit programmed as output\n  R - Reads value on GPIO_O pins\n  W - Writes value to the corresponding AXI GPIO \n      data register bit and output pin\n",
                       "is_volatile": true,
@@ -282,7 +282,7 @@
                 },
                 "GPIO2_TRI": {
                   "address_offset": "0xC",
-                  "size": 32,
+                  "size": 8,
                   "display_name": "Channel_2_GPIO_TRI",
                   "description": "Channel-2 AXI GPIO 3-State Control register",
                   "is_volatile": true,
@@ -291,7 +291,7 @@
                   "fields": {
                     "CH2_TRI": {
                       "bit_offset": 0,
-                      "bit_width": 32,
+                      "bit_width": 8,
                       "display_name": "Channel_2_GPIO_DATA",
                       "description": "AXI GPIO 3-State Control Register\nEach I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input\n",
                       "is_volatile": true,
@@ -379,5 +379,5 @@
       }
     }
   },
-  "checksum": "aa593a04"
+  "checksum": "5f209b01"
 }
