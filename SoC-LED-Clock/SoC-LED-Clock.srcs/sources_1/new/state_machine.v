@@ -39,7 +39,7 @@ translator #(
 ) trans (
   .clk(clk),
   .start(start_trans),
-  .ascii_data(ascii_trans_in),           // 8 bits per character * N modasdules
+  .ascii_data(ascii_trans_in),  // 8 bits per character * N modasdules
   .row_packet(packet),          // 16-bit packet to send to SPI engine
   .packet_valid(packet_valid),  // Tells SPI engine to transmit
   .ready(ready)                 // ready
@@ -78,7 +78,7 @@ always @(posedge clk) begin
     end
 
     BRIGHTNESS: begin
-      brightness <= ctrl_reg[1:0];
+      state <= BRIGHTNESS_CHANGE;
     end
 
     ASCII : begin
@@ -99,13 +99,14 @@ assign ascii_trans_in = ascii_data[27:0];
 
 localparam IDLE              = 4'd1;
 localparam ENABLE            = 4'd2;
-localparam SEND_DECODE_OFF   = 4'd3;
+localparam SEND_CTRL_REG     = 4'd3;
 localparam WAIT_SEND_SIMPLE  = 4'd4;
 localparam START_SEND        = 4'd5;
 localparam STEP_ROW          = 4'd6;
 localparam START_TRANSLATION = 4'd7;
 localparam WAIT_TRANS        = 4'd8;
 localparam TRANSLATION       = 4'd9;
+localparam BRIGHTNESS_CHANGE = 4'd10;
 
 always @(posedge clk) begin
     case (state)
@@ -119,11 +120,16 @@ always @(posedge clk) begin
       // Turning off decoding 
       ENABLE : begin
         data  <= {4{16'b0000_1001_0000_0000}};
-        state <= SEND_DECODE_OFF;
+        state <= SEND_CTRL_REG;
       end
 
-      SEND_DECODE_OFF : begin
-        if (busy) state <= SEND_DECODE_OFF;
+      BRIGHTNESS_CHANGE : begin
+        data <= {4{4'b0000, 4'b1010, 4'b0000, ctrl_reg[1:0], 2'b00}};
+        state <= SEND_CTRL_REG;
+      end
+
+      SEND_CTRL_REG : begin
+        if (busy) state <= SEND_CTRL_REG;
         else begin
           start <= 1;
           state <= WAIT_SEND_SIMPLE;
@@ -137,6 +143,22 @@ always @(posedge clk) begin
       end
       
       // ASCII data send and translation
+      TRANSLATION : begin
+        row_idx     <= 0;
+        start_trans <= 0;
+        state <= START_TRANSLATION;
+      end
+
+      START_TRANSLATION : begin
+        start_trans <= 1;
+        if (packet_valid && ready) begin
+          state       <= START_SEND;
+          start_trans <= 0;
+        end else begin 
+          state <= START_TRANSLATION;
+        end
+      end
+      
       START_SEND : begin
         start <= 1'b1;
         state <= WAIT_TRANS;
@@ -159,23 +181,7 @@ always @(posedge clk) begin
           state <= START_TRANSLATION;
         end
       end
-
-      START_TRANSLATION : begin
-        start_trans <= 1;
-        if (packet_valid && ready) begin
-          state       <= START_SEND;
-          start_trans <= 0;
-        end else begin 
-          state <= START_TRANSLATION;
-        end
-      end
       
-      TRANSLATION : begin
-        row_idx     <= 0;
-        start_trans <= 0;
-        state <= START_TRANSLATION;
-      end
-
       default: state <= IDLE;
     endcase
 end
