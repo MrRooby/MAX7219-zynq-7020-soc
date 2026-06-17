@@ -1,5 +1,17 @@
 ## LED Dot matrix alarm clock using MAX7219 based modules
 
+### Wymagania FPGA
+- dekodowanie ascii do danych MAX7219
+- wysyłanie szeregowo danych na dot matrix
+- blink danego charactera
+- RTC interrupts
+
+### Wymagania ARM
+- debounce przycisków i auto repetition
+- wysyłanie na dot matrix tryb operacyjny, aktualny czas i czas alarmu
+- zarządzanie działaniem zegara
+- RTC
+
 ### Required Hardware
 LED Dot matrix with MAX7219
 
@@ -19,3 +31,5 @@ input
 - Displaying information depends on the operation mode, current time, alarm time
 - During the set operation, the digits that are set are flashing
 - Real-time clock
+
+
