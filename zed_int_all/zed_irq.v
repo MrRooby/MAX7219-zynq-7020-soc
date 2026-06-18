@@ -11,17 +11,23 @@ module ZED_IRQ(
 	MIO,
 	LED,	
 	PB_C, PB_U, PB_D, PB_R, PB_L,
-	SW
+	SW,
 	
-	//LCD:
-	//LCD_E, LCD_RW, LCD_RS, LCD_BL,
-	//LCD_D
+	// Moje
+	MAX_CLK, MAX_LOAD, MAX_DIN
 );
+
+// Moje
+output MAX_CLK;
+output MAX_LOAD;
+output MAX_DIN;
+
+wire [31:0] ascii_data;
+wire [7:0] ctrl_reg;
 
 inout PS_CLK;  //PS Clock signal
 inout PS_PORB;
 inout PS_SRSTB;
-
 
 //DDR memory interface
 inout [14:0] DDR_A;
@@ -47,7 +53,6 @@ inout DDR_WEB;
 inout DDR_VRN;
 inout DDR_VRP;
 
-
 inout [53:0] MIO;
 
 //User signals
@@ -56,18 +61,6 @@ output [7:0] LED;
 input PB_C, PB_U, PB_D, PB_R, PB_L;
 input [7:0] SW;
 wire IRQ;
-
-//LCD
-//output LCD_E;
-//output LCD_RW;
-//output LCD_RS; 
-//output LCD_BL;
-//inout [3:0] LCD_D;
-
-/*pullup P_LCD_D0(LCD_D[0]);
-pullup P_LCD_D1(LCD_D[1]);
-pullup P_LCD_D2(LCD_D[2]);
-pullup P_LCD_D3(LCD_D[3]);*/
 
 assign LCD_E = 1'b0;
 assign LCD_RW = 1'b0;
@@ -156,7 +149,6 @@ wire GP1_RLAST;
 
 wire CLK = FCLK[0];
 wire RESETN = FRESETN[0];
-
 
 PS7 CPU (
 	//--------------
@@ -945,8 +937,21 @@ AXI_IO_INT AXI_IO_1 (
 	.S_AXI_RRESP(GP0_RRESP),
 	.S_AXI_RVALID(GP0_RVALID),
 	.S_AXI_RREADY(GP0_RREADY),
-	.S_AXI_RLAST(GP0_RLAST));
-   
+	.S_AXI_RLAST(GP0_RLAST),
+	
+	// Moje
+	.ASCII_DATA(ascii_data),
+	.CTRL_REG(ctrl_reg)
+);
+
+state_machine main (
+  .clk(CLK),
+  .ascii_data(ascii_data),
+  .ctrl_reg(ctrl_reg),
+  .clk_out(MAX_CLK),
+  .load(MAX_LOAD),
+  .d_out(MAX_DIN)
+);   
     
 //AXI GP1 Device Base 0x8000_0000 -> no device
 //GP1_ARESETN

@@ -1,4 +1,8 @@
 
+# Moje
+set_property -dict { PACKAGE_PIN Y19 IOSTANDARD LVCMOS33 } [get_ports {MAX_DIN}];  # "BTNR"
+set_property -dict { PACKAGE_PIN AA11 IOSTANDARD LVCMOS33 } [get_ports {MAX_LOAD}];  # Button Up
+set_property -dict { PACKAGE_PIN AA9 IOSTANDARD LVCMOS33 } [get_ports {MAX_CLK}];  # "BTNR"
 # ----------------------------------------------------------------------------
 # User LEDs - Bank 33
 # ----------------------------------------------------------------------------

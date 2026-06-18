@@ -23,3 +23,13 @@
     <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="83224" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="178291" HostCore="16" HostMemory="16226068">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="192933" HostCore="16" HostMemory="16226068">
+    </Process>
+</ProcessHandle>

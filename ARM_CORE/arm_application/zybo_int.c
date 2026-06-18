@@ -1,10 +1,16 @@
 #include "xscugic.h"
 #include "xil_exception.h"
 #include "zybo_io.h"
+#include <stdint.h>
 #include <string.h>
+#include <xil_printf.h>
+#include "sleep.h"
 
 #define TIMER_ISR_VECT 61
 #define TIMER_BASE 0x40000040
+
+#define PACK4(c0,c1,c2,c3) \
+    (((c0)&0x7F) | (((c1)&0x7F)<<7) | (((c2)&0x7F)<<14) | (((c3)&0x7F)<<21))
 
 static XScuGic_Config *GicConfig; /* The configuration parameters of the controller */
 XScuGic InterruptController; /* Instance of the Interrupt Controller */
@@ -76,14 +82,26 @@ void tmPooling()
 
 
 int main( void )
-{        
-    Xil_Out32(0x40000000, 0x3);
-    led->io = 0x5;
-    led->io = 0xA;
-    initDevices();    
+{
+	uint32_t counter = 0;
+	        
+    Xil_Out32(0x40000004, 0x01);
+	usleep(200);
+	
+	Xil_Out32(0x40000004, 0x41);
+	usleep(200);
+
+	Xil_Out32(0x40000000, PACK4('1', '2', '3', '4'));
+	Xil_Out32(0x40000004, 0x80);
+	usleep(2000);
+	 
     for(;;)
     {
+		xil_printf("ping\n");
         //tmPooling();
+		Xil_Out32(0x40000000, PACK4('1', '2', '3', '4'));
+		Xil_Out32(0x40000004, 0x80);
+		usleep(2000);
     }
 	return 0;
 }

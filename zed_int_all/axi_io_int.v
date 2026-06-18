@@ -65,8 +65,12 @@ module AXI_IO_INT(
 	//Peripheral signals
 	SW,
 	PB,
-	LED
-	);
+	LED,
+	
+	// Moje
+	ASCII_DATA,
+	CTRL_REG
+);
 
 
 //Base adderess
@@ -155,6 +159,9 @@ input [7:0] SW;
 input [4:0] PB;
 output reg [7:0] LED;
 
+output reg [31:0] ASCII_DATA;
+output reg [7:0]  CTRL_REG;
+
 // Internal signals
 // AXI IO controller
 reg [R_CTRL_W - 1:0] R0_CTRL;
@@ -207,8 +214,8 @@ always @(posedge S_AXI_ACLK) begin
 			S_AXI_RRESP <= RESP_OK;
 			R0_CTRL <= 1 << R_DATA_ACK;
 			case({R0_ADDR[31:2],2'b00})
-				32'h4000_0000: S_AXI_RDATA <= LED_REG;
-                32'h4000_0004: S_AXI_RDATA <= LED_REG;
+				32'h4000_0000: S_AXI_RDATA <= ASCII_DATA;
+                32'h4000_0004: S_AXI_RDATA <= {24'd0, CTRL_REG};
                 32'h4000_0008: S_AXI_RDATA <= LED_REG;
                 32'h4000_000C: S_AXI_RDATA <= LED_REG;
 				32'h4000_0020: S_AXI_RDATA <= {24'd0, SW};
@@ -248,29 +255,26 @@ always @(posedge S_AXI_ACLK) begin
 			S_AXI_BRESP <= RESP_OK;
 			case({W0_ADDR[31:2], 2'b00})
 				32'h4000_0000: begin
-					if(W0_STRB[0]) LED_REG[7:0] <= W0_DATA[7:0];
-					if(W0_STRB[1]) LED_REG[15:8] <= W0_DATA[15:8];
-					if(W0_STRB[2]) LED_REG[23:16] <= W0_DATA[23:16];
-					if(W0_STRB[3]) LED_REG[31:24] <= W0_DATA[31:24];
+					if(W0_STRB[0]) ASCII_DATA[7:0]   <= W0_DATA[7:0];
+					if(W0_STRB[1]) ASCII_DATA[15:8]  <= W0_DATA[15:8];
+					if(W0_STRB[2]) ASCII_DATA[23:16] <= W0_DATA[23:16];
+					if(W0_STRB[3]) ASCII_DATA[31:24] <= W0_DATA[31:24];
 				end
                 32'h4000_0004: begin
-					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] | W0_DATA[7:0];
-					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] | W0_DATA[15:8];
-					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] | W0_DATA[23:16];
-					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] | W0_DATA[31:24];
+					if(W0_STRB[0]) CTRL_REG <= W0_DATA[7:0];
 				end
-                32'h4000_0008: begin
-					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] & ~W0_DATA[7:0];
-					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] & ~W0_DATA[15:8];
-					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] & ~W0_DATA[23:16];
-					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] & ~W0_DATA[31:24];
-				end
-                32'h4000_000C: begin
-					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] ^ W0_DATA[7:0];
-					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] ^ W0_DATA[15:8];
-					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] ^ W0_DATA[23:16];
-					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] ^ W0_DATA[31:24];
-				end
+//                32'h4000_0008: begin
+//					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] & ~W0_DATA[7:0];
+//					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] & ~W0_DATA[15:8];
+//					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] & ~W0_DATA[23:16];
+//					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] & ~W0_DATA[31:24];
+//				end
+//                32'h4000_000C: begin
+//					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] ^ W0_DATA[7:0];
+//					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] ^ W0_DATA[15:8];
+//					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] ^ W0_DATA[23:16];
+//					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] ^ W0_DATA[31:24];
+//				end
 				AT_Q: begin
 					if(!RUN & (&W0_STRB)) TMR_Q <= W0_DATA[31:0];
 				end
