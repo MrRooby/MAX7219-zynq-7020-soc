@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Jun 18 15:02:08 2026
+| Date         : Thu Jun 18 16:28:51 2026
 | Host         : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command      : report_methodology -file ZED_IRQ_methodology_drc_routed.rpt -pb ZED_IRQ_methodology_drc_routed.pb -rpx ZED_IRQ_methodology_drc_routed.rpx
 | Design       : ZED_IRQ
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 396
+             Checks found: 401
 +-----------+------------------+-----------------------------+--------+
 | Rule      | Severity         | Description                 | Checks |
 +-----------+------------------+-----------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 396    |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 401    |
 +-----------+------------------+-----------------------------+--------+
 
 2. REPORT DETAILS
@@ -1509,505 +1509,530 @@ Related violations: <none>
 
 TIMING-17#296 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/FSM_sequential_state_reg[0]/C is not reached by a timing clock
+The clock pin div/clk_en_10mhz_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#297 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/FSM_sequential_state_reg[1]/C is not reached by a timing clock
+The clock pin div/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#298 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/FSM_sequential_state_reg[2]/C is not reached by a timing clock
+The clock pin div/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#299 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/FSM_sequential_state_reg[3]/C is not reached by a timing clock
+The clock pin div/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#300 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/data_reg[50]/C is not reached by a timing clock
+The clock pin div/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#301 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/data_reg[51]/C is not reached by a timing clock
+The clock pin main/FSM_sequential_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#302 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/data_reg[56]/C is not reached by a timing clock
+The clock pin main/FSM_sequential_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#303 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/data_reg[57]/C is not reached by a timing clock
+The clock pin main/FSM_sequential_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#304 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/data_reg[59]/C is not reached by a timing clock
+The clock pin main/FSM_sequential_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#305 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/FSM_onehot_state_reg[0]/C is not reached by a timing clock
+The clock pin main/data_reg[50]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#306 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/FSM_onehot_state_reg[1]/C is not reached by a timing clock
+The clock pin main/data_reg[51]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#307 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/FSM_onehot_state_reg[2]/C is not reached by a timing clock
+The clock pin main/data_reg[56]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#308 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[0]/C is not reached by a timing clock
+The clock pin main/data_reg[57]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#309 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[1]/C is not reached by a timing clock
+The clock pin main/data_reg[59]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#310 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[2]/C is not reached by a timing clock
+The clock pin main/fifo/FSM_onehot_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#311 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[3]/C is not reached by a timing clock
+The clock pin main/fifo/FSM_onehot_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#312 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[4]/C is not reached by a timing clock
+The clock pin main/fifo/FSM_onehot_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#313 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[5]/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#314 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/bit_cnt_reg[6]/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#315 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/busy_reg/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#316 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/clk_out_reg/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#317 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/d_out_reg/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#318 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/load_reg/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#319 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/phase_reg/C is not reached by a timing clock
+The clock pin main/fifo/bit_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#320 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[10]/C is not reached by a timing clock
+The clock pin main/fifo/busy_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#321 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[11]/C is not reached by a timing clock
+The clock pin main/fifo/clk_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#322 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[15]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
+The clock pin main/fifo/d_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#323 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[16]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
+The clock pin main/fifo/load_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#324 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[17]/C is not reached by a timing clock
+The clock pin main/fifo/phase_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#325 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[18]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#326 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[19]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#327 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[21]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[15]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#328 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[22]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[16]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#329 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[23]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#330 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[24]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#331 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[25]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#332 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[26]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[21]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#333 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[27]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[22]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#334 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[2]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#335 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[31]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#336 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[32]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#337 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[33]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#338 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[34]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#339 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[35]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#340 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[37]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[31]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#341 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[38]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[32]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#342 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[39]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[33]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#343 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[3]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[34]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#344 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[40]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[35]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#345 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[41]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[37]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#346 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[42]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[38]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#347 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[43]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[39]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#348 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[47]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#349 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[48]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[40]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#350 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[49]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[41]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#351 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[50]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[42]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#352 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[51]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[43]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#353 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[53]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[47]_srl4___main_fifo_shreg_reg_r_2/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#354 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[54]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[48]_main_fifo_shreg_reg_r_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#355 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[55]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[49]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#356 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[56]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[50]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#357 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[57]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[51]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#358 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[58]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[53]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#359 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[59]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[54]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#360 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[5]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[55]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#361 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[61]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[56]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#362 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[62]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[57]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#363 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[63]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[58]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#364 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[6]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[59]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#365 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[7]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[5]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#366 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[8]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[61]_srl2___main_fifo_shreg_reg_r_0/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#367 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg[9]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[62]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#368 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg_r/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[63]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#369 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg_r_0/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[6]_main_fifo_shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#370 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg_r_1/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#371 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg_r_2/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#372 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/fifo/shreg_reg_r_3/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#373 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[0]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg_r/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#374 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[1]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg_r_0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#375 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[2]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg_r_1/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#376 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[3]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg_r_2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#377 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[4]/C is not reached by a timing clock
+The clock pin main/fifo/shreg_reg_r_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#378 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[5]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#379 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[6]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#380 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/prev_ctrl_val_reg[7]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#381 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/row_idx_reg[0]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#382 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/row_idx_reg[1]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#383 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/row_idx_reg[2]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#384 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/row_idx_reg[3]/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#385 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/start_fifo_reg/C is not reached by a timing clock
+The clock pin main/prev_ctrl_val_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#386 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/start_trans_reg/C is not reached by a timing clock
+The clock pin main/row_idx_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#387 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/FSM_onehot_state_reg[0]/C is not reached by a timing clock
+The clock pin main/row_idx_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#388 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/FSM_onehot_state_reg[1]/C is not reached by a timing clock
+The clock pin main/row_idx_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#389 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/FSM_onehot_state_reg[2]/C is not reached by a timing clock
+The clock pin main/row_idx_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#390 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/FSM_onehot_state_reg[3]/C is not reached by a timing clock
+The clock pin main/start_fifo_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#391 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/FSM_onehot_state_reg[4]/C is not reached by a timing clock
+The clock pin main/start_trans_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#392 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/idx_reg[0]/C is not reached by a timing clock
+The clock pin main/trans/FSM_onehot_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#393 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/idx_reg[1]/C is not reached by a timing clock
+The clock pin main/trans/FSM_onehot_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#394 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/idx_reg[2]/C is not reached by a timing clock
+The clock pin main/trans/FSM_onehot_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#395 Critical Warning
 Non-clocked sequential cell  
-The clock pin main/trans/packet_valid_reg/C is not reached by a timing clock
+The clock pin main/trans/FSM_onehot_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#396 Critical Warning
+Non-clocked sequential cell  
+The clock pin main/trans/FSM_onehot_state_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#397 Critical Warning
+Non-clocked sequential cell  
+The clock pin main/trans/idx_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#398 Critical Warning
+Non-clocked sequential cell  
+The clock pin main/trans/idx_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#399 Critical Warning
+Non-clocked sequential cell  
+The clock pin main/trans/idx_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#400 Critical Warning
+Non-clocked sequential cell  
+The clock pin main/trans/packet_valid_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#401 Critical Warning
 Non-clocked sequential cell  
 The clock pin main/trans/ready_reg/C is not reached by a timing clock
 Related violations: <none>

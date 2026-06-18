@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Thu Jun 18 15:02:08 2026
+| Date             : Thu Jun 18 16:28:52 2026
 | Host             : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command          : report_power -file ZED_IRQ_power_routed.rpt -pb ZED_IRQ_power_summary_routed.pb -rpx ZED_IRQ_power_routed.rpx
 | Design           : ZED_IRQ
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+---------------------------------+
-| Total On-Chip Power (W)  | 8.985 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 9.677 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                    |
 | Power Budget Margin (W)  | NA                              |
-| Dynamic (W)              | 7.947                           |
-| Device Static (W)        | 1.038                           |
+| Dynamic (W)              | 8.636                           |
+| Device Static (W)        | 1.041                           |
 | Effective TJA (C/W)      | 11.5                            |
 | Max Ambient (C)          | 0.0                             |
 | Junction Temperature (C) | 125.0                           |
@@ -52,18 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     0.598 |      798 |       --- |             --- |
-|   LUT as Logic          |     0.499 |      203 |     53200 |            0.38 |
-|   Register              |     0.056 |      387 |    106400 |            0.36 |
-|   CARRY4                |     0.030 |       18 |     13300 |            0.14 |
-|   LUT as Shift Register |     0.007 |        8 |     17400 |            0.05 |
-|   BUFG                  |     0.006 |        1 |        32 |            3.13 |
-|   Others                |     0.000 |      140 |       --- |             --- |
-| Signals                 |     1.396 |      676 |       --- |             --- |
-| I/O                     |     5.940 |       24 |       200 |           12.00 |
+| Slice Logic             |     0.574 |      808 |       --- |             --- |
+|   LUT as Logic          |     0.482 |      204 |     53200 |            0.38 |
+|   Register              |     0.053 |      392 |    106400 |            0.37 |
+|   CARRY4                |     0.026 |       18 |     13300 |            0.14 |
+|   BUFG                  |     0.010 |        2 |        32 |            6.25 |
+|   LUT as Shift Register |     0.003 |        8 |     17400 |            0.05 |
+|   Others                |     0.000 |      142 |       --- |             --- |
+| Signals                 |     1.133 |      675 |       --- |             --- |
+| I/O                     |     6.917 |       24 |       200 |           12.00 |
 | PS7                     |     0.000 |        1 |       --- |             --- |
-| Static Power            |     1.038 |          |           |                 |
-| Total                   |     8.972 |          |           |                 |
+| Static Power            |     1.041 |          |           |                 |
+| Total                   |     9.664 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,16 +73,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     2.358 |       2.059 |      0.299 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.316 |       0.216 |      0.100 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     1.667 |       1.666 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     2.070 |       1.772 |      0.299 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.351 |       0.252 |      0.100 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     1.944 |       1.943 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.024 |       0.000 |      0.024 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.026 |       0.000 |      0.026 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -147,11 +147,12 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| ZED_IRQ    |     7.934 |
-|   AXI_IO_1 |     0.660 |
-|   main     |     0.663 |
-|     fifo   |     0.373 |
-|     trans  |     0.136 |
+| ZED_IRQ    |     8.623 |
+|   AXI_IO_1 |     0.598 |
+|   div      |     0.076 |
+|   main     |     0.551 |
+|     fifo   |     0.318 |
+|     trans  |     0.114 |
 +------------+-----------+
 
 

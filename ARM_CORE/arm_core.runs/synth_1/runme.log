@@ -1,0 +1,243 @@
+
+*** Running vivado
+    with args -log main_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main_wrapper.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Jun 18 15:36:32 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source main_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/ip'.
+Command: synth_design -top main_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 222607
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2456.012 ; gain = 480.875 ; free physical = 3086 ; free virtual = 14550
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main_wrapper' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/hdl/main_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'main' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:13]
+INFO: [Synth 8-6157] synthesizing module 'main_processing_system7_0_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.runs/synth_1/.Xil/Vivado-222477-Ruby-Legion5/realtime/main_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'main_processing_system7_0_0' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.runs/synth_1/.Xil/Vivado-222477-Ruby-Legion5/realtime/main_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARVALID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWVALID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_BREADY' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_RREADY' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WLAST' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WVALID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WID' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARBURST' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARLOCK' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARSIZE' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWBURST' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWLOCK' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWSIZE' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARPROT' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWPROT' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARADDR' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWADDR' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WDATA' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARCACHE' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARLEN' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARQOS' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWCACHE' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWLEN' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWQOS' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WSTRB' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'FCLK_RESET0_N' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'MIO' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'PS_SRSTB' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'PS_CLK' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7071] port 'PS_PORB' of module 'main_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'main_processing_system7_0_0' has 45 connections declared, but only 13 given [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'main' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/synth/main.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'main_wrapper' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/hdl/main_wrapper.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2540.980 ; gain = 565.844 ; free physical = 2651 ; free virtual = 14159
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2552.855 ; gain = 577.719 ; free physical = 2640 ; free virtual = 14148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2552.855 ; gain = 577.719 ; free physical = 2640 ; free virtual = 14148
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2552.855 ; gain = 0.000 ; free physical = 2631 ; free virtual = 14140
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/ip/main_processing_system7_0_0/main_processing_system7_0_0/main_processing_system7_0_0_in_context.xdc] for cell 'main_i/processing_system7_0'
+Finished Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.gen/sources_1/bd/main/ip/main_processing_system7_0_0/main_processing_system7_0_0/main_processing_system7_0_0_in_context.xdc] for cell 'main_i/processing_system7_0'
+Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2598.812 ; gain = 0.000 ; free physical = 2440 ; free virtual = 14098
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2598.848 ; gain = 0.000 ; free physical = 2435 ; free virtual = 14099
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2598.848 ; gain = 623.711 ; free physical = 2114 ; free virtual = 13867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2606.816 ; gain = 631.680 ; free physical = 2114 ; free virtual = 13867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2606.816 ; gain = 631.680 ; free physical = 2114 ; free virtual = 13867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2606.816 ; gain = 631.680 ; free physical = 2110 ; free virtual = 13866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2606.816 ; gain = 631.680 ; free physical = 2084 ; free virtual = 13849
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2712.816 ; gain = 737.680 ; free physical = 1965 ; free virtual = 13731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2712.816 ; gain = 737.680 ; free physical = 1965 ; free virtual = 13731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2721.832 ; gain = 746.695 ; free physical = 1957 ; free virtual = 13724
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------+----------+
+|      |BlackBox name               |Instances |
++------+----------------------------+----------+
+|1     |main_processing_system7_0_0 |         1|
++------+----------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------+------+
+|      |Cell                      |Count |
++------+--------------------------+------+
+|1     |main_processing_system7_0 |     1|
++------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.645 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2908.645 ; gain = 887.516 ; free physical = 1787 ; free virtual = 13554
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2908.652 ; gain = 933.508 ; free physical = 1787 ; free virtual = 13554
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2908.652 ; gain = 0.000 ; free physical = 1787 ; free virtual = 13554
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2908.652 ; gain = 0.000 ; free physical = 1954 ; free virtual = 13722
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e6d48954
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 33 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2908.680 ; gain = 1131.121 ; free physical = 1956 ; free virtual = 13723
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1801.245; main = 1801.245; forked = 272.320
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4278.379; main = 2908.648; forked = 1646.559
+INFO: [Common 17-1381] The checkpoint '/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_core.runs/synth_1/main_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file main_wrapper_utilization_synth.rpt -pb main_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 18 15:37:12 2026...

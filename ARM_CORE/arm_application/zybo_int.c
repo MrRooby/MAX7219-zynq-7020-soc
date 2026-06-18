@@ -86,23 +86,26 @@ int main( void )
 	uint32_t counter = 0;
 	        
     Xil_Out32(0x40000004, 0x01);
-	usleep(200);
+	sleep(1);
 	
 	Xil_Out32(0x40000004, 0x41);
-	usleep(200);
+	sleep(1);
 
 	Xil_Out32(0x40000000, PACK4('1', '2', '3', '4'));
+	sleep(1);
 	Xil_Out32(0x40000004, 0x80);
-	usleep(2000);
+	sleep(1);
 	 
     for(;;)
     {
-		xil_printf("ping\n");
+		xil_printf("ping %d\n", counter++);
         //tmPooling();
-		Xil_Out32(0x40000000, PACK4('1', '2', '3', '4'));
+		Xil_Out32(0x40000000, PACK4('A', 'B', 'C', 'D'));
 		Xil_Out32(0x40000004, 0x80);
-		usleep(2000);
+		// usleep(20000);
+		msleep(2000);
     }
 	return 0;
 }
 
+// 

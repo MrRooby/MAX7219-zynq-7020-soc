@@ -48,7 +48,7 @@ reg [1:0] blink_idx;
 reg [3:0] row_idx = 4'b0;
 reg start_fifo;
 reg start_trans   = 0;
-wire [63:0] packet = 0;
+wire [63:0] packet;   // driven by translator.row_packet -- do NOT initialize (creates a 2nd driver)
 reg [63:0] data = 64'b0;
 wire busy;
 wire packet_valid;
@@ -59,7 +59,8 @@ translator #(
 ) trans (
   .clk(clk),
   .start(start_trans),
-  .ascii_data(ascii_data[27:0]),  // 8 bits per character * N modasdules
+  .ascii_data(ascii_data[27:0]),  // 7 bits per character * N modules
+  .row_idx(row_idx[2:0]),       // which font row to fetch
   .row_packet(packet),          // 16-bit packet to send to SPI engine
   .packet_valid(packet_valid),  // Tells SPI engine to transmit
   .ready(ready)                 // ready

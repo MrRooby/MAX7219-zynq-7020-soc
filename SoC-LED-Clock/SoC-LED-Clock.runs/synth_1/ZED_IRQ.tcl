@@ -56,14 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-5838-Ruby-Legion5/incrSyn
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -80,6 +74,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/axi_io_int.v
+  /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/clock_div.v
   /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v
   /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/font_rom.v
   /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/state_machine.v

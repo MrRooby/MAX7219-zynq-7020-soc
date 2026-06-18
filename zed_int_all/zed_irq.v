@@ -944,8 +944,15 @@ AXI_IO_INT AXI_IO_1 (
 	.CTRL_REG(ctrl_reg)
 );
 
+wire slow_clk;
+
+clock_div div (
+    .clk_100mhz(CLK),
+    .clk_en_10mhz(slow_clk)
+);
+
 state_machine main (
-  .clk(CLK),
+  .clk(slow_clk),
   .ascii_data(ascii_data),
   .ctrl_reg(ctrl_reg),
   .clk_out(MAX_CLK),

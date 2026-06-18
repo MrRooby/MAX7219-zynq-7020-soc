@@ -75,7 +75,8 @@ module translator #(
             end
             
             STORE: begin
-                row_packet[(N-1-idx)*16+:16] <= {4'b0000, row_idx, row_data};
+                // MAX7219 digit registers are 1..8, so address = row_idx + 1
+                row_packet[(N-1-idx)*16+:16] <= {4'b0000, ({1'b0, row_idx} + 4'd1), row_data};
                 idx <= idx + 1'b1;   
                 state <= (idx == N-1) ? DONE : FETCH;
                 if (idx == N-1) begin

@@ -7,7 +7,8 @@
       "name": "main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.2"
+      "tool_version": "2025.2",
+      "validated": "true"
     },
     "design_tree": {
       "processing_system7_0": ""
@@ -37,7 +38,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100.000000"
+            "value": "10.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -94,7 +95,7 @@
             "value": "200"
           },
           "PCW_CLK0_FREQ": {
-            "value": "100000000"
+            "value": "10000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -105,11 +106,14 @@
           "PCW_CLK3_FREQ": {
             "value": "10000000"
           },
+          "PCW_DDR_RAM_HIGHADDR": {
+            "value": "0x3FFFFFFF"
+          },
           "PCW_EN_DDR": {
             "value": "0"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100"
+            "value": "10"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"

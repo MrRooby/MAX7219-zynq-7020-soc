@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Jun 18 15:00:32 2026
-# Process ID         : 177835
+# Start of session at: Thu Jun 18 16:26:38 2026
+# Process ID         : 315232
 # Current directory  : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1
 # Command line       : vivado -log ZED_IRQ.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZED_IRQ.tcl
 # Log file           : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1/ZED_IRQ.vds
@@ -13,12 +13,12 @@
 # Platform           : Fedora
 # Operating System   : Fedora Linux 44 (Workstation Edition)
 # Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
-# CPU Frequency      : 4226.329 MHz
+# CPU Frequency      : 1397.695 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16615 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 25205 MB
-# Available Virtual  : 14231 MB
+# Available Virtual  : 11341 MB
 #-----------------------------------------------------------
 source ZED_IRQ.tcl -notrace

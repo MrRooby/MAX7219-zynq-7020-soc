@@ -1,35 +1,25 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="46502" HostCore="16" HostMemory="16226068">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="280899" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="50686" HostCore="16" HostMemory="16226068">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="296958" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="62537" HostCore="16" HostMemory="16226068">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="311666" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="71208" HostCore="16" HostMemory="16226068">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="315934" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="83224" HostCore="16" HostMemory="16226068">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="178291" HostCore="16" HostMemory="16226068">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="192933" HostCore="16" HostMemory="16226068">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="333149" HostCore="16" HostMemory="16226068">
     </Process>
 </ProcessHandle>
