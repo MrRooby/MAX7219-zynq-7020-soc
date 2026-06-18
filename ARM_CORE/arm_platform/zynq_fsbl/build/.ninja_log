@@ -1,0 +1,16 @@
+# ninja log v5
+7	89	0	CMakeFiles/print_build_info	e0e9288dc14a8fb3
+7	89	0	/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_platform/zynq_fsbl/build/CMakeFiles/print_build_info	e0e9288dc14a8fb3
+93	367	1781784067535290100	CMakeFiles/fsbl.elf.dir/rsa.c.obj	b680b594318b55f4
+90	372	1781784067541623800	CMakeFiles/fsbl.elf.dir/fsbl_handoff.S.obj	62a8cb6e2ea63db9
+92	409	1781784067577353700	CMakeFiles/fsbl.elf.dir/qspi.c.obj	509782765acf0a18
+91	416	1781784067584669200	CMakeFiles/fsbl.elf.dir/nand.c.obj	9c14609b6e3b4cf9
+91	419	1781784067587801100	CMakeFiles/fsbl.elf.dir/md5.c.obj	51f901193a435bb0
+93	429	1781784067598615000	CMakeFiles/fsbl.elf.dir/sd.c.obj	f8e486dd3bcac59b
+90	433	1781784067602672400	CMakeFiles/fsbl.elf.dir/fsbl_hooks.c.obj	f6449183b511dd6c
+92	435	1781784067604160100	CMakeFiles/fsbl.elf.dir/nor.c.obj	d36457e993176248
+93	438	1781784067607030100	CMakeFiles/fsbl.elf.dir/ps7_init.c.obj	46d5607b67fa50a4
+91	443	1781784067612984800	CMakeFiles/fsbl.elf.dir/main.c.obj	2292cde7908472df
+92	444	1781784067612749400	CMakeFiles/fsbl.elf.dir/pcap.c.obj	436f5e4e374b2950
+91	445	1781784067612895100	CMakeFiles/fsbl.elf.dir/image_mover.c.obj	9c7cf7d3fcdd7f8
+445	727	1781784067798990000	fsbl.elf	d36d8d0c8f62600b

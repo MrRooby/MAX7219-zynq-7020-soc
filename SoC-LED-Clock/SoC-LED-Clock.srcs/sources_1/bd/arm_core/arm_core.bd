@@ -10,11 +10,11 @@
       "tool_version": "2025.2"
     },
     "design_tree": {
+      "top_0": "",
       "processing_system7_0": "",
-      "axi_gpio_0": "",
-      "axi_smc": "",
       "rst_ps7_0_50M": "",
-      "top_0": ""
+      "axi_gpio_0": "",
+      "axi_smc": ""
     },
     "interface_ports": {
       "DDR": {
@@ -210,6 +210,54 @@
       }
     },
     "components": {
+      "top_0": {
+        "vlnv": "xilinx.com:module_ref:top:1.0",
+        "ip_revision": "1",
+        "xci_name": "arm_core_top_0_3",
+        "xci_path": "ip/arm_core_top_0_3/arm_core_top_0_3.xci",
+        "inst_hier_path": "top_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "arm_core_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "ascii_data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ctrl_reg": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "clk_out": {
+            "direction": "O"
+          },
+          "load": {
+            "direction": "O"
+          },
+          "d_out": {
+            "direction": "O"
+          }
+        }
+      },
       "processing_system7_0": {
         "vlnv": "xilinx.com:ip:processing_system7:5.5",
         "ip_revision": "8",
@@ -362,6 +410,14 @@
           }
         }
       },
+      "rst_ps7_0_50M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "17",
+        "xci_name": "arm_core_rst_ps7_0_50M_0",
+        "xci_path": "ip/arm_core_rst_ps7_0_50M_0/arm_core_rst_ps7_0_50M_0.xci",
+        "inst_hier_path": "rst_ps7_0_50M",
+        "has_run_ip_tcl": "true"
+      },
       "axi_gpio_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
@@ -484,52 +540,6 @@
             }
           }
         }
-      },
-      "rst_ps7_0_50M": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "ip_revision": "17",
-        "xci_name": "arm_core_rst_ps7_0_50M_0",
-        "xci_path": "ip/arm_core_rst_ps7_0_50M_0/arm_core_rst_ps7_0_50M_0.xci",
-        "inst_hier_path": "rst_ps7_0_50M",
-        "has_run_ip_tcl": "true"
-      },
-      "top_0": {
-        "vlnv": "xilinx.com:module_ref:top:1.0",
-        "ip_revision": "1",
-        "xci_name": "arm_core_top_0_3",
-        "xci_path": "ip/arm_core_top_0_3/arm_core_top_0_3.xci",
-        "inst_hier_path": "top_0",
-        "has_run_ip_tcl": "true",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "ascii_data": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "ctrl_reg": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "clk_out": {
-            "direction": "O"
-          },
-          "load": {
-            "direction": "O"
-          },
-          "d_out": {
-            "direction": "O"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -575,10 +585,10 @@
         "ports": [
           "processing_system7_0/FCLK_CLK0",
           "processing_system7_0/M_AXI_GP0_ACLK",
-          "axi_smc/aclk",
-          "axi_gpio_0/s_axi_aclk",
+          "top_0/clk",
           "rst_ps7_0_50M/slowest_sync_clk",
-          "top_0/clk"
+          "axi_gpio_0/s_axi_aclk",
+          "axi_smc/aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {

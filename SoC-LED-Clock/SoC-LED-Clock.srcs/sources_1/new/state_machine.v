@@ -83,10 +83,12 @@ localparam BLINK_IDX  = 2'b11;
 localparam BRIGHTNESS = 2'b01;
 localparam ASCII      = 2'b10;
 
+reg [7:0] prev_ctrl_val = 8'b11;
 
-// CTRL signal decoding
 always @(posedge clk) begin
-  if (!busy) begin
+  prev_ctrl_val <= ctrl_reg;
+
+  if (!busy && prev_ctrl_val != ctrl_reg) begin
     case (ctrl_reg[7:6])
       ENABLE : begin
         if (ctrl_reg[0]) begin
@@ -110,10 +112,7 @@ always @(posedge clk) begin
       default : ;
     endcase
   end
-end
 
-
-always @(posedge clk) begin
     case (state)
       IDLE : begin
         start_fifo <= 0;

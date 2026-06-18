@@ -1,0 +1,8 @@
+verilog xil_defaultlib -i "../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" --include "/media/bartek/LEXAR/DEV/FPGA/Xylinx/2025.2/data/xilinx_vip/include" --include "../../../../arm_core.gen/sources_1/bd/main/ipshared/ec67/hdl" --include "../../../../arm_core.gen/sources_1/bd/main/ipshared/9a25/hdl" \
+"../../../bd/main/ip/main_processing_system7_0_0/sim/main_processing_system7_0_0.v" \
+"../../../bd/main/sim/main.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

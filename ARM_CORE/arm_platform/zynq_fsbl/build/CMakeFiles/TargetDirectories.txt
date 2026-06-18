@@ -1,0 +1,4 @@
+/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_platform/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
+/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_platform/zynq_fsbl/build/CMakeFiles/print_build_info.dir
+/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_platform/zynq_fsbl/build/CMakeFiles/edit_cache.dir
+/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/ARM_CORE/arm_platform/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

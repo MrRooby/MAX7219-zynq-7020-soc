@@ -38,18 +38,12 @@ module tb_state_machine;
         ascii_data = 32'h0;
         ctrl_reg = 8'h0;
 
-        // Wait for global reset / initialization stability
-        #100;
-
         // ---------------------------------------------------------
         // Test Case 1: Trigger ENABLE Sequence
         // ctrl_reg[7:6] = 2'b00 (ENABLE mode), ctrl_reg[0] = 1'b1
         // ---------------------------------------------------------
         #20;
         ctrl_reg = 8'b0000_0001; 
-        #20;
-        ctrl_reg = 8'h0; // Clear command strobe if needed
-        
         #2000; // Allow time for state machine progression (ENABLE -> SEND_CTRL_REG -> WAIT_SEND_SIMPLE)
 
         // ---------------------------------------------------------
@@ -86,7 +80,7 @@ module tb_state_machine;
 
         // Note: The duration here depends heavily on the sub-modules 
         // (translator & fifo) asserting ready/busy/packet_valid lines.
-        #2000; 
+        #8000; 
 
         // Finish simulation
         $display("Simulation finished.");

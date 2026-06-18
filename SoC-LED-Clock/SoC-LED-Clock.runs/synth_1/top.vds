@@ -1,0 +1,544 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Jun 18 13:44:23 2026
+# Process ID         : 70940
+# Current directory  : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1
+# Command line       : vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file           : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1/top.vds
+# Journal file       : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1/vivado.jou
+# Running On         : Ruby-Legion5
+# Platform           : Fedora
+# Operating System   : Fedora Linux 44 (Workstation Edition)
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
+# CPU Frequency      : 1396.820 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16615 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 25205 MB
+# Available Virtual  : 17008 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 71017
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2450.293 ; gain = 487.125 ; free physical = 295 ; free virtual = 15015
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/top.v:21]
+INFO: [Synth 8-6157] synthesizing module 'state_machine' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/state_machine.v:21]
+INFO: [Synth 8-6157] synthesizing module 'translator' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:21]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'font_rom' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/font_rom.v:21]
+INFO: [Synth 8-226] default block is never used [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/font_rom.v:148]
+INFO: [Synth 8-6155] done synthesizing module 'font_rom' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/font_rom.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'translator' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:21]
+INFO: [Synth 8-6157] synthesizing module 'dot_matrix_fifo' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:13]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dot_matrix_fifo' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/TANG/dot_matrix_fifo.v:13]
+INFO: [Synth 8-226] default block is never used [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/state_machine.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'state_machine' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/state_machine.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/top.v:21]
+WARNING: [Synth 8-6014] Unused sequential element blink_idx_reg was removed.  [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/state_machine.v:101]
+WARNING: [Synth 8-7129] Port ascii_data[31] in module state_machine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[30] in module state_machine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[29] in module state_machine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[28] in module state_machine is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2534.262 ; gain = 571.094 ; free physical = 173 ; free virtual = 14896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2546.137 ; gain = 582.969 ; free physical = 173 ; free virtual = 14896
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2546.137 ; gain = 582.969 ; free physical = 173 ; free virtual = 14896
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2546.137 ; gain = 0.000 ; free physical = 173 ; free virtual = 14896
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc]
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[4]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[5]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[7]'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB_C'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB_D'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB_L'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB_R'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB_U'. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2656.875 ; gain = 0.000 ; free physical = 171 ; free virtual = 14894
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2656.910 ; gain = 0.000 ; free physical = 170 ; free virtual = 14893
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2656.910 ; gain = 693.742 ; free physical = 175 ; free virtual = 14900
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 175 ; free virtual = 14900
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 175 ; free virtual = 14900
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'translator'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_matrix_fifo'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'state_machine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                            00001 |                              000
+                   FETCH |                            00010 |                              001
+                WAIT_ROM |                            00100 |                              011
+                   STORE |                            01000 |                              100
+                    DONE |                            10000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'translator'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                              001 |                               00
+                   SHIFT |                              010 |                               01
+                   LATCH |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_matrix_fifo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0000 |                             0001
+              DECODE_OFF |                             0001 |                             0010
+       BRIGHTNESS_CHANGE |                             0010 |                             1010
+           SEND_CTRL_REG |                             0011 |                             0011
+        WAIT_SEND_SIMPLE |                             0100 |                             0100
+             TRANSLATION |                             0101 |                             1001
+       START_TRANSLATION |                             0110 |                             0111
+              START_SEND |                             0111 |                             0101
+              WAIT_TRANS |                             1000 |                             1000
+                STEP_ROW |                             1001 |                             0110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'state_machine'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 172 ; free virtual = 14902
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   6 Input   64 Bit        Muxes := 1     
+	   4 Input   64 Bit        Muxes := 1     
+	  10 Input   64 Bit        Muxes := 1     
+	   4 Input    7 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 5     
+	   2 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 7     
+	   3 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 3     
+	  11 Input    1 Bit        Muxes := 4     
+	  10 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6040] Register main/trans/ascii_code_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-7129] Port ascii_data[31] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[30] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[29] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ascii_data[28] in module top is either unconnected or has no load
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[58] with 1st driver pin 'main/trans/row_packet_reg[58]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[58] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[58] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[57] with 1st driver pin 'main/trans/row_packet_reg[57]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[57] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[57] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[56] with 1st driver pin 'main/trans/row_packet_reg[56]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[56] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[56] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[55] with 1st driver pin 'main/trans/row_packet_reg[55]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[55] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[55] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[54] with 1st driver pin 'main/trans/row_packet_reg[54]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[54] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[54] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[53] with 1st driver pin 'main/trans/row_packet_reg[53]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[53] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[53] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[52] with 1st driver pin 'main/trans/row_packet_reg[52]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[52] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[52] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[51] with 1st driver pin 'main/trans/row_packet_reg[51]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[51] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[51] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[50] with 1st driver pin 'main/trans/row_packet_reg[50]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[50] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[50] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[49] with 1st driver pin 'main/trans/row_packet_reg[49]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[49] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[49] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[48] with 1st driver pin 'main/trans/row_packet_reg[48]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[48] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[48] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[42] with 1st driver pin 'main/trans/row_packet_reg[42]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[42] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[42] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[41] with 1st driver pin 'main/trans/row_packet_reg[41]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[41] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[41] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[40] with 1st driver pin 'main/trans/row_packet_reg[40]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[40] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[40] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[39] with 1st driver pin 'main/trans/row_packet_reg[39]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[39] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[39] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[38] with 1st driver pin 'main/trans/row_packet_reg[38]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[38] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[38] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[37] with 1st driver pin 'main/trans/row_packet_reg[37]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[37] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[37] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[36] with 1st driver pin 'main/trans/row_packet_reg[36]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[36] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[36] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[35] with 1st driver pin 'main/trans/row_packet_reg[35]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[35] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[35] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[34] with 1st driver pin 'main/trans/row_packet_reg[34]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[34] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[34] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[33] with 1st driver pin 'main/trans/row_packet_reg[33]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[33] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[33] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[32] with 1st driver pin 'main/trans/row_packet_reg[32]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[32] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[32] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[26] with 1st driver pin 'main/trans/row_packet_reg[26]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[26] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[26] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[25] with 1st driver pin 'main/trans/row_packet_reg[25]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[25] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[25] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[24] with 1st driver pin 'main/trans/row_packet_reg[24]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[24] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[24] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[23] with 1st driver pin 'main/trans/row_packet_reg[23]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[23] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[23] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[22] with 1st driver pin 'main/trans/row_packet_reg[22]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[22] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[22] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[21] with 1st driver pin 'main/trans/row_packet_reg[21]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[21] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[21] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[20] with 1st driver pin 'main/trans/row_packet_reg[20]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[20] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[20] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[19] with 1st driver pin 'main/trans/row_packet_reg[19]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[19] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[19] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[18] with 1st driver pin 'main/trans/row_packet_reg[18]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[18] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[18] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[17] with 1st driver pin 'main/trans/row_packet_reg[17]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[17] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[17] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[16] with 1st driver pin 'main/trans/row_packet_reg[16]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[16] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[16] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[10] with 1st driver pin 'main/trans/row_packet_reg[10]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[10] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[10] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[9] with 1st driver pin 'main/trans/row_packet_reg[9]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[9] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[9] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[8] with 1st driver pin 'main/trans/row_packet_reg[8]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[8] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[8] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[7] with 1st driver pin 'main/trans/row_packet_reg[7]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[7] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[7] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[6] with 1st driver pin 'main/trans/row_packet_reg[6]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[6] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[6] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[5] with 1st driver pin 'main/trans/row_packet_reg[5]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[5] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[5] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[4] with 1st driver pin 'main/trans/row_packet_reg[4]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[4] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[4] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[3] with 1st driver pin 'main/trans/row_packet_reg[3]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[3] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[3] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[2] with 1st driver pin 'main/trans/row_packet_reg[2]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[2] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[2] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[1] with 1st driver pin 'main/trans/row_packet_reg[1]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[1] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[0] with 1st driver pin 'main/trans/row_packet_reg[0]/Q' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin row_packet[0] with 2nd driver pin 'GND' [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net row_packet[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.srcs/sources_1/new/translator.v:78]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 167 ; free virtual = 14884
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+--------------------------------+---------------+----------------+
+|Module Name | RTL Object                     | Depth x Width | Implemented As | 
++------------+--------------------------------+---------------+----------------+
+|font_rom    | full_char                      | 128x51        | LUT            | 
+|top         | main/trans/ascii_rom/full_char | 128x51        | LUT            | 
++------------+--------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 167 ; free virtual = 14884
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2664.879 ; gain = 701.711 ; free physical = 166 ; free virtual = 14883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14825
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 237 ; free virtual = 14826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14826
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | main/fifo/shreg_reg[63] | 4      | 5     | YES          | NO                 | YES               | 5      | 0       | 
+|top         | main/fifo/shreg_reg[49] | 6      | 3     | YES          | NO                 | YES               | 3      | 0       | 
++------------+-------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |LUT1   |     3|
+|3     |LUT2   |    35|
+|4     |LUT3   |     8|
+|5     |LUT4   |    17|
+|6     |LUT5   |    11|
+|7     |LUT6   |    17|
+|8     |SRL16E |     8|
+|9     |FDRE   |    73|
+|10    |FDSE   |    20|
+|11    |IBUF   |     9|
+|12    |OBUF   |     3|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.691 ; gain = 800.523 ; free physical = 236 ; free virtual = 14826
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 132 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2763.691 ; gain = 689.750 ; free physical = 236 ; free virtual = 14825
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2763.699 ; gain = 800.523 ; free physical = 236 ; free virtual = 14825
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2778.566 ; gain = 0.000 ; free physical = 216 ; free virtual = 14806
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2933.156 ; gain = 0.000 ; free physical = 272 ; free virtual = 14861
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 31545bb
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 31 Warnings, 153 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 2933.191 ; gain = 1153.664 ; free physical = 271 ; free virtual = 14860
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1775.405; main = 1775.405; forked = 274.527
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4303.438; main = 2933.160; forked = 1646.559
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2957.168 ; gain = 0.000 ; free physical = 271 ; free virtual = 14860
+INFO: [Common 17-1381] The checkpoint '/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/synth_1/top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 18 13:44:55 2026...

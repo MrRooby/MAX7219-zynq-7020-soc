@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-//Date        : Tue Jun 16 11:52:50 2026
+//Date        : Thu Jun 18 13:13:22 2026
 //Host        : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 //Command     : generate_target arm_core_wrapper.bd
 //Design      : arm_core_wrapper
