@@ -263,18 +263,18 @@ always @(posedge S_AXI_ACLK) begin
                 32'h4000_0004: begin
 					if(W0_STRB[0]) CTRL_REG <= W0_DATA[7:0];
 				end
-//                32'h4000_0008: begin
-//					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] & ~W0_DATA[7:0];
-//					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] & ~W0_DATA[15:8];
-//					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] & ~W0_DATA[23:16];
-//					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] & ~W0_DATA[31:24];
-//				end
-//                32'h4000_000C: begin
-//					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] ^ W0_DATA[7:0];
-//					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] ^ W0_DATA[15:8];
-//					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] ^ W0_DATA[23:16];
-//					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] ^ W0_DATA[31:24];
-//				end
+                32'h4000_0008: begin
+					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] & ~W0_DATA[7:0];
+					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] & ~W0_DATA[15:8];
+					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] & ~W0_DATA[23:16];
+					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] & ~W0_DATA[31:24];
+				end
+                32'h4000_000C: begin
+					if(W0_STRB[0]) LED_REG[7:0] <= LED_REG[7:0] ^ W0_DATA[7:0];
+					if(W0_STRB[1]) LED_REG[15:8] <= LED_REG[15:8] ^ W0_DATA[15:8];
+					if(W0_STRB[2]) LED_REG[23:16] <= LED_REG[23:16] ^ W0_DATA[23:16];
+					if(W0_STRB[3]) LED_REG[31:24] <= LED_REG[31:24] ^ W0_DATA[31:24];
+				end
 				AT_Q: begin
 					if(!RUN & (&W0_STRB)) TMR_Q <= W0_DATA[31:0];
 				end

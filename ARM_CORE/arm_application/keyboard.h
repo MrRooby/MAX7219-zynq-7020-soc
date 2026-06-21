@@ -18,7 +18,7 @@ typedef struct {
 } Btn;
 
 static Btn kb_btns[NUM_BTNS];
-static const uint8_t kb_btn_bit[NUM_BTNS] = { BTN_MODE, BTN_UP, BTN_DOWN, BTN_SET };
+static const uint8_t kb_btn_bit[NUM_BTNS] = { BTN_L, BTN_R, BTN_D, BTN_U, BTN_C };
 
 static inline void kb_init(void)
 {

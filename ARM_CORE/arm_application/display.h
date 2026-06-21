@@ -10,19 +10,28 @@
 #include "xil_io.h"
 #include "sleep.h"
 
-static inline void display_ctrl_write(uint32_t v) { Xil_Out32(CTRL_REG, v); }
+/* Every CTRL_REG write flips bit 5 ("kick"), which is how the PL detects a
+ * new command. This makes a command repeatable even with an unchanged op/arg.
+ * Layout: [7:6] op | [5] kick | [1:0] arg */
+static unsigned display_kick = 0;
+
+static inline void display_cmd(uint32_t op, uint32_t arg)
+{
+    display_kick ^= 1u;
+    Xil_Out32(CTRL_REG, op | (display_kick << 5) | (arg & 3u));
+}
 
 /* Set intensity, level 0..3. */
 static inline void display_set_brightness(uint8_t level)
 {
     if (level > 3) level = 3;
-    display_ctrl_write(CTRL_BRIGHTNESS | level);
+    display_cmd(CTRL_BRIGHTNESS, level);
 }
 
 /* Initialise the display (no-decode mode + default brightness). */
 static inline void display_init(void)
 {
-    display_ctrl_write(CTRL_ENABLE | 0x01);   /* init / no-decode mode */
+    display_cmd(CTRL_ENABLE, 1);              /* init / no-decode mode */
     usleep(2000);
     display_set_brightness(DEFAULT_BRIGHTNESS);
 }
@@ -36,8 +45,8 @@ static inline void display_send(const char buf[4])
     if (packed == last)
         return;                         /* nothing changed -> no bus traffic */
     last = packed;
-    Xil_Out32(ASCII_REG, packed);
-    display_ctrl_write(CTRL_ASCII);     /* latch + show */
+    Xil_Out32(ASCII_REG, packed);       /* chars first ... */
+    display_cmd(CTRL_ASCII, 0);         /* ... then kick the render */
 }
 
 /* Drive the alarm indicator LED. */

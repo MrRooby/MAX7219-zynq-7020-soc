@@ -4,8 +4,9 @@
  * Register map (AXI GP0, custom slave):
  *   ASCII_REG  0x40000000  RW  32b  4 glyphs * 7 bit, packed by PACK4()
  *   CTRL_REG   0x40000004  RW   8b  command, decoded by bits [7:6]
- *   BTN_REG    0x40000008  R    8b  one bit per push-button   (assumed)
- *   LED_REG    0x4000000C  RW   8b  bit0 = alarm indicator LED (assumed)
+ *   SW_REG     0x40000020  R        slide switches
+ *   BTN_REG    0x40000024  R    5b  5-way push-button cluster (L/R/D/U/C)
+ *   LED_REG    0x4000000C  RW   8b  bit0 = alarm indicator LED (adjust)
  *   TIMER      0x40000040       RTC timer with IRQ line -> 1 Hz
  */
 #ifndef CONFIG_H
@@ -14,26 +15,39 @@
 /* ---- hardware addresses ------------------------------------------ */
 #define ASCII_REG   0x40000000u
 #define CTRL_REG    0x40000004u
-#define BTN_REG     0x40000008u   /* read-only button register   (adjust) */
+#define SW_REG      0x40000020u
+#define BTN_REG     0x40000024u
 #define LED_REG     0x4000000Cu   /* alarm indicator LED         (adjust) */
 #define TIMER_BASE  0x40000040u
 
+/* Physical buttons (bit per button in BTN_REG, active-high, no HW debounce) */
+#define BTN_L  (1u << 0)
+#define BTN_R  (1u << 1)
+#define BTN_D  (1u << 2)
+#define BTN_U  (1u << 3)
+#define BTN_C  (1u << 4)
+
 #define TIMER_ISR_VECT 61
 
-/* ---- CTRL_REG command opcodes (bits [7:6]) ----------------------- */
+/* ---- CTRL_REG layout:  [7:6] op | [5] kick | [1:0] arg ------------
+ * The PL re-triggers whenever bit 5 ("kick") toggles, so display_cmd()
+ * flips it on every write -> the same command can be re-issued at will. */
 #define CTRL_ENABLE     (0u << 6)
 #define CTRL_BRIGHTNESS (1u << 6)
 #define CTRL_ASCII      (2u << 6)
 #define CTRL_BLINK      (3u << 6)
 
 /* ---- buttons ----------------------------------------------------- */
-#define BTN_MODE   0x01u
-#define BTN_UP     0x02u
-#define BTN_DOWN   0x04u
-#define BTN_SET    0x08u
-#define BTN_MASK   (BTN_MODE | BTN_UP | BTN_DOWN | BTN_SET)
-#define BTN_ACTIVE_HIGH 1         /* set to 0 if "pressed" reads as 0 */
-#define NUM_BTNS   4
+#define BTN_MASK   (BTN_L | BTN_R | BTN_D | BTN_U | BTN_C)  /* 0x1F */
+#define BTN_ACTIVE_HIGH 1         /* pressed reads as 1; set to 0 if inverted */
+#define NUM_BTNS   5
+
+/* Logical key roles -> physical buttons (remap here to taste). */
+#define KEY_MODE   BTN_C          /* cycle TIME / SET_TIME / SET_ALARM       */
+#define KEY_UP     BTN_U          /* increment field / brightness up         */
+#define KEY_DOWN   BTN_D          /* decrement field / brightness down       */
+#define KEY_LEFT   BTN_L          /* select HH (set) / alarm on-off (time)   */
+#define KEY_RIGHT  BTN_R          /* select MM (set)                         */
 
 /* ---- display ----------------------------------------------------- */
 /* Pack 4 ASCII chars (7 bits each) into the 28-bit display word.

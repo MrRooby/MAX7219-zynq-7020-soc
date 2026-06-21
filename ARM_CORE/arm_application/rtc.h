@@ -41,7 +41,7 @@ static inline void rtc_init(XScuGic *g)
     XScuGic_Connect(rtc_gic, TIMER_ISR_VECT, rtc_isr, 0);
     XScuGic_Enable(rtc_gic, TIMER_ISR_VECT);
 
-    rtc_tm->tmQ   = 49999999;   /* 50 MHz / 50e6 = 1 Hz */
+    rtc_tm->tmQ   = 99999999;   /* 100 MHz / 100e6 = 1 Hz */
     rtc_tm->tmRUN = 1;
 }
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Jun 18 16:28:26 2026
+| Date         : Sun Jun 21 22:52:51 2026
 | Host         : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command      : report_control_sets -verbose -file ZED_IRQ_control_sets_placed.rpt
 | Design       : ZED_IRQ
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    29 |
-|    Minimum number of control sets                        |    29 |
+| Total control sets                                       |    34 |
+|    Minimum number of control sets                        |    34 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    88 |
+| Unused register locations in slices containing registers |   110 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    29 |
+| Total control sets |    34 |
 | >= 0 to < 4        |     3 |
-| >= 4 to < 6        |     8 |
-| >= 6 to < 8        |     3 |
-| >= 8 to < 10       |     6 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    10 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     9 |
 +--------------------+-------+
@@ -58,50 +58,55 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              28 |           10 |
+| No           | No                    | No                     |              54 |           19 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              66 |           18 |
-| Yes          | No                    | No                     |             224 |           50 |
+| Yes          | No                    | No                     |             310 |           71 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              74 |           25 |
+| Yes          | Yes                   | No                     |              92 |           35 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |           Enable Signal          |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
-|  slow_clk_BUFG | main/fifo/d_out_i_1_n_0          | main/fifo/d_out0                 |                1 |              1 |         1.00 |
-|  slow_clk_BUFG | main/fifo/d_out0                 | main/fifo/load0                  |                1 |              1 |         1.00 |
-|  slow_clk_BUFG | main/fifo/clk_out_i_1_n_0        |                                  |                1 |              1 |         1.00 |
-|  slow_clk_BUFG | main/row_idx[0]                  |                                  |                2 |              4 |         2.00 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               | main/fifo/shreg[51]_i_1_n_0      |                1 |              4 |         4.00 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               | main/fifo/shreg[56]_i_1_n_0      |                1 |              4 |         4.00 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               | main/fifo/shreg[59]_i_1_n_0      |                1 |              4 |         4.00 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               | main/fifo/shreg[57]_i_1_n_0      |                1 |              4 |         4.00 |
-|  slow_clk_BUFG | AXI_IO_1/E[0]                    |                                  |                2 |              4 |         2.00 |
-|  slow_clk_BUFG | main/trans/state_n_0             |                                  |                1 |              5 |         5.00 |
-|  slow_clk_BUFG | main/data[59]_i_2_n_0            | main/data0                       |                2 |              5 |         2.50 |
-|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0 |                                  |                5 |              6 |         1.20 |
-|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0 | AXI_IO_1/S_AXI_RDATA[29]_i_1_n_0 |                3 |              7 |         2.33 |
-|  slow_clk_BUFG | main/fifo/clk_out_i_2_n_0        | main/fifo/d_out0                 |                2 |              7 |         3.50 |
-|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[31]           |                                  |                2 |              8 |         4.00 |
-|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[23]           |                                  |                2 |              8 |         4.00 |
-|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[7]            |                                  |                2 |              8 |         4.00 |
-|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[15]           |                                  |                2 |              8 |         4.00 |
-|  FCLK_BUFG[0]  |                                  |                                  |                4 |              8 |         2.00 |
-|  FCLK_BUFG[0]  | AXI_IO_1/CTRL_REG[7]_i_1_n_0     |                                  |                1 |              8 |         8.00 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               | main/fifo/shreg[58]_i_1_n_0      |                3 |             17 |         5.67 |
-|  slow_clk_BUFG |                                  |                                  |                6 |             20 |         3.33 |
-|  slow_clk_BUFG | main/fifo/shreg[0]               |                                  |                3 |             20 |         6.67 |
-|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0 | AXI_IO_1/S_AXI_RDATA[30]_i_1_n_0 |                9 |             20 |         2.22 |
-|  FCLK_BUFG[0]  | AXI_IO_1/TMR_Q[31]_i_1_n_0       |                                  |                7 |             32 |         4.57 |
-|  FCLK_BUFG[0]  |                                  | AXI_IO_1/TMR_CNT[0]_i_1_n_0      |                8 |             32 |         4.00 |
-|  FCLK_BUFG[0]  |                                  | AXI_IO_1/clear                   |               10 |             34 |         3.40 |
-|  FCLK_BUFG[0]  | AXI_IO_1/R0_ADDR[0]              |                                  |                6 |             42 |         7.00 |
-|  FCLK_BUFG[0]  | AXI_IO_1/W0_ADDR[0]              |                                  |               14 |             78 |         5.57 |
-+----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
++----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |              Enable Signal             |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  slow_clk_BUFG | main/fifo/clk_out_i_1_n_0              | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/fifo/load_i_1_n_0                 | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/fifo/d_out_i_1_n_0                | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/data[57]_i_1_n_0                  | main/data[59]_i_1_n_0            |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/row_idx[3]_i_1_n_0                |                                  |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/data[57]_i_1_n_0                  | main/data[56]_i_1_n_0            |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/cmd_valid                         |                                  |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/E[0]                         | main/fifo/ctrl_s3_reg[5]         |                2 |              4 |         2.00 |
+|  slow_clk_BUFG | main/trans/FSM_onehot_state[4]_i_1_n_0 |                                  |                1 |              5 |         5.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0       |                                  |                3 |              5 |         1.67 |
+|  slow_clk_BUFG | main/trans/ascii_code_0[0]             | main/trans/ascii_code0           |                4 |              7 |         1.75 |
+|  slow_clk_BUFG | main/fifo/bit_cnt[6]_i_1_n_0           | main/abort_reg_n_0               |                2 |              7 |         3.50 |
+|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0       | AXI_IO_1/S_AXI_RDATA[29]_i_1_n_0 |                2 |              7 |         3.50 |
+|  slow_clk_BUFG | main/fifo/shreg[59]_i_1_n_0            | main/fifo/shreg_r_i_1_n_0        |                1 |              7 |         7.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/ASCII_DATA[7]_i_1_n_0         |                                  |                1 |              8 |         8.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/ASCII_DATA[23]_i_1_n_0        |                                  |                2 |              8 |         4.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/ASCII_DATA[15]_i_1_n_0        |                                  |                2 |              8 |         4.00 |
+|  FCLK_BUFG[0]  |                                        |                                  |                4 |              8 |         2.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/ASCII_DATA[31]_i_1_n_0        |                                  |                3 |              8 |         2.67 |
+|  FCLK_BUFG[0]  | AXI_IO_1/CTRL_REG[7]_i_1_n_0           |                                  |                1 |              8 |         8.00 |
+|  slow_clk_BUFG | main/trans/row_packet[63]              |                                  |                4 |              9 |         2.25 |
+|  slow_clk_BUFG | main/trans/row_packet[47]              |                                  |                2 |              9 |         4.50 |
+|  slow_clk_BUFG | main/trans/row_packet[31]              |                                  |                2 |              9 |         4.50 |
+|  slow_clk_BUFG | main/trans/FSM_onehot_state[4]_i_2_n_0 |                                  |                3 |              9 |         3.00 |
+|  slow_clk_BUFG | main/data[57]_i_1_n_0                  |                                  |                2 |             12 |         6.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0       | AXI_IO_1/S_AXI_RDATA[30]_i_1_n_0 |               12 |             21 |         1.75 |
+|  slow_clk_BUFG | main/data[57]_i_1_n_0                  | main/data[58]_i_1_n_0            |                7 |             28 |         4.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/TMR_Q[31]_i_1_n_0             |                                  |                6 |             32 |         5.33 |
+|  FCLK_BUFG[0]  |                                        | AXI_IO_1/TMR_CNT[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  FCLK_BUFG[0]  |                                        | AXI_IO_1/clear                   |               10 |             34 |         3.40 |
+|  FCLK_BUFG[0]  | AXI_IO_1/R0_ADDR[0]                    |                                  |                8 |             42 |         5.25 |
+|  slow_clk_BUFG |                                        |                                  |               15 |             46 |         3.07 |
+|  slow_clk_BUFG | main/fifo/shreg[59]_i_1_n_0            |                                  |               16 |             56 |         3.50 |
+|  FCLK_BUFG[0]  | AXI_IO_1/W0_ADDR[0]                    |                                  |               13 |             78 |         6.00 |
++----------------+----------------------------------------+----------------------------------+------------------+----------------+--------------+
 
 

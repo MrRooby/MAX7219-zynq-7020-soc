@@ -31,9 +31,11 @@ reg [3:0] row_idx = 4'b0;
 reg start_fifo;
 reg start_trans   = 0;
 reg [63:0] data = 64'b0;
+wire [63:0] packet;
 wire busy;
 wire packet_valid;
 wire ready;
+reg abort = 1'b0;
 
 translator #(
   .N(4)
@@ -56,6 +58,7 @@ dot_matrix_fifo #(
   .clk_in(clk),                 // system clock (e.g. 10 MHz from PLL)
   .start(start_fifo),           // 1-cycle pulse to begin a frame
   .data(data),                  // frame: word for each device, MSB-first 16bit * N
+  .abort(abort),
   .busy(busy)
 );
 
@@ -65,36 +68,55 @@ localparam BLINK_IDX  = 2'b11;
 localparam BRIGHTNESS = 2'b01;
 localparam ASCII      = 2'b10;
 
-reg [7:0] prev_ctrl_val = 8'b11;
+// ctrl_reg: [7:6]=opcode, [5]=kick (ARM toggles every write), [1:0]=arg
+// Synchronize ctrl_reg into this clock domain (100 MHz AXI -> slow clk here)
+reg [7:0] ctrl_s1 = 8'b0;
+reg [7:0] ctrl_s2 = 8'b0;
+reg [7:0] ctrl_s3 = 8'b0;
+always @(posedge clk) begin
+  ctrl_s1 <= ctrl_reg;
+  ctrl_s2 <= ctrl_s1;
+  ctrl_s3 <= ctrl_s2;
+end
+
+wire       cmd_valid = ctrl_s2[5] ^ ctrl_s3[5];  // 1 pulse per ARM write
+wire [1:0] cmd_op    = ctrl_s2[7:6];
+wire [1:0] cmd_arg   = ctrl_s2[1:0];
+
+reg       cmd_pend = 1'b0;   // a captured command is waiting for the engine
+reg [1:0] pend_op  = 2'b0;
+reg [1:0] pend_arg = 2'b0;
 
 always @(posedge clk) begin
-  prev_ctrl_val <= ctrl_reg;
+  abort <= 1'b0;                       // default -> guarantees a 1-cycle pulse
 
-  if (!busy && prev_ctrl_val != ctrl_reg) begin
-    case (ctrl_reg[7:6])
-      ENABLE : begin
-        if (ctrl_reg[0]) begin
-          state <= DECODE_OFF;
-        end else begin
-        end
-      end
+  // 1) capture every write; preempt the current frame if one is in flight
+  if (cmd_valid) begin
+    cmd_pend <= 1'b1;
+    pend_op  <= cmd_op;
+    pend_arg <= cmd_arg;
+    if (busy) begin
+      abort       <= 1'b1;
+      start_fifo  <= 1'b0;
+      start_trans <= 1'b0;
+      state       <= IDLE;
+    end
+  end
 
-      BLINK_IDX: begin
-        blink_idx <= ctrl_reg[1:0];
-      end
-
-      BRIGHTNESS: begin
-        state <= BRIGHTNESS_CHANGE;
-      end
-
-      ASCII : begin
-        state <= TRANSLATION;
-      end
-
-      default : ;
+  // 2) dispatch once the engine is free (in IDLE, so case(state) won't fight us)
+  else if (cmd_pend && !busy && state == IDLE) begin
+    cmd_pend <= 1'b0;
+    case (pend_op)
+      ENABLE     : if (pend_arg[0]) state <= DECODE_OFF;
+      BLINK_IDX  : blink_idx <= pend_arg;
+      BRIGHTNESS : begin brightness <= pend_arg; state <= BRIGHTNESS_CHANGE; end
+      ASCII      : state <= TRANSLATION;
+      default    : ;
     endcase
   end
 
+  // 3) frame FSM
+  else begin
     case (state)
       IDLE : begin
         start_fifo <= 0;
@@ -108,7 +130,7 @@ always @(posedge clk) begin
       end
 
       BRIGHTNESS_CHANGE : begin
-        data <= {4{4'b0000, 4'b1010, 4'b0000, ctrl_reg[1:0], 2'b00}};
+        data <= {4{4'b0000, 4'b1010, 4'b0000, brightness, 2'b00}};
         state <= SEND_CTRL_REG;
         start_fifo <= 1;
       end
@@ -169,6 +191,7 @@ always @(posedge clk) begin
       
       default: state <= IDLE;
     endcase
+  end
 end
 
 endmodule

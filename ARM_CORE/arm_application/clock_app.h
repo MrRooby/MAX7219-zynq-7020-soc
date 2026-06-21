@@ -2,10 +2,11 @@
  * clock_app.h - alarm-clock UI state machine. Header-only: include from
  *               exactly one translation unit.
  *
- * Modes (cycled by MODE): TIME -> SET_TIME -> SET_ALARM -> TIME
- *   TIME      : show current time. UP/DOWN = brightness, SET = alarm on/off.
- *   SET_TIME  : edit current time. SET = HH<->MM, UP/DOWN = adjust field.
- *   SET_ALARM : edit alarm time.   SET = HH<->MM, UP/DOWN = adjust field.
+ * Controls (5-way pad: C=mode, L/R, U/D):
+ * Modes cycled by C: TIME -> SET_TIME -> SET_ALARM -> TIME
+ *   TIME      : show current time. U/D = brightness, L = alarm on/off.
+ *   SET_TIME  : edit current time. L/R = pick HH/MM, U/D = adjust field.
+ *   SET_ALARM : edit alarm time.   L/R = pick HH/MM, U/D = adjust field.
  * The field being edited flashes; a ringing alarm flashes the whole
  * display plus the LED and is silenced by any key.
  */
@@ -45,21 +46,24 @@ static inline uint8_t app_wrap(int v, int mod)
     return (uint8_t)v;
 }
 
-static inline void app_adjust_field(int dir)        /* dir = +1 / -1 */
+static inline void app_adjust_field(int dir)        /* dir = +1 / -1, set modes */
 {
     if (app_mode == MODE_SET_TIME) {
         if (app_field == 0) app_work_hh = app_wrap(app_work_hh + dir, 24);
         else                app_work_mm = app_wrap(app_work_mm + dir, 60);
-    } else if (app_mode == MODE_SET_ALARM) {
+    } else { /* MODE_SET_ALARM */
         if (app_field == 0) app_alarm_hh = app_wrap(app_alarm_hh + dir, 24);
         else                app_alarm_mm = app_wrap(app_alarm_mm + dir, 60);
-    } else { /* MODE_TIME: UP/DOWN control brightness */
-        int b = (int)app_brightness + dir;
-        if (b < 0) b = 0;
-        if (b > 3) b = 3;
-        app_brightness = (uint8_t)b;
-        display_set_brightness(app_brightness);
     }
+}
+
+static inline void app_adjust_brightness(int dir)
+{
+    int b = (int)app_brightness + dir;
+    if (b < 0) b = 0;
+    if (b > 3) b = 3;
+    app_brightness = (uint8_t)b;
+    display_set_brightness(app_brightness);
 }
 
 static inline void app_on_mode(void)
@@ -81,16 +85,8 @@ static inline void app_on_mode(void)
     }
 }
 
-static inline void app_on_set(void)
-{
-    if (app_mode == MODE_TIME)
-        app_alarm_enabled = !app_alarm_enabled;   /* toggle alarm on/off */
-    else
-        app_field ^= 1;                           /* HH <-> MM */
-}
-
 /* ---- public API -------------------------------------------------- */
-/* Apply a mask of BTN_* keyboard events. */
+/* Apply a mask of KEY_* keyboard events. */
 static inline void app_handle_buttons(uint8_t ev)
 {
     if (ev == 0)
@@ -103,10 +99,18 @@ static inline void app_handle_buttons(uint8_t ev)
         return;
     }
 
-    if (ev & BTN_MODE) app_on_mode();
-    if (ev & BTN_SET)  app_on_set();
-    if (ev & BTN_UP)   app_adjust_field(+1);
-    if (ev & BTN_DOWN) app_adjust_field(-1);
+    if (ev & KEY_MODE) app_on_mode();
+
+    if (app_mode == MODE_TIME) {
+        if (ev & KEY_UP)   app_adjust_brightness(+1);
+        if (ev & KEY_DOWN) app_adjust_brightness(-1);
+        if (ev & KEY_LEFT) app_alarm_enabled = !app_alarm_enabled;
+    } else { /* SET_TIME / SET_ALARM */
+        if (ev & KEY_LEFT)  app_field = 0;          /* select HH */
+        if (ev & KEY_RIGHT) app_field = 1;          /* select MM */
+        if (ev & KEY_UP)    app_adjust_field(+1);
+        if (ev & KEY_DOWN)  app_adjust_field(-1);
+    }
 }
 
 /* Call once per second (alarm matching). */
