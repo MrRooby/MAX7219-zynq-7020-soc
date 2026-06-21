@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06/16/2026 02:29:10 PM
-// Design Name: 
-// Module Name: state_machine
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+
 module state_machine(
   input clk,
 
@@ -48,7 +30,6 @@ reg [1:0] blink_idx;
 reg [3:0] row_idx = 4'b0;
 reg start_fifo;
 reg start_trans   = 0;
-wire [63:0] packet;   // driven by translator.row_packet -- do NOT initialize (creates a 2nd driver)
 reg [63:0] data = 64'b0;
 wire busy;
 wire packet_valid;

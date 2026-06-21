@@ -20,6 +20,7 @@ module dot_matrix_fifo #(
     input               clk_in,           // system clock (e.g. 10 MHz from PLL)
     input               start,            // 1-cycle pulse to begin a frame
     input  [(16*N)-1:0] data,             // frame: word for each device, MSB-first
+    input               abort,            // 1-cycle pulse: drop current frame, return to IDLE
 
     output reg          busy
 );
@@ -35,6 +36,20 @@ module dot_matrix_fifo #(
     reg                        phase   = 1'b0; // 0 = SCLK low (set data), 1 = SCLK high (sample)
 
     always @(posedge clk_in) begin
+        // Abort: stop shifting immediately and release CS high. We do NOT latch
+        // a partial frame as a valid one. Note: the MAX7219 shift register is
+        // free-running, so any residual bits are harmless as long as the next
+        // transfer clocks a full 16*N bits before LOAD -- which the state
+        // machine always does.
+        if (abort) begin
+            load    <= 1'b1;
+            clk_out <= 1'b0;
+            d_out   <= 1'b0;
+            busy    <= 1'b0;
+            phase   <= 1'b0;
+            bit_cnt <= TOTAL_BITS[$clog2(TOTAL_BITS):0];
+            state   <= IDLE;
+        end else
         case (state)
             IDLE: begin
                 load    <= 1'b1;          // CS idle high

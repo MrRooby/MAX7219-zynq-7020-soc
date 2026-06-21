@@ -1,111 +1,61 @@
+/*
+ * zybo_int.c - LED dot-matrix alarm clock, top level.
+ *
+ * Sets up the GIC, brings up the sub-systems and runs the POLL loop.
+ * The actual work lives in:
+ *   rtc.[ch]        - 1 Hz real-time clock (timer interrupt)
+ *   keyboard.[ch]   - debounce + auto-repeat for the 4 buttons
+ *   display.[ch]    - MAX7219 dot-matrix front-end
+ *   clock_app.[ch]  - UI state machine (modes, alarm, rendering)
+ *   config.h        - register map and tunables
+ */
 #include "xscugic.h"
 #include "xil_exception.h"
-#include "zybo_io.h"
-#include <stdint.h>
-#include <string.h>
-#include <xil_printf.h>
 #include "sleep.h"
+#include <xil_printf.h>
 
-#define TIMER_ISR_VECT 61
-#define TIMER_BASE 0x40000040
+#include "config.h"
+#include "rtc.h"
+#include "keyboard.h"
+#include "display.h"
+#include "clock_app.h"
 
-#define PACK4(c0,c1,c2,c3) \
-    (((c0)&0x7F) | (((c1)&0x7F)<<7) | (((c2)&0x7F)<<14) | (((c3)&0x7F)<<21))
+XScuGic InterruptController;
+static XScuGic_Config *GicConfig;
 
-static XScuGic_Config *GicConfig; /* The configuration parameters of the controller */
-XScuGic InterruptController; /* Instance of the Interrupt Controller */
-
-PTimer tm	= (PTimer) 0x40000040;
-PLED led	= (PLED) 0x40000000;
-
-void tmInit()
+static void gic_init(void)
 {
-    tm->tmQ = 49999999;
-    tm->tmRUN = 1;
-}
+    Xil_ExceptionInit();
 
-void tmStop()
-{
-    tm->tmRUN = 0;
-}
+    GicConfig = XScuGic_LookupConfig(0);
+    XScuGic_CfgInitialize(&InterruptController, GicConfig,
+                          GicConfig->CpuBaseAddress);
 
-void tmOnTick(void *cb)
-{
-    tm->tmCTRL = (1 << TM_INT) | (1 << TM_RUN);
-	//tmC = tm->tmCTRL;
-	++led->io;
-}
-
-void initDevices()
-{
-	Xil_ExceptionInit();
-	
-	GicConfig = XScuGic_LookupConfig(0);
-	
-	XScuGic_CfgInitialize(
-		&InterruptController,
-		GicConfig,
-		GicConfig->CpuBaseAddress);
-	
-	XScuGic_Connect(&InterruptController, TIMER_ISR_VECT, tmOnTick, NULL);
-	
-	XScuGic_Enable(&InterruptController, TIMER_ISR_VECT);
     Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
-			(Xil_ExceptionHandler) XScuGic_InterruptHandler,
-			&InterruptController);
-	Xil_ExceptionEnable();
-
-    tmInit();
+            (Xil_ExceptionHandler) XScuGic_InterruptHandler,
+            &InterruptController);
+    Xil_ExceptionEnable();
 }
 
-void tmPooling()
+int main(void)
 {
-    TTimer tt;
-    static unsigned long t_min = 10000000;
-    static unsigned long t_max = 0;
-	tm->tmQ = 50000000;
-	memcpy(&tt, tm, sizeof(TTimer));	
-	for(;;)
-	{
-		if(tm->tmINT)
-		{
-            memcpy(&tt, tm, sizeof(TTimer));	
-            if(t_max < tt.tmCNT)
-                t_max = tt.tmCNT;
-            if(t_min > tt.tmCNT)
-                t_min = tt.tmCNT;            
-			tm->tmCTRL = (1 << TM_INT);			
-			++led->io;
-		}
-	}
-}
+    gic_init();
+    rtc_init(&InterruptController);
+    kb_init();
+    display_init();
+    app_init();
 
+    xil_printf("LED matrix alarm clock started\n");
 
-int main( void )
-{
-	uint32_t counter = 0;
-	        
-    Xil_Out32(0x40000004, 0x01);
-	sleep(1);
-	
-	Xil_Out32(0x40000004, 0x41);
-	sleep(1);
+    for (;;) {
+        app_handle_buttons(kb_scan());
 
-	Xil_Out32(0x40000000, PACK4('1', '2', '3', '4'));
-	sleep(1);
-	Xil_Out32(0x40000004, 0x80);
-	sleep(1);
-	 
-    for(;;)
-    {
-		xil_printf("ping %d\n", counter++);
-        //tmPooling();
-		Xil_Out32(0x40000000, PACK4('A', 'B', 'C', 'D'));
-		Xil_Out32(0x40000004, 0x80);
-		// usleep(20000);
-		msleep(2000);
+        if (rtc_take_sec_event())
+            app_second_tick();
+
+        app_refresh();
+
+        usleep(POLL_MS * 1000);
     }
-	return 0;
+    return 0;
 }
-
-// 
