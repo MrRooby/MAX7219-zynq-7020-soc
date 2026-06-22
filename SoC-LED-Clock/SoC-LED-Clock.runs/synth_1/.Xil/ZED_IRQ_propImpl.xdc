@@ -1,6 +1,6 @@
 set_property SRC_FILE_INFO {cfile:/media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/zed_int_all/zed.xdc rfile:../../../../zed_int_all/zed.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN Y19 IOSTANDARD LVCMOS33 } [get_ports {MAX_DIN}];  # "BTNR"
+set_property -dict { PACKAGE_PIN Y11 IOSTANDARD LVCMOS33 } [get_ports {MAX_DIN}];  # "BTNR"
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN AA11 IOSTANDARD LVCMOS33 } [get_ports {MAX_LOAD}];  # Button Up
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]

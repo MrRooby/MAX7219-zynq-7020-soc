@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Sun Jun 21 22:52:17 2026
+| Date         : Mon Jun 22 12:07:00 2026
 | Host         : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command      : report_utilization -file ZED_IRQ_utilization_synth.rpt -pb ZED_IRQ_utilization_synth.pb
 | Design       : ZED_IRQ
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  384 |     0 |          0 |     53200 |  0.72 |
-|   LUT as Logic             |  380 |     0 |          0 |     53200 |  0.71 |
+| Slice LUTs*                |  419 |     0 |          0 |     53200 |  0.79 |
+|   LUT as Logic             |  415 |     0 |          0 |     53200 |  0.78 |
 |   LUT as Memory            |    4 |     0 |          0 |     17400 |  0.02 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |    4 |     0 |            |           |       |
-| Slice Registers            |  522 |     0 |          0 |    106400 |  0.49 |
-|   Register as Flip Flop    |  522 |     0 |          0 |    106400 |  0.49 |
+| Slice Registers            |  554 |     0 |          0 |    106400 |  0.52 |
+|   Register as Flip Flop    |  554 |     0 |          0 |    106400 |  0.52 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                   |   44 |     0 |          0 |     26600 |  0.17 |
 | F8 Muxes                   |   22 |     0 |          0 |     13300 |  0.17 |
-| Unique Control Sets        |   34 |       |          0 |     13300 |  0.26 |
+| Unique Control Sets        |   37 |       |          0 |     13300 |  0.28 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -63,8 +63,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 34    |          Yes |         Set |            - |
-| 488   |          Yes |       Reset |            - |
+| 37    |          Yes |         Set |            - |
+| 517   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -153,15 +153,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+----------------------+
 | Ref Name | Used |  Functional Category |
 +----------+------+----------------------+
-| FDRE     |  488 |         Flop & Latch |
-| LUT6     |  225 |                  LUT |
+| FDRE     |  517 |         Flop & Latch |
+| LUT6     |  212 |                  LUT |
 | BIBUF    |  130 |                   IO |
-| LUT4     |   97 |                  LUT |
+| LUT4     |  115 |                  LUT |
+| LUT3     |   60 |                  LUT |
+| LUT5     |   50 |                  LUT |
 | MUXF7    |   44 |                MuxFx |
-| LUT5     |   38 |                  LUT |
-| LUT2     |   36 |                  LUT |
-| FDSE     |   34 |         Flop & Latch |
-| LUT3     |   24 |                  LUT |
+| FDSE     |   37 |         Flop & Latch |
+| LUT2     |   30 |                  LUT |
 | MUXF8    |   22 |                MuxFx |
 | CARRY4   |   18 |           CarryLogic |
 | IBUF     |   13 |                   IO |

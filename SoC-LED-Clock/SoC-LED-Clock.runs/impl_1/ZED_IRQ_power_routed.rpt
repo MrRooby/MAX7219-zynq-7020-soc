@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Sun Jun 21 22:53:17 2026
+| Date             : Mon Jun 22 12:07:56 2026
 | Host             : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command          : report_power -file ZED_IRQ_power_routed.rpt -pb ZED_IRQ_power_summary_routed.pb -rpx ZED_IRQ_power_routed.rpx
 | Design           : ZED_IRQ
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+---------------------------------+
-| Total On-Chip Power (W)  | 9.336 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                    |
-| Power Budget Margin (W)  | NA                              |
-| Dynamic (W)              | 8.295                           |
-| Device Static (W)        | 1.041                           |
-| Effective TJA (C/W)      | 11.5                            |
-| Max Ambient (C)          | 0.0                             |
-| Junction Temperature (C) | 125.0                           |
-| Confidence Level         | Low                             |
-| Setting File             | ---                             |
-| Simulation Activity File | ---                             |
-| Design Nets Matched      | NA                              |
-+--------------------------+---------------------------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 12.552 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 11.511                           |
+| Device Static (W)        | 1.041                            |
+| Effective TJA (C/W)      | 11.5                             |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     1.783 |     1181 |       --- |             --- |
-|   LUT as Logic          |     1.594 |      380 |     53200 |            0.71 |
-|   F7/F8 Muxes           |     0.082 |       66 |     53200 |            0.12 |
-|   Register              |     0.067 |      522 |    106400 |            0.49 |
-|   CARRY4                |     0.030 |       18 |     13300 |            0.14 |
+| Slice Logic             |     1.821 |     1260 |       --- |             --- |
+|   LUT as Logic          |     1.622 |      415 |     53200 |            0.78 |
+|   F7/F8 Muxes           |     0.087 |       66 |     53200 |            0.12 |
+|   Register              |     0.075 |      554 |    106400 |            0.52 |
+|   CARRY4                |     0.027 |       18 |     13300 |            0.14 |
 |   BUFG                  |     0.010 |        2 |        32 |            6.25 |
 |   LUT as Shift Register |    <0.001 |        4 |     17400 |            0.02 |
 |   Others                |     0.000 |      144 |       --- |             --- |
-| Signals                 |     2.198 |      856 |       --- |             --- |
-| I/O                     |     4.301 |       24 |       200 |           12.00 |
+| Signals                 |     2.262 |      911 |       --- |             --- |
+| I/O                     |     7.415 |       24 |       200 |           12.00 |
 | PS7                     |     0.000 |        1 |       --- |             --- |
 | Static Power            |     1.041 |          |           |                 |
-| Total                   |     9.323 |          |           |                 |
+| Total                   |    12.539 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     4.345 |       4.046 |      0.299 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.256 |       0.156 |      0.100 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     1.204 |       1.203 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     4.446 |       4.148 |      0.299 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.370 |       0.270 |      0.100 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     2.085 |       2.084 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,13 +148,13 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| ZED_IRQ         |     8.282 |
-|   AXI_IO_1      |     0.712 |
+| ZED_IRQ         |    11.498 |
+|   AXI_IO_1      |     0.835 |
 |   div           |     0.076 |
-|   main          |     2.618 |
-|     fifo        |     0.230 |
-|     trans       |     2.277 |
-|       ascii_rom |     1.208 |
+|   main          |     2.681 |
+|     fifo        |     0.414 |
+|     trans       |     2.128 |
+|       ascii_rom |     1.229 |
 +-----------------+-----------+
 
 
