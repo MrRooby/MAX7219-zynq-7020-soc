@@ -1,0 +1,118 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Jun 22 19:58:25 2026
+| Host         : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
+| Command      : report_control_sets -verbose -file ZED_IRQ_control_sets_placed.rpt
+| Design       : ZED_IRQ
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    40 |
+|    Minimum number of control sets                        |    40 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   109 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    40 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |    10 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    10 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     4 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     9 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              48 |           15 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              66 |           17 |
+| Yes          | No                    | No                     |             358 |           89 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              83 |           26 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |           Enable Signal          |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+|  slow_clk_BUFG | main/fifo/load_i_1_n_0           | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/fifo/d_out_i_1_n_0          | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/fifo/clk_out_i_1_n_0        | main/abort_reg_n_0               |                1 |              1 |         1.00 |
+|  slow_clk_BUFG | main/cmd_valid                   |                                  |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/trans/E[0]                  | main/fifo/SR[0]                  |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/E[0]                   |                                  |                2 |              4 |         2.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[3]_3         |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[3]_2         |                2 |              4 |         2.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[3]_1         |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[3]_0         |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[3]           |                1 |              4 |         4.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/init_idx_reg[1]_0      |                2 |              4 |         2.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/brightness_reg[1]      |                2 |              4 |         2.00 |
+|  slow_clk_BUFG | main/trans/ascii_code_0[0]       | main/trans/ascii_code[6]_i_1_n_0 |                2 |              7 |         3.50 |
+|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0 | AXI_IO_1/S_AXI_RDATA[29]_i_1_n_0 |                4 |              7 |         1.75 |
+|  slow_clk_BUFG | main/fifo/bit_cnt[6]_i_1_n_0     | main/abort_reg_n_0               |                2 |              7 |         3.50 |
+|  slow_clk_BUFG | main/fifo/shreg[59]_i_1_n_0      | main/fifo/shreg_r_i_1_n_0        |                1 |              7 |         7.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/LED_REG[7]_i_1_n_0      |                                  |                4 |              8 |         2.00 |
+|  FCLK_BUFG[0]  |                                  |                                  |                3 |              8 |         2.67 |
+|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[23]           |                                  |                1 |              8 |         8.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[15]           |                                  |                2 |              8 |         4.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[7]            |                                  |                3 |              8 |         2.67 |
+|  FCLK_BUFG[0]  | AXI_IO_1/p_0_in__0[31]           |                                  |                2 |              8 |         4.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/CTRL_REG[7]_i_1_n_0     |                                  |                1 |              8 |         8.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/LED_REG[23]_i_1_n_0     |                                  |                2 |              8 |         4.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/LED_REG[31]_i_1_n_0     |                                  |                3 |              8 |         2.67 |
+|  FCLK_BUFG[0]  | AXI_IO_1/LED_REG[15]_i_1_n_0     |                                  |                2 |              8 |         4.00 |
+|  slow_clk_BUFG | main/trans/row_packet[15]        |                                  |                4 |             12 |         3.00 |
+|  slow_clk_BUFG | main/trans/row_packet[31]        |                                  |                3 |             12 |         4.00 |
+|  slow_clk_BUFG | main/trans/row_packet[47]        |                                  |                3 |             12 |         4.00 |
+|  slow_clk_BUFG | main/trans/row_packet[63]        |                                  |                2 |             12 |         6.00 |
+|  slow_clk_BUFG | main/fifo/state_reg[1]           | main/fifo/state_reg[2]           |                3 |             20 |         6.67 |
+|  FCLK_BUFG[0]  | AXI_IO_1/S_AXI_RDATA[31]_i_1_n_0 |                                  |               13 |             26 |         2.00 |
+|  FCLK_BUFG[0]  | AXI_IO_1/TMR_Q[31]_i_1_n_0       |                                  |                6 |             32 |         5.33 |
+|  FCLK_BUFG[0]  |                                  | AXI_IO_1/TMR_CNT[0]_i_1_n_0      |                8 |             32 |         4.00 |
+|  FCLK_BUFG[0]  |                                  | AXI_IO_1/clear                   |                9 |             34 |         3.78 |
+|  slow_clk_BUFG |                                  |                                  |               12 |             40 |         3.33 |
+|  FCLK_BUFG[0]  | AXI_IO_1/R0_ADDR[0]              |                                  |                7 |             42 |         6.00 |
+|  slow_clk_BUFG | main/fifo/shreg[59]_i_1_n_0      |                                  |               15 |             56 |         3.73 |
+|  FCLK_BUFG[0]  | AXI_IO_1/W0_ADDR[0]              |                                  |               13 |             78 |         6.00 |
++----------------+----------------------------------+----------------------------------+------------------+----------------+--------------+
+
+

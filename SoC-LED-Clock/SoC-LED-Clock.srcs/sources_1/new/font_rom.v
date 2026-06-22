@@ -7,11 +7,27 @@ module font_rom (
     output reg [7:0] row_data
 );
 
-    reg [63:0] full_char;
-
+reg [7:0] addr; 
+reg [63:0] mem [128:0]; 
+reg [63:0] full_char;
+ 
+ always @(posedge clk) begin
+    addr <= ascii_code;
+     case (row_index)
+        3'd0: row_data = full_char[63:56];
+        3'd1: row_data = full_char[55:48];
+        3'd2: row_data = full_char[47:40];
+        3'd3: row_data = full_char[39:32];
+        3'd4: row_data = full_char[31:24];
+        3'd5: row_data = full_char[23:16];
+        3'd6: row_data = full_char[15:8];
+        3'd7: row_data = full_char[7:0];
+        default: row_data = 8'b00000000;
+     endcase
+end
     // Map ASCII codes to 64-bit character bitmaps (8x8 grid)
     always @(*) begin
-        case (ascii_code)
+        case (addr)
             // Space & Punctuation (0x20 - 0x2F)
             7'h20: full_char = 64'h0000000000000000; // Space
             7'h21: full_char = 64'h1818181818001800; // !
@@ -124,20 +140,4 @@ module font_rom (
             default: full_char = 64'h0000000000000000; // Unhandled / Control character
         endcase
     end
-
-    // Extract the requested 8-bit row slice from the 64-bit configuration
-    always @(posedge clk) begin
-        case (row_index)
-            3'd0: row_data <= full_char[63:56];
-            3'd1: row_data <= full_char[55:48];
-            3'd2: row_data <= full_char[47:40];
-            3'd3: row_data <= full_char[39:32];
-            3'd4: row_data <= full_char[31:24];
-            3'd5: row_data <= full_char[23:16];
-            3'd6: row_data <= full_char[15:8];
-            3'd7: row_data <= full_char[7:0];
-            default: row_data <= 8'b00000000;
-        endcase
-    end
-
 endmodule

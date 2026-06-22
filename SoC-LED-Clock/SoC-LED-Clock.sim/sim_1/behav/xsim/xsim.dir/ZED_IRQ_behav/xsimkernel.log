@@ -1,0 +1,4 @@
+Running: xsim.dir/ZED_IRQ_behav/xsimk -simmode gui -wdb ZED_IRQ_behav.wdb -simrunnum 0 -socket 43075
+Design successfully loaded
+Design Loading Memory Usage: 422336 KB (Peak: 422344 KB)
+Design Loading CPU Usage: 1280 ms

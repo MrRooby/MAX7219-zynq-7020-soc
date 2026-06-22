@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "ZED_IRQ_behav" "xil_defaultlib.ZED_IRQ" "xil_defaultlib.glbl" -log "elaborate.log" 

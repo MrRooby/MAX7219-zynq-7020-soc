@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../DEV/FPGA/Xylinx/2025.2/data/rsb/busdef" \
+"../../../../SoC-LED-Clock.srcs/sources_1/new/font_rom.v" \
+"../../../../SoC-LED-Clock.srcs/sources_1/new/translator.v" \
+"../../../../../TESTBENCH/benches/tb_translator.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

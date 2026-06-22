@@ -14,11 +14,12 @@ module translator #(
 );
 
     // State Machine Encodings
-    localparam IDLE     = 3'd0;
-    localparam FETCH    = 3'd1;
-    localparam DONE     = 3'd2;
-    localparam WAIT_ROM = 3'd3;
-    localparam STORE    = 3'd4;
+    localparam IDLE       = 3'd0;
+    localparam FETCH      = 3'd1;
+    localparam DONE       = 3'd2;
+    localparam WAIT_ROM_1 = 3'd3;
+    localparam WAIT_ROM_2 = 3'd4;
+    localparam STORE      = 3'd5;
 
     reg [2:0] state       = IDLE;
     reg [6:0] ascii_code  = 7'b0;
@@ -49,12 +50,12 @@ module translator #(
 
             FETCH: begin
                 ascii_code   <= ascii_data[idx];
-                state        <= WAIT_ROM;
+                state        <= WAIT_ROM_1;
             end
             
-            WAIT_ROM: begin
-                state <= STORE;
-            end
+            WAIT_ROM_1: state <= WAIT_ROM_2;
+            
+            WAIT_ROM_2: state <= STORE;
             
             STORE: begin
                 // MAX7219 digit registers are 1..8, so address = row_idx + 1

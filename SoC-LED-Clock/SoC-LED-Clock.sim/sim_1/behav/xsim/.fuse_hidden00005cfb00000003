@@ -1,0 +1,2 @@
+Time resolution is 1 ps
+Warning on instance ZED_IRQ.CPU : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1782132268" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="bram_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="bram.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="bram_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="bram_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="bram_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="bram.vds"/>
-  <File Type="REPORTS-TCL" Name="bram_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="bram_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="bram.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1782151031" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="ZED_IRQ_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="ZED_IRQ.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="ZED_IRQ_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ZED_IRQ_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="ZED_IRQ_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ZED_IRQ.vds"/>
+  <File Type="REPORTS-TCL" Name="ZED_IRQ_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="ZED_IRQ_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="ZED_IRQ.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../zed_int_all/axi_io_int.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -21,7 +20,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/clock_div.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -29,7 +27,6 @@
     </File>
     <File Path="$PPRDIR/../TANG/dot_matrix_fifo.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -37,7 +34,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/font_rom.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -45,7 +41,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/state_machine.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -53,21 +48,12 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/translator.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../zed_int_all/zed_irq.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../TANG/bram.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -76,7 +62,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="bram"/>
+      <Option Name="TopModule" Val="ZED_IRQ"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
