@@ -22,8 +22,15 @@ localparam START_TRANSLATION = 4'd7;
 localparam WAIT_TRANS        = 4'd8;
 localparam TRANSLATION       = 4'd9;
 localparam BRIGHTNESS_CHANGE = 4'd10;
+localparam INIT_BUSY         = 4'd11;
+localparam INIT_WAIT         = 4'd12;
+localparam WAIT_TRANS_BUSY   = 4'd13;
+localparam WAIT_TRANS_DONE   = 4'd14;
 
 reg [3:0] state = IDLE;
+
+// power-on init sequence index: 0=exit-shutdown, 1=scan-limit, 2=no-decode
+reg [1:0] init_idx = 2'd0;
 
 reg [1:0] brightness = 2'b1;
 reg [1:0] blink_idx;
@@ -107,7 +114,7 @@ always @(posedge clk) begin
   else if (cmd_pend && !busy && state == IDLE) begin
     cmd_pend <= 1'b0;
     case (pend_op)
-      ENABLE     : if (pend_arg[0]) state <= DECODE_OFF;
+      ENABLE     : if (pend_arg[0]) begin init_idx <= 2'd0; state <= DECODE_OFF; end
       BLINK_IDX  : blink_idx <= pend_arg;
       BRIGHTNESS : begin brightness <= pend_arg; state <= BRIGHTNESS_CHANGE; end
       ASCII      : state <= TRANSLATION;
@@ -122,20 +129,46 @@ always @(posedge clk) begin
         start_fifo <= 0;
       end
 
-      // Turning off decoding 
-      DECODE_OFF : begin
-        data  <= {4{16'b0000_1001_0000_0000}};
-        state <= SEND_CTRL_REG;
+      // Power-on init: send three MAX7219 config frames back-to-back.
+      //   idx 0 -> 0x0C01  exit shutdown (normal operation)
+      //   idx 1 -> 0x0B07  scan-limit = all 8 digits
+      //   idx 2 -> 0x0900  decode mode = none
+      DECODE_OFF : begin // 2
+        case (init_idx)
+          2'd0:    data <= {4{16'h0C01}};
+          2'd1:    data <= {4{16'h0B07}};
+          default: data <= {4{16'h0900}};
+        endcase
         start_fifo <= 1;
+        state      <= INIT_BUSY;
       end
 
-      BRIGHTNESS_CHANGE : begin
+      // de-assert start and wait for the current init frame to go busy
+      INIT_BUSY : begin // 11 B
+        start_fifo <= 0;
+        if (busy) state <= INIT_BUSY;
+        else      state <= INIT_WAIT;
+      end
+
+      // frame done? advance to the next init word, else finish the sequence
+      INIT_WAIT : begin // 12 C
+        if (busy) state <= INIT_WAIT;
+        else if (init_idx != 2'd2) begin
+          init_idx <= init_idx + 1'b1;
+          state    <= DECODE_OFF;
+        end else begin
+          init_idx <= 2'd0;
+          state    <= IDLE;
+        end
+      end
+
+      BRIGHTNESS_CHANGE : begin // 10 C
         data <= {4{4'b0000, 4'b1010, 4'b0000, brightness, 2'b00}};
         state <= SEND_CTRL_REG;
         start_fifo <= 1;
       end
 
-      SEND_CTRL_REG : begin
+      SEND_CTRL_REG : begin // 3
         start_fifo <= 0;
         if (busy) state <= SEND_CTRL_REG;
         else begin
@@ -143,35 +176,44 @@ always @(posedge clk) begin
         end
       end
 
-      WAIT_SEND_SIMPLE : begin
+      WAIT_SEND_SIMPLE : begin // 4
         if (busy) state <= WAIT_SEND_SIMPLE;
         else state <= IDLE;
       end
       
       // ASCII data send and translation
-      TRANSLATION : begin
+      TRANSLATION : begin  // 9
         row_idx     <= 0;
         start_trans <= 0;
         state <= START_TRANSLATION;
       end
 
-      START_TRANSLATION : begin
+      // kick off one translation for the current row (single-cycle start pulse)
+      START_TRANSLATION : begin // 7
         start_trans <= 1;
-        if (packet_valid && ready) begin
-          state       <= START_SEND;
-          start_trans <= 0;
-        end else begin 
-          state <= START_TRANSLATION;
-        end
-      end
-      
-      START_SEND : begin
-        start_fifo <= 1'b1;
-        data <= packet;
-        state <= WAIT_TRANS;
+        state       <= WAIT_TRANS_BUSY;
       end
 
-      WAIT_TRANS: begin
+      // drop start and wait for the translator to accept it (ready -> 0),
+      // so we can't latch a stale packet_valid from the previous row
+      WAIT_TRANS_BUSY : begin // 13 D
+        start_trans <= 0;
+        if (!ready) state <= WAIT_TRANS_DONE;
+      end
+
+      // wait for the freshly-translated row packet, then send it
+      WAIT_TRANS_DONE : begin  // 14 E
+        if (packet_valid) state <= START_SEND;
+      end
+      
+      START_SEND : begin  // 5
+        start_fifo <= 1'b1;
+        data <= packet;
+        if (!busy) state <= START_SEND;
+        else state <= WAIT_TRANS; 
+      end
+
+      WAIT_TRANS: begin  // 8
         start_fifo <= 1'b0;
         if (busy) begin
           state <= WAIT_TRANS;
@@ -180,7 +222,7 @@ always @(posedge clk) begin
         end
       end
 
-      STEP_ROW : begin
+      STEP_ROW : begin  //  6
         if (row_idx == 7) begin
           state <= IDLE;
         end else begin

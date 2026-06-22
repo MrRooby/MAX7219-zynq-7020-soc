@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Mon Jun 22 12:07:56 2026
+| Date             : Mon Jun 22 13:53:57 2026
 | Host             : Ruby-Legion5 running 64-bit Fedora Linux 44 (Workstation Edition)
 | Command          : report_power -file ZED_IRQ_power_routed.rpt -pb ZED_IRQ_power_summary_routed.pb -rpx ZED_IRQ_power_routed.rpx
 | Design           : ZED_IRQ
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 12.552 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 12.443 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 11.511                           |
+| Dynamic (W)              | 11.402                           |
 | Device Static (W)        | 1.041                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     1.821 |     1260 |       --- |             --- |
-|   LUT as Logic          |     1.622 |      415 |     53200 |            0.78 |
-|   F7/F8 Muxes           |     0.087 |       66 |     53200 |            0.12 |
-|   Register              |     0.075 |      554 |    106400 |            0.52 |
-|   CARRY4                |     0.027 |       18 |     13300 |            0.14 |
+| Slice Logic             |     2.067 |     1311 |       --- |             --- |
+|   LUT as Logic          |     1.901 |      451 |     53200 |            0.85 |
+|   F7/F8 Muxes           |     0.065 |       50 |     53200 |            0.09 |
+|   Register              |     0.063 |      557 |    106400 |            0.52 |
+|   CARRY4                |     0.028 |       18 |     13300 |            0.14 |
 |   BUFG                  |     0.010 |        2 |        32 |            6.25 |
 |   LUT as Shift Register |    <0.001 |        4 |     17400 |            0.02 |
 |   Others                |     0.000 |      144 |       --- |             --- |
-| Signals                 |     2.262 |      911 |       --- |             --- |
-| I/O                     |     7.415 |       24 |       200 |           12.00 |
+| Signals                 |     2.339 |      991 |       --- |             --- |
+| I/O                     |     6.983 |       24 |       200 |           12.00 |
 | PS7                     |     0.000 |        1 |       --- |             --- |
 | Static Power            |     1.041 |          |           |                 |
-| Total                   |    12.539 |          |           |                 |
+| Total                   |    12.430 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     4.446 |       4.148 |      0.299 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.370 |       0.270 |      0.100 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     2.085 |       2.084 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     4.769 |       4.471 |      0.299 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.354 |       0.254 |      0.100 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     1.963 |       1.962 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,13 +148,13 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| ZED_IRQ         |    11.498 |
-|   AXI_IO_1      |     0.835 |
-|   div           |     0.076 |
-|   main          |     2.681 |
-|     fifo        |     0.414 |
-|     trans       |     2.128 |
-|       ascii_rom |     1.229 |
+| ZED_IRQ         |    11.389 |
+|   AXI_IO_1      |     0.810 |
+|   div           |     0.075 |
+|   main          |     3.115 |
+|     fifo        |     0.422 |
+|     trans       |     2.509 |
+|       ascii_rom |     1.419 |
 +-----------------+-----------+
 
 
