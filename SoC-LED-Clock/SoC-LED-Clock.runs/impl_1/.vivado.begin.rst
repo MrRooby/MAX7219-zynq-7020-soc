@@ -48,3 +48,8 @@
     <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="221970" HostCore="16" HostMemory="16226056">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="bartek" Host="Ruby-Legion5" Pid="292655" HostCore="16" HostMemory="16226056">
+    </Process>
+</ProcessHandle>

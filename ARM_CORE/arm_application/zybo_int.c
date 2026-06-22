@@ -1,36 +1,3 @@
-/*
- * zybo_int.c - MINIMAL display test.
- *
- * Strips the whole alarm-clock stack down to one job: initialise the
- * MAX7219 chain and show "1234". No GIC, no RTC, no keyboard, no UI.
- *
- * The original alarm-clock top level is preserved unchanged at the bottom
- * of this file under `#if 0` so it can be switched back on later.
- */
-// #include "sleep.h"
-// #include <xil_printf.h>
-
-// #include "config.h"
-// #include "display.h"
-
-
-// int main(void)
-// {
-//     display_init();             /* no-decode mode + default brightness   */
-//     usleep(2000);               /* let the two init frames finish on SPI  */
-
-//     display_send("    ");       /* render the four glyphs, then stop      */
-//     usleep(2000);               /* let the two init frames finish on SPI  */
-//     display_send("1234");       /* render the four glyphs, then stop      */
-
-//     xil_printf("display test: 1234\n");
-
-//     for (;;) {
-//         /* idle - leave "1234" on the panel */
-//     }
-//     return 0;
-// }
-
 /* ===== ORIGINAL ALARM-CLOCK TOP LEVEL (disabled) ===================
  * zybo_int.c - LED dot-matrix alarm clock, top level.
  *

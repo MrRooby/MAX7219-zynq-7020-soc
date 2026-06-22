@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ZED_IRQ.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ZED_IRQ.tcl" );
+         "-log bram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bram.tcl" );
 
 
 

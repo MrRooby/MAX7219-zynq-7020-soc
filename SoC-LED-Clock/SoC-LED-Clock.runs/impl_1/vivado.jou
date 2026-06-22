@@ -3,22 +3,22 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Jun 22 13:54:55 2026
-# Process ID         : 222035
+# Start of session at: Mon Jun 22 14:45:11 2026
+# Process ID         : 292723
 # Current directory  : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/impl_1
-# Command line       : vivado -log ZED_IRQ.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ZED_IRQ.tcl -notrace
-# Log file           : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/impl_1/ZED_IRQ.vdi
+# Command line       : vivado -log bram.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bram.tcl -notrace
+# Log file           : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/impl_1/bram.vdi
 # Journal file       : /media/bartek/LEXAR/SUT/SoC/Projekt-LED-Matrix-Clock/SoC-LED-Clock/SoC-LED-Clock.runs/impl_1/vivado.jou
 # Running On         : Ruby-Legion5
 # Platform           : Fedora
 # Operating System   : Fedora Linux 44 (Workstation Edition)
 # Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics
-# CPU Frequency      : 1396.442 MHz
+# CPU Frequency      : 4148.575 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16615 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 25205 MB
-# Available Virtual  : 16812 MB
+# Available Virtual  : 15856 MB
 #-----------------------------------------------------------
-source ZED_IRQ.tcl -notrace
+source bram.tcl -notrace
